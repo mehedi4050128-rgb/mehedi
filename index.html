@@ -731,7 +731,7 @@
 
   <canvas id="cyber-canvas"></canvas>
 
-  <!-- Navbar -->
+  <!-- Navbar (Removed CONNECT Button) -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
@@ -744,7 +744,7 @@
         </div>
       </a>
 
-      <!-- Clean Nav without Numbers -->
+      <!-- Clean Navigation Links -->
       <ul class="nav-links">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">Profile</a></li>
@@ -831,14 +831,10 @@
         <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-
-      <a href="tel:+8801680450882" class="cyber-btn cyber-btn-primary" style="padding: 0.5rem 1.1rem;">
-        <i class="fa-solid fa-satellite-dish"></i> CONNECT
-      </a>
     </nav>
   </div>
 
-  <!-- Hero Section with Direct CV Download Link -->
+  <!-- Hero Section -->
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="terminal-badge">
@@ -850,8 +846,7 @@
         Specializing in mission-critical CCTV surveillance command centers, biometric access control architectures (BioStar 2), and high-availability NOC network operations across enterprise facilities.
       </p>
       <div class="btn-group">
-        <!-- Direct Download button linking to cv.pdf -->
-        <a href="cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="cyber-btn cyber-btn-primary">
+        <a href="./cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="cyber-btn cyber-btn-primary">
           <i class="fa-solid fa-file-pdf"></i> DOWNLOAD CV (PDF)
         </a>
         <button onclick="openModal('refModal')" class="cyber-btn cyber-btn-glass"><i class="fa-solid fa-id-card-clip"></i> REFERENCES</button>
@@ -880,7 +875,7 @@
     </div>
   </section>
 
-  <!-- Work Experience Timeline -->
+  <!-- Work Experience Timeline (Removed all '//' symbols) -->
   <section id="experience">
     <div class="section-header">
       <h2 class="section-title">WORK EXPERIENCE</h2>
@@ -895,7 +890,7 @@
           <div class="job-header">
             <div>
               <h3 class="job-title">Executive (Security & Administration)</h3>
-              <div class="company-title">// Ulkasemi Pvt. Ltd.</div>
+              <div class="company-title">Ulkasemi Pvt. Ltd.</div>
             </div>
             <span class="job-badge">JUN 2026 - PRESENT</span>
           </div>
@@ -915,7 +910,7 @@
           <div class="job-header">
             <div>
               <h3 class="job-title">Executive (Safety & Security)</h3>
-              <div class="company-title">// United Group (UGSSL)</div>
+              <div class="company-title">United Group (UGSSL)</div>
             </div>
             <span class="job-badge">FEB 2024 - JUN 2026</span>
           </div>
@@ -934,7 +929,7 @@
           <div class="job-header">
             <div>
               <h3 class="job-title">Technical Support & Security Consultant</h3>
-              <div class="company-title">// D-Net Service</div>
+              <div class="company-title">D-Net Service</div>
             </div>
             <span class="job-badge">DEC 2022 - MAR 2023</span>
           </div>
@@ -952,7 +947,7 @@
           <div class="job-header">
             <div>
               <h3 class="job-title">Sr. Executive (Network Operation Centre - NOC)</h3>
-              <div class="company-title">// Royal Green Ltd. (PacENet)</div>
+              <div class="company-title">Royal Green Ltd. (PacENet)</div>
             </div>
             <span class="job-badge">NOV 2020 - NOV 2022</span>
           </div>
@@ -967,7 +962,7 @@
     </div>
   </section>
 
-  <!-- Skills with Airplane Logo -->
+  <!-- Skills Section -->
   <section id="skills">
     <div class="section-header">
       <h2 class="section-title">CORE SKILLS</h2>
@@ -982,7 +977,7 @@
     </div>
 
     <div class="skills-grid">
-      <!-- Aviation Security with Airplane Logo (fa-plane-departure) -->
+      <!-- Aviation Security with Airplane Logo -->
       <div class="cyber-card" data-cat="aviation">
         <div class="skill-hud-icon"><i class="fa-solid fa-plane-departure"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">Aviation & Facility Security</h3>
@@ -1279,6 +1274,6 @@
 """
 
 with open("index.html", "w", encoding="utf-8") as f:
-    f.write(updated_code)
+    f.write(clean_code)
 
-print("Updated index.html with plane logo and direct CV pdf link.")
+print("Updated index.html: Removed CONNECT button and all '//' symbols.")
