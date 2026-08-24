@@ -1,23 +1,24 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md. Mehedi Hassan | Portfolio</title>
+  <title>Md. Mehedi Hassan | IT & Security Systems Specialist</title>
   <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     :root {
       --bg: #030712;
-      --card-bg: rgba(17, 24, 39, 0.7);
+      --card-bg: rgba(15, 23, 42, 0.65);
       --card-border: rgba(255, 255, 255, 0.08);
       --primary: #38bdf8;
-      --primary-glow: rgba(56, 189, 248, 0.35);
-      --purple: #818cf8;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --primary-glow: rgba(56, 189, 248, 0.3);
+      --accent: #818cf8;
+      --accent-glow: rgba(129, 140, 248, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
     * {
@@ -34,51 +35,187 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 85%, rgba(129, 140, 248, 0.1) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(129, 140, 248, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
       background-attachment: fixed;
     }
 
-    /* Glass Navbar */
-    nav {
+    /* Floating Futuristic Navbar */
+    .nav-wrapper {
       position: fixed;
-      top: 0;
+      top: 1.2rem;
+      left: 0;
       width: 100%;
-      background: rgba(3, 7, 18, 0.75);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      padding: 0 1.5rem;
+    }
+
+    nav {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 8%;
-      z-index: 1000;
-      border-bottom: 1px solid var(--card-border);
+      padding: 0.7rem 1.8rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.05);
     }
 
-    .logo {
-      font-size: 1.4rem;
+    /* Modern Tech Badge Logo */
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #030712;
+      font-size: 1rem;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--primary), var(--purple));
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
     }
 
-    .nav-links {
+    .brand-tag {
+      font-size: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* Modern Dropdown & Links */
+    .nav-menu {
       display: flex;
+      align-items: center;
       list-style: none;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    .nav-links a {
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: 0.3s;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
     }
 
-    .nav-links a:hover {
+    .nav-link:hover, .nav-item:hover .nav-link {
       color: var(--primary);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .nav-link i.fa-chevron-down {
+      font-size: 0.7rem;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .nav-link i.fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    /* Glass Morphism Dropdown Menu */
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 0.8rem;
+      min-width: 240px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 12px;
+      height: 12px;
+      background: rgba(15, 23, 42, 0.92);
+      border-left: 1px solid var(--card-border);
+      border-top: 1px solid var(--card-border);
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-item a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.65rem 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-item a i {
+      font-size: 1rem;
+      color: var(--primary);
+      width: 20px;
+      text-align: center;
+    }
+
+    .dropdown-item a:hover {
+      color: #ffffff;
+      background: rgba(56, 189, 248, 0.12);
+      transform: translateX(4px);
     }
 
     /* Hero Section */
@@ -87,8 +224,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6rem 8% 2rem;
-      gap: 3rem;
+      padding: 7.5rem 8% 2rem;
+      gap: 3.5rem;
     }
 
     .hero-text {
@@ -101,12 +238,13 @@
       gap: 8px;
       padding: 6px 14px;
       background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 999px;
       font-size: 0.8rem;
       color: var(--primary);
       margin-bottom: 1.5rem;
       font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
     }
 
     .status-dot {
@@ -126,14 +264,14 @@
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--primary), #a855f7);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-text p {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 2rem;
       max-width: 540px;
     }
@@ -156,7 +294,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--purple));
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: #030712;
       box-shadow: 0 0 25px var(--primary-glow);
     }
@@ -177,7 +315,7 @@
       border-color: var(--text-muted);
     }
 
-    /* Futuristic Profile Image Wrapper */
+    /* Glowing Profile Image */
     .hero-img-container {
       flex: 0.9;
       display: flex;
@@ -191,8 +329,8 @@
       width: 320px;
       height: 320px;
       border-radius: 50%;
-      padding: 7px;
-      background: linear-gradient(135deg, var(--primary), transparent 40%, var(--purple));
+      padding: 6px;
+      background: linear-gradient(135deg, var(--primary), transparent 40%, var(--accent));
       box-shadow: 0 0 50px rgba(56, 189, 248, 0.25);
       animation: pulseGlow 4s infinite alternate;
     }
@@ -242,7 +380,7 @@
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 2.2rem;
       backdrop-filter: blur(12px);
       transition: all 0.3s ease;
@@ -259,7 +397,7 @@
       width: 50px;
       height: 50px;
       background: rgba(56, 189, 248, 0.1);
-      border-radius: 12px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -297,15 +435,16 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Contact Banner */
+    /* Contact Section */
     .contact-box {
-      background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(30, 41, 59, 0.6));
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.6));
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 3.5rem 2rem;
       text-align: center;
       max-width: 700px;
       margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
     .social-links {
@@ -338,7 +477,7 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 8%;
       border-top: 1px solid var(--card-border);
       color: var(--text-muted);
       font-size: 0.85rem;
@@ -348,7 +487,7 @@
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 7rem;
+        padding-top: 8rem;
       }
       .hero-text p {
         margin: 0 auto 2rem;
@@ -360,7 +499,7 @@
         width: 250px;
         height: 250px;
       }
-      .nav-links {
+      .nav-menu {
         display: none;
       }
     }
@@ -368,35 +507,82 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">MH.</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Floating Futuristic Navbar -->
+  <div class="nav-wrapper">
+    <nav>
+      <!-- Modern Tech Logo Badge -->
+      <a href="#home" class="brand-logo">
+        <div class="brand-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Mehedi Hassan</span>
+          <span class="brand-tag">Tech & Security</span>
+        </div>
+      </a>
+
+      <!-- Navigation & Dropdowns -->
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        
+        <!-- Skills Dropdown -->
+        <li class="nav-item">
+          <a href="#skills" class="nav-link">
+            Skills <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="#skills"><i class="fa-solid fa-network-wired"></i> Network Infrastructure</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#skills"><i class="fa-solid fa-video"></i> CCTV Surveillance</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#skills"><i class="fa-solid fa-fingerprint"></i> BioStar 2 & Access</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Projects Dropdown -->
+        <li class="nav-item">
+          <a href="#projects" class="nav-link">
+            Projects <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="#projects"><i class="fa-solid fa-server"></i> Access Control Setup</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Network Architecture</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#projects"><i class="fa-solid fa-desktop"></i> Security Monitoring</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-text">
       <div class="status-badge">
-        <span class="status-dot"></span> Available for Projects & Support
+        <span class="status-dot"></span> Available for Solutions & Support
       </div>
       <h1>Hello, I'm <br><span class="gradient-text">Md. Mehedi Hassan</span></h1>
-      <p>IT & Security Systems Specialist | Network Infrastructure, Access Control & Surveillance Solutions.</p>
+      <p>IT & Security Systems Specialist specializing in Network Infrastructure, Access Control, and Enterprise CCTV Surveillance Solutions.</p>
       <div class="btn-group">
         <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> View Work</a>
-        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-envelope"></i> Get In Touch</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-envelope"></i> Contact Me</a>
       </div>
     </div>
     
     <div class="hero-img-container">
       <div class="img-frame">
-        <!-- এখানে আপনার profile.jpg ফাইলটি সরাসরি লিংক করা হয়েছে -->
         <img src="profile.jpg" alt="Md. Mehedi Hassan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
       </div>
     </div>
@@ -406,11 +592,11 @@
   <section id="about">
     <div class="section-header">
       <h2>About Me</h2>
-      <p>Professional background and key focus areas</p>
+      <p>Professional background and key operational areas</p>
     </div>
-    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <p style="font-size: 1.05rem; color: #e2e8f0;">
-        I specialize in enterprise network infrastructure, security surveillance management, and access control integrations (BioStar 2). Passionate about resolving technical bottlenecks, system troubleshooting, and deploying dependable operational workflows.
+    <div class="card" style="max-width: 820px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 1.05rem; color: #cbd5e1;">
+        I am a dedicated IT and Security Systems professional with hands-on experience in managing enterprise network setups, CCTV surveillance, biometric access control (BioStar 2), and server operations. Focused on streamlining infrastructure reliability, troubleshooting technical bottlenecks, and ensuring seamless security integration.
       </p>
     </div>
   </section>
@@ -418,14 +604,14 @@
   <!-- Skills Section -->
   <section id="skills">
     <div class="section-header">
-      <h2>Key Technical Skills</h2>
-      <p>Core competencies & system architectures</p>
+      <h2>Areas of Expertise</h2>
+      <p>Technical proficiencies & specialized system architectures</p>
     </div>
     <div class="grid">
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
         <h3>Network Infrastructure</h3>
-        <p>Routing, Switching, MikroTik Router configuration, CCNA networking protocols, and OLT systems deployment.</p>
+        <p>Routing, Switching, MikroTik Router configuration, CCNA networking standards, and OLT system setup.</p>
         <div class="tags">
           <span class="tag">MikroTik</span>
           <span class="tag">CCNA</span>
@@ -436,22 +622,22 @@
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>Security Surveillance</h3>
-        <p>IP CCTV deployment, NVR/DVR management, central control room monitoring walls, and gate security barriers.</p>
+        <p>IP CCTV deployment, central control room monitoring displays, NVR setups, and automated barrier systems.</p>
         <div class="tags">
           <span class="tag">IP CCTV</span>
           <span class="tag">Surveillance</span>
-          <span class="tag">Barriers</span>
+          <span class="tag">Smart Barriers</span>
         </div>
       </div>
 
       <div class="card">
         <div class="card-icon"><i class="fa-solid fa-fingerprint"></i></div>
         <h3>Access Control & BioStar</h3>
-        <p>Biometric time-attendance hardware, BioStar 2 database configuration, server synchronization, and access policies.</p>
+        <p>Biometric time-attendance devices, BioStar 2 database configuration, access policies, and server synchronization.</p>
         <div class="tags">
           <span class="tag">BioStar 2</span>
+          <span class="tag">Biometrics</span>
           <span class="tag">Database</span>
-          <span class="tag">Access Tech</span>
         </div>
       </div>
     </div>
@@ -461,7 +647,7 @@
   <section id="projects">
     <div class="section-header">
       <h2>Featured Works</h2>
-      <p>Highlights of technical implementations</p>
+      <p>Key technical implementations & system deployments</p>
     </div>
     <div class="grid">
       <div class="card">
@@ -496,10 +682,10 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact-box">
-      <h2>Let's Connect</h2>
-      <p style="color: var(--text-muted); margin-top: 0.5rem;">Have a project or technical consultation in mind?</p>
+      <h2>Let's Work Together</h2>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Interested in network deployments, surveillance setups, or technical support?</p>
       <div style="margin-top: 2rem;">
-        <a href="mailto:your-email@example.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Send Email</a>
+        <a href="mailto:your-email@example.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Send an Email</a>
       </div>
       <div class="social-links">
         <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -515,3 +701,9 @@
 
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("File index.html generated successfully.")
