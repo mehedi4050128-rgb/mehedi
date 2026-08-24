@@ -1,23 +1,27 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md. Mehedi Hassan | IT & Security Systems Specialist</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Md. Mehedi Hassan | Technical Security & Aviation Specialist</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
   <style>
     :root {
-      --bg: #030712;
-      --card-bg: rgba(15, 23, 42, 0.65);
-      --card-border: rgba(255, 255, 255, 0.08);
+      --bg-main: #060913;
+      --bg-surface: rgba(13, 21, 38, 0.75);
+      --bg-surface-hover: rgba(22, 34, 61, 0.9);
+      --border-subtle: rgba(56, 189, 248, 0.12);
+      --border-focus: rgba(56, 189, 248, 0.4);
       --primary: #38bdf8;
-      --primary-glow: rgba(56, 189, 248, 0.3);
-      --accent: #818cf8;
-      --accent-glow: rgba(129, 140, 248, 0.25);
-      --text-main: #f8fafc;
+      --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+      --accent-cyan: #06b6d4;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --text-pure: #ffffff;
+      --text-body: #e2e8f0;
       --text-muted: #94a3b8;
     }
 
@@ -30,20 +34,26 @@ html_content = """<!DOCTYPE html>
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
+      background-color: var(--bg-main);
+      color: var(--text-body);
+      line-height: 1.65;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(129, 140, 248, 0.08) 0%, transparent 40%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 90% 85%, rgba(99, 102, 241, 0.1) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
       background-attachment: fixed;
     }
 
-    /* Floating Futuristic Navbar */
+    /* Selection */
+    ::selection {
+      background: rgba(56, 189, 248, 0.3);
+      color: var(--primary);
+    }
+
+    /* Floating Ultra-Glass Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -57,68 +67,68 @@ html_content = """<!DOCTYPE html>
 
     nav {
       width: 100%;
-      max-width: 1100px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
+      max-width: 1180px;
+      background: rgba(10, 15, 29, 0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
       border-radius: 999px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.7rem 1.8rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.05);
+      padding: 0.65rem 1.8rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.08);
     }
 
-    /* Modern Tech Badge Logo */
+    /* Brand Logo */
     .brand-logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
-      color: var(--text-main);
     }
 
-    .brand-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--primary-gradient);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #030712;
-      font-size: 1rem;
-      box-shadow: 0 0 15px var(--primary-glow);
+      color: #060913;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
     }
 
-    .brand-text {
+    .brand-title-group {
       display: flex;
       flex-direction: column;
     }
 
-    .brand-name {
-      font-size: 0.95rem;
-      font-weight: 800;
+    .brand-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
       letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #ffffff, #cbd5e1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text-pure);
     }
 
-    .brand-tag {
+    .brand-sub {
       font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
       color: var(--primary);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
+      font-weight: 600;
     }
 
-    /* Modern Dropdown & Links */
-    .nav-menu {
+    /* Navigation Links */
+    .nav-links {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 1.5rem;
+      gap: 1.2rem;
     }
 
     .nav-item {
@@ -130,61 +140,64 @@ html_content = """<!DOCTYPE html>
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
 
-    .nav-link:hover, .nav-item:hover .nav-link {
-      color: var(--primary);
+    .nav-link:hover, .nav-item:hover > .nav-link {
+      color: var(--text-pure);
       background: rgba(56, 189, 248, 0.08);
     }
 
     .nav-link i.fa-chevron-down {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       transition: transform 0.3s ease;
+      color: var(--text-muted);
     }
 
-    .nav-item:hover .nav-link i.fa-chevron-down {
+    .nav-item:hover > .nav-link i.fa-chevron-down {
       transform: rotate(180deg);
+      color: var(--primary);
     }
 
-    /* Glass Morphism Dropdown Menu */
+    /* Gorgeous Mega-Dropdown */
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 14px);
       left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(24px);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 0.8rem;
-      min-width: 240px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.1);
+      transform: translateX(-50%) translateY(12px);
+      background: rgba(10, 16, 31, 0.94);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 20px;
+      padding: 1rem;
+      min-width: 290px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.15);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
 
     .dropdown-menu::before {
       content: '';
       position: absolute;
-      top: -6px;
+      top: -7px;
       left: 50%;
       transform: translateX(-50%) rotate(45deg);
-      width: 12px;
-      height: 12px;
-      background: rgba(15, 23, 42, 0.92);
-      border-left: 1px solid var(--card-border);
-      border-top: 1px solid var(--card-border);
+      width: 14px;
+      height: 14px;
+      background: rgba(10, 16, 31, 0.94);
+      border-left: 1px solid rgba(56, 189, 248, 0.2);
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
     }
 
     .nav-item:hover .dropdown-menu {
@@ -196,20 +209,29 @@ html_content = """<!DOCTYPE html>
     .dropdown-item a {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 0.65rem 0.9rem;
+      gap: 14px;
+      padding: 0.75rem 1rem;
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.85rem;
-      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border-radius: 12px;
       transition: all 0.2s ease;
+      background: transparent;
     }
 
-    .dropdown-item a i {
-      font-size: 1rem;
+    .dropdown-icon-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--primary);
-      width: 20px;
-      text-align: center;
+      font-size: 0.95rem;
+      transition: 0.2s;
     }
 
     .dropdown-item a:hover {
@@ -218,288 +240,533 @@ html_content = """<!DOCTYPE html>
       transform: translateX(4px);
     }
 
+    .dropdown-item a:hover .dropdown-icon-box {
+      background: var(--primary);
+      color: #060913;
+      box-shadow: 0 0 15px var(--primary);
+    }
+
     /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 7.5rem 8% 2rem;
-      gap: 3.5rem;
+      padding: 8rem 8% 4rem;
+      gap: 4rem;
     }
 
-    .hero-text {
-      flex: 1.2;
+    .hero-content {
+      flex: 1.3;
     }
 
-    .status-badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
+      gap: 10px;
+      padding: 8px 18px;
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.6rem;
       font-family: 'JetBrains Mono', monospace;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
     }
 
-    .status-dot {
+    .pulse-dot {
       width: 8px;
       height: 8px;
-      background: #22c55e;
+      background: #10b981;
       border-radius: 50%;
-      box-shadow: 0 0 10px #22c55e;
+      box-shadow: 0 0 12px #10b981;
+      animation: pulse 2s infinite;
     }
 
-    .hero-text h1 {
-      font-size: 3.4rem;
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-content h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.6rem;
       font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      letter-spacing: -1.5px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      color: var(--text-pure);
+      margin-bottom: 1.2rem;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+    .hero-gradient {
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-text p {
+    .hero-subtitle {
+      font-size: 1.12rem;
       color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      max-width: 540px;
+      max-width: 600px;
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
     }
 
     .btn-group {
       display: flex;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 1.2rem;
     }
 
     .btn {
-      padding: 0.85rem 1.8rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
+      padding: 0.95rem 2rem;
+      border-radius: 14px;
+      font-weight: 700;
       font-size: 0.95rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #030712;
-      box-shadow: 0 0 25px var(--primary-glow);
+      background: var(--primary-gradient);
+      color: #060913;
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.4);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.65);
     }
 
-    .btn-outline {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-main);
-      border: 1px solid var(--card-border);
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-pure);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(10px);
     }
 
-    .btn-outline:hover {
+    .btn-glass:hover {
       background: rgba(255, 255, 255, 0.08);
-      border-color: var(--text-muted);
+      border-color: var(--primary);
+      transform: translateY(-3px);
     }
 
-    /* Glowing Profile Image */
-    .hero-img-container {
+    /* Futuristic Profile Frame */
+    .hero-visual {
       flex: 0.9;
       display: flex;
       justify-content: center;
-      align-items: center;
       position: relative;
     }
 
-    .img-frame {
+    .profile-glow-ring {
       position: relative;
-      width: 320px;
-      height: 320px;
+      width: 340px;
+      height: 340px;
       border-radius: 50%;
-      padding: 6px;
-      background: linear-gradient(135deg, var(--primary), transparent 40%, var(--accent));
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.25);
-      animation: pulseGlow 4s infinite alternate;
+      padding: 8px;
+      background: linear-gradient(135deg, #38bdf8, transparent 40%, #6366f1 70%, #a855f7);
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.3);
+      animation: ringGlow 6s infinite alternate;
     }
 
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 30px rgba(56, 189, 248, 0.2); }
-      100% { box-shadow: 0 0 60px rgba(129, 140, 248, 0.4); }
+    @keyframes ringGlow {
+      0% { box-shadow: 0 0 40px rgba(56, 189, 248, 0.25); }
+      100% { box-shadow: 0 0 70px rgba(168, 85, 247, 0.35); }
     }
 
-    .img-frame img {
+    .profile-glow-ring img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      background-color: #111827;
+      background: #0d1526;
       display: block;
     }
 
-    /* Content Sections */
+    /* Section Styling */
     section {
-      padding: 6rem 8%;
+      padding: 6.5rem 8%;
     }
 
-    .section-header {
+    .section-title-wrap {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
 
-    .section-header h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
       margin-bottom: 0.5rem;
+      display: block;
     }
 
-    .section-header p {
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--text-pure);
+    }
+
+    .section-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0.5rem auto 0;
     }
 
-    .grid {
+    /* About Section Grid */
+    .about-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 3rem;
+      backdrop-filter: blur(16px);
+      max-width: 950px;
+      margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2.2rem;
-      backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
+    .stat-item h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* Experience Timeline */
+    .timeline {
       position: relative;
+      max-width: 950px;
+      margin: 0 auto;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--accent-indigo), transparent);
     }
 
-    .card-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(56, 189, 248, 0.1);
-      border-radius: 14px;
+    .timeline-item {
+      position: relative;
+      padding-left: 70px;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      left: 8px;
+      top: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #060913;
+      border: 2px solid var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      box-shadow: 0 0 15px var(--primary);
     }
 
-    .card h3 {
+    .timeline-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-focus);
+      transform: translateX(6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-pure);
+    }
+
+    .company-name {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .job-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .job-bullets {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .job-bullets li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    .job-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .skill-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.2rem;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-focus);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+
+    .skill-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .skill-box h3 {
       font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 0.8rem;
+      color: var(--text-pure);
+      margin-bottom: 0.6rem;
     }
 
-    .card p {
+    .skill-box p {
       color: var(--text-muted);
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
+    /* Training & Certifications Section */
+    .trainings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .tag {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .training-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 1.8rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .training-card:hover {
+      border-color: var(--border-focus);
+      background: var(--bg-surface-hover);
+      transform: translateY(-4px);
+    }
+
+    .training-icon {
+      font-size: 1.8rem;
+      color: var(--accent-indigo);
+    }
+
+    .training-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-pure);
+      margin-bottom: 0.3rem;
+    }
+
+    .training-info .issuer {
+      font-size: 0.85rem;
       color: var(--primary);
-      font-size: 0.75rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .training-info .meta {
       font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
     }
 
     /* Contact Section */
-    .contact-box {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.6));
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      max-width: 700px;
+    .contact-container {
+      background: linear-gradient(135deg, rgba(13, 21, 38, 0.95), rgba(20, 30, 55, 0.75));
+      border: 1px solid var(--border-subtle);
+      border-radius: 28px;
+      padding: 4rem 2rem;
+      max-width: 850px;
       margin: 0 auto;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-body);
+      font-size: 0.95rem;
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      font-size: 1.1rem;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.2rem;
       margin-top: 2rem;
     }
 
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-main);
+      color: var(--text-pure);
       text-decoration: none;
-      transition: 0.3s;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
     }
 
-    .social-icon:hover {
+    .social-btn:hover {
       background: var(--primary);
-      color: #030712;
-      box-shadow: 0 0 20px var(--primary-glow);
+      color: #060913;
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px var(--primary);
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 2.5rem 8%;
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid var(--border-subtle);
       color: var(--text-muted);
       font-size: 0.85rem;
     }
 
-    @media (max-width: 900px) {
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 8rem;
+        padding-top: 9rem;
       }
-      .hero-text p {
-        margin: 0 auto 2rem;
+      .hero-subtitle {
+        margin: 0 auto 2.2rem;
       }
       .btn-group {
         justify-content: center;
       }
-      .img-frame {
-        width: 250px;
-        height: 250px;
+      .profile-glow-ring {
+        width: 270px;
+        height: 270px;
       }
-      .nav-menu {
+      .nav-links {
         display: none;
       }
     }
@@ -507,25 +774,61 @@ html_content = """<!DOCTYPE html>
 </head>
 <body>
 
-  <!-- Floating Futuristic Navbar -->
+  <!-- Floating Ultra-Glass Navbar -->
   <div class="nav-wrapper">
     <nav>
-      <!-- Modern Tech Logo Badge -->
+      <!-- Brand Logo Badge -->
       <a href="#home" class="brand-logo">
-        <div class="brand-icon">
+        <div class="brand-avatar">
           <i class="fa-solid fa-shield-halved"></i>
         </div>
-        <div class="brand-text">
-          <span class="brand-name">Mehedi Hassan</span>
-          <span class="brand-tag">Tech & Security</span>
+        <div class="brand-title-group">
+          <span class="brand-title">Mehedi Hassan</span>
+          <span class="brand-sub">Security & Tech Specialist</span>
         </div>
       </a>
 
       <!-- Navigation & Dropdowns -->
-      <ul class="nav-menu">
+      <ul class="nav-links">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         
+        <!-- Experience Dropdown -->
+        <li class="nav-item">
+          <a href="#experience" class="nav-link">
+            Experience <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="#experience">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-microchip"></i></div>
+                <div>
+                  <strong>Ulkasemi Pvt. Ltd.</strong><br>
+                  <small style="color:var(--text-muted); font-size:0.75rem;">Executive (Security & Admin)</small>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#experience">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-building-shield"></i></div>
+                <div>
+                  <strong>United Group (UGSSL)</strong><br>
+                  <small style="color:var(--text-muted); font-size:0.75rem;">Executive (Safety & Security)</small>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#experience">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                <div>
+                  <strong>Royal Green (PacENet)</strong><br>
+                  <small style="color:var(--text-muted); font-size:0.75rem;">Sr. Executive (NOC)</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <!-- Skills Dropdown -->
         <li class="nav-item">
           <a href="#skills" class="nav-link">
@@ -533,163 +836,328 @@ html_content = """<!DOCTYPE html>
           </a>
           <ul class="dropdown-menu">
             <li class="dropdown-item">
-              <a href="#skills"><i class="fa-solid fa-network-wired"></i> Network Infrastructure</a>
+              <a href="#skills">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-plane-shield"></i></div>
+                Aviation & Enterprise Security
+              </a>
             </li>
             <li class="dropdown-item">
-              <a href="#skills"><i class="fa-solid fa-video"></i> CCTV Surveillance</a>
+              <a href="#skills">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-video"></i></div>
+                CCTV & Video Surveillance
+              </a>
             </li>
             <li class="dropdown-item">
-              <a href="#skills"><i class="fa-solid fa-fingerprint"></i> BioStar 2 & Access</a>
+              <a href="#skills">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-fingerprint"></i></div>
+                Access Control & BioStar 2
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#skills">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-server"></i></div>
+                NOC & IP Networking
+              </a>
             </li>
           </ul>
         </li>
 
-        <!-- Projects Dropdown -->
-        <li class="nav-item">
-          <a href="#projects" class="nav-link">
-            Projects <i class="fa-solid fa-chevron-down"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item">
-              <a href="#projects"><i class="fa-solid fa-server"></i> Access Control Setup</a>
-            </li>
-            <li class="dropdown-item">
-              <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Network Architecture</a>
-            </li>
-            <li class="dropdown-item">
-              <a href="#projects"><i class="fa-solid fa-desktop"></i> Security Monitoring</a>
-            </li>
-          </ul>
-        </li>
-
+        <li class="nav-item"><a href="#trainings" class="nav-link">Certifications</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </div>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <div class="status-badge">
-        <span class="status-dot"></span> Available for Solutions & Support
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> HCSA Certified | Aviation Security Specialist
       </div>
-      <h1>Hello, I'm <br><span class="gradient-text">Md. Mehedi Hassan</span></h1>
-      <p>IT & Security Systems Specialist specializing in Network Infrastructure, Access Control, and Enterprise CCTV Surveillance Solutions.</p>
+      <h1>Securing Digital & <br><span class="hero-gradient">Physical Infrastructure</span></h1>
+      <p class="hero-subtitle">
+        I am <strong>Md. Mehedi Hassan</strong>, a Technical Security & Aviation Security Specialist with extensive operational experience across multinational corporate facilities, five-star hotels, shopping malls, and NOC network infrastructures.
+      </p>
       <div class="btn-group">
-        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> View Work</a>
-        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-envelope"></i> Contact Me</a>
+        <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View Career History</a>
+        <a href="#contact" class="btn btn-glass"><i class="fa-regular fa-paper-plane"></i> Get In Touch</a>
       </div>
     </div>
     
-    <div class="hero-img-container">
-      <div class="img-frame">
+    <div class="hero-visual">
+      <div class="profile-glow-ring">
         <img src="profile.jpg" alt="Md. Mehedi Hassan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- About Section -->
   <section id="about">
-    <div class="section-header">
-      <h2>About Me</h2>
-      <p>Professional background and key operational areas</p>
+    <div class="section-title-wrap">
+      <span class="section-tag">Executive Summary</span>
+      <h2 class="section-title">About Me</h2>
     </div>
-    <div class="card" style="max-width: 820px; margin: 0 auto; text-align: center;">
-      <p style="font-size: 1.05rem; color: #cbd5e1;">
-        I am a dedicated IT and Security Systems professional with hands-on experience in managing enterprise network setups, CCTV surveillance, biometric access control (BioStar 2), and server operations. Focused on streamlining infrastructure reliability, troubleshooting technical bottlenecks, and ensuring seamless security integration.
+    <div class="about-card">
+      <p style="font-size: 1.08rem; color: #cbd5e1; line-height: 1.8;">
+        Security and technology professional with hands-on experience in <strong>Aviation Security, CCTV surveillance, Biometric Access Control, IP Networking, and integrated security command systems</strong>. Proven track record in managing critical security operations across international hotels, shopping complexes, convention halls, and corporate facilities. HCSA certified by Hikvision with a deep focus on IT Security, Cybersecurity, and Crisis Response Management.
       </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <h3>5+ Years</h3>
+          <p>Technical Experience</p>
+        </div>
+        <div class="stat-item">
+          <h3>HCSA</h3>
+          <p>Hikvision Certified</p>
+        </div>
+        <div class="stat-item">
+          <h3>ASM</h3>
+          <p>Airport Security Trained</p>
+        </div>
+        <div class="stat-item">
+          <h3>B.Sc</h3>
+          <p>Physics (CGPA 3.55)</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Work Experience Timeline -->
+  <section id="experience">
+    <div class="section-title-wrap">
+      <span class="section-tag">Career Journey</span>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-desc">Comprehensive record of security operations, administration, and network leadership.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Job 1: Ulkasemi -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div class="timeline-card">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Executive (Security & Administration)</h3>
+              <div class="company-name"><i class="fa-solid fa-building"></i> Ulkasemi Pvt. Ltd.</div>
+            </div>
+            <span class="job-date">June 2026 – Present</span>
+          </div>
+          <ul class="job-bullets">
+            <li>Managed day-to-day security operations, workplace administration, safety compliance, and crisis management.</li>
+            <li>Supervised security personnel, duty rosters, post assignments, and strategic workforce deployments.</li>
+            <li>Monitored enterprise CCTV, biometric access control, visitor management systems, and command center operations.</li>
+            <li>Coordinated with technology vendors and service providers for system maintenance and technical infrastructure upgrades.</li>
+            <li>Developed standard operating procedures (SOPs), safety protocols, security risk assessments, and incident reporting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job 2: United Group -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-building-shield"></i></div>
+        <div class="timeline-card">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Executive (Safety & Security)</h3>
+              <div class="company-name"><i class="fa-solid fa-shield-halved"></i> United Group (UGSSL)</div>
+            </div>
+            <span class="job-date">Feb 2024 – June 2026</span>
+          </div>
+          <ul class="job-bullets">
+            <li>Spearheaded security operations across premium properties (hotels, convention centres, and shopping malls).</li>
+            <li>Led vendor and contractor management, maintenance troubleshooting, and safety performance audits.</li>
+            <li>Conducted site inspections, preventive security protocols, threat assessments, and comprehensive compliance logging.</li>
+            <li>Coordinated with engineering, project management, and emergency response teams during critical incidents.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job 3: D-Net Service -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-headset"></i></div>
+        <div class="timeline-card">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Call Center Agent & Security Consultant</h3>
+              <div class="company-name"><i class="fa-solid fa-network-wired"></i> D-Net Service</div>
+            </div>
+            <span class="job-date">Dec 2022 – Mar 2023</span>
+          </div>
+          <ul class="job-bullets">
+            <li>Delivered responsive customer support and technical escalation handling with first-call resolution benchmarks.</li>
+            <li>Assisted in security consultancy projects, evaluating client security requirements and network protection plans.</li>
+            <li>Maintained direct technical communication with enterprise partners including BRAC Bank.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Job 4: Royal Green (PacENet) -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="timeline-card">
+          <div class="job-header">
+            <div>
+              <h3 class="job-title">Sr. Executive (Network Operation Centre - NOC)</h3>
+              <div class="company-name"><i class="fa-solid fa-globe"></i> Royal Green Ltd. (PacENet)</div>
+            </div>
+            <span class="job-date">Nov 2020 – Nov 2022</span>
+          </div>
+          <ul class="job-bullets">
+            <li>Administered end-to-end network infrastructure for enterprise & residential clients, maintaining 99.9% uptime.</li>
+            <li>Led a 7-member IT & NOC operations team, improving incident response time by 50%.</li>
+            <li>Oversaw data centre operations, server configuration, firewall policies, bandwidth optimization, and disaster recovery.</li>
+            <li>Provided Tier-3 IT support, resolving complex routing disruptions with an 88% first-contact resolution rate.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Competencies / Skills -->
   <section id="skills">
-    <div class="section-header">
-      <h2>Areas of Expertise</h2>
-      <p>Technical proficiencies & specialized system architectures</p>
+    <div class="section-title-wrap">
+      <span class="section-tag">Key Proficiencies</span>
+      <h2 class="section-title">Technical Expertise</h2>
+      <p class="section-desc">Domain mastery across enterprise security technologies and network systems.</p>
     </div>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Network Infrastructure</h3>
-        <p>Routing, Switching, MikroTik Router configuration, CCNA networking standards, and OLT system setup.</p>
-        <div class="tags">
-          <span class="tag">MikroTik</span>
-          <span class="tag">CCNA</span>
-          <span class="tag">OLT</span>
-        </div>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-plane-shield"></i></div>
+        <h3>Aviation & Physical Security</h3>
+        <p>Airport security manager operations, risk assessment, perimeter defense, crisis management, and safety SOP design.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Security Surveillance</h3>
-        <p>IP CCTV deployment, central control room monitoring displays, NVR setups, and automated barrier systems.</p>
-        <div class="tags">
-          <span class="tag">IP CCTV</span>
-          <span class="tag">Surveillance</span>
-          <span class="tag">Smart Barriers</span>
-        </div>
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-video"></i></div>
+        <h3>CCTV & Video Surveillance</h3>
+        <p>Enterprise IP & Analog CCTV systems, NVR matrix configuration, central command display walls, and Hikvision solutions.</p>
       </div>
 
-      <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3>Access Control & BioStar</h3>
-        <p>Biometric time-attendance devices, BioStar 2 database configuration, access policies, and server synchronization.</p>
-        <div class="tags">
-          <span class="tag">BioStar 2</span>
-          <span class="tag">Biometrics</span>
-          <span class="tag">Database</span>
-        </div>
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-fingerprint"></i></div>
+        <h3>Access Control & BioStar 2</h3>
+        <p>Biometric access control architecture, RFID cards, time-attendance database sync, and automated barrier controllers.</p>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>IP Networking & NOC Operations</h3>
+        <p>MikroTik configuration, CCNA routing protocols, OLT deployment, firewall management, and data center uptime assurance.</p>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-users-gear"></i></div>
+        <h3>Team Leadership & Vendors</h3>
+        <p>Cross-functional team supervision, multi-vendor contract management, SLAs, and technical project lifecycle oversight.</p>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-icon"><i class="fa-solid fa-shield-virus"></i></div>
+        <h3>Cybersecurity & Incident Response</h3>
+        <p>IT threat monitoring, emergency evacuation protocols, compliance auditing, and hardware vulnerability assessments.</p>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="section-header">
-      <h2>Featured Works</h2>
-      <p>Key technical implementations & system deployments</p>
+  <!-- Trainings & Certifications -->
+  <section id="trainings">
+    <div class="section-title-wrap">
+      <span class="section-tag">Qualifications</span>
+      <h2 class="section-title">Trainings & Certifications</h2>
+      <p class="section-desc">Specialized technical accreditations and governmental trainings.</p>
     </div>
-    <div class="grid">
-      <div class="card">
-        <h3>BioStar 2 Access & Migration</h3>
-        <p>Successfully managed employee attendance and access control device migration and server connectivity.</p>
-        <div class="tags">
-          <span class="tag">BioStar 2</span>
-          <span class="tag">Database Support</span>
+    <div class="trainings-grid">
+      
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="training-info">
+          <h4>Airport Security Manager (ASM)</h4>
+          <div class="issuer">Civil Aviation Authority of Bangladesh (CAAB)</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 1 Month | 2026</div>
         </div>
       </div>
 
-      <div class="card">
-        <h3>Enterprise Network Deployment</h3>
-        <p>Deployed MikroTik and OLT routing architecture ensuring high-availability enterprise connectivity.</p>
-        <div class="tags">
-          <span class="tag">Networking</span>
-          <span class="tag">Infrastructure</span>
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-brands fa-microsoft"></i></div>
+        <div class="training-info">
+          <h4>Microsoft Azure Fundamentals</h4>
+          <div class="issuer">Bangladesh High-Tech Park Authority</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 2021</div>
         </div>
       </div>
 
-      <div class="card">
-        <h3>Surveillance Monitoring Central</h3>
-        <p>Installed high-capacity IP CCTV monitoring display setups and automated perimeter barriers.</p>
-        <div class="tags">
-          <span class="tag">IP CCTV</span>
-          <span class="tag">Automation</span>
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="training-info">
+          <h4>ASP.NET Core MVC Web Application</h4>
+          <div class="issuer">Bangladesh High-Tech Park Authority</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 2021</div>
         </div>
       </div>
+
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-solid fa-cube"></i></div>
+        <div class="training-info">
+          <h4>3D Animation Online AAVA</h4>
+          <div class="issuer">3D & Skill Aid Bangladesh</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 2021</div>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-brands fa-android"></i></div>
+        <div class="training-info">
+          <h4>Android App Monetization</h4>
+          <div class="issuer">Software Technology Park</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 2018</div>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="training-icon"><i class="fa-solid fa-fire-extinguisher"></i></div>
+        <div class="training-info">
+          <h4>Community-Level Volunteer Training</h4>
+          <div class="issuer">Bangladesh Fire Service & Civil Defence</div>
+          <div class="meta"><i class="fa-regular fa-clock"></i> 2013</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <div class="contact-box">
-      <h2>Let's Work Together</h2>
-      <p style="color: var(--text-muted); margin-top: 0.5rem;">Interested in network deployments, surveillance setups, or technical support?</p>
-      <div style="margin-top: 2rem;">
-        <a href="mailto:your-email@example.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Send an Email</a>
+    <div class="contact-container">
+      <span class="section-tag" style="margin-bottom:0.5rem;">Get In Touch</span>
+      <h2 class="section-title" style="margin-bottom: 1rem;">Let's Connect</h2>
+      <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">
+        Available for security consultations, enterprise infrastructure setup, and high-level technical operations.
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Malibagh, Dhaka-1217, Bangladesh</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+8801680450882</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>mehedi4050128@gmail.com</span>
+        </div>
       </div>
+
+      <div>
+        <a href="mailto:mehedi4050128@gmail.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Direct Email</a>
+      </div>
+
       <div class="social-links">
-        <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/mehedi4050128-rgb" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/mehedi-hassan-7810261aa" target="_blank" class="social-btn" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/mehedi4050128-rgb" target="_blank" class="social-btn" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
   </section>
@@ -704,6 +1172,6 @@ html_content = """<!DOCTYPE html>
 """
 
 with open("index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
+    f.write(html_code)
 
-print("File index.html generated successfully.")
+print("Generated full CV-integrated index.html successfully.")
