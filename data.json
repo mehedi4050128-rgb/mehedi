@@ -1,0 +1,53 @@
+{
+  "profile": {
+    "status": "ONLINE // HCSA & ASM CERTIFIED",
+    "headline": "SECURE THE INFRASTRUCTURE",
+    "subheadline": "IT & AVIATION SECURITY SPECIALIST",
+    "about": "Security and technology professional with verified operational leadership in Aviation Security, CCTV Surveillance Matrix, Biometric Access Control Systems, and Enterprise IP Networks. Experienced in managing security protocols across five-star international hotels, commercial complexes, and Tier-3 NOC environments.",
+    "phone": "+880 1680-450882",
+    "email": "mehedi4050128@gmail.com",
+    "location": "Malibagh, Dhaka-1217, BD"
+  },
+  "experiences": [
+    {
+      "role": "Executive (Security & Administration)",
+      "company": "Ulkasemi Pvt. Ltd.",
+      "period": "JUN 2026 - PRESENT",
+      "points": [
+        "Directed full-scope facility security operations, administration, and emergency safety protocols.",
+        "Supervised deployed security workforce, tactical post assignments, and standard operational procedures (SOPs).",
+        "Managed central CCTV control monitoring, biometric gate access, and visitor database integrity.",
+        "Led technical vendor collaborations for security hardware maintenance and network upgrades."
+      ]
+    },
+    {
+      "role": "Executive (Safety & Security)",
+      "company": "United Group (UGSSL)",
+      "period": "FEB 2024 - JUN 2026",
+      "points": [
+        "Spearheaded security infrastructure across luxury hotels, shopping malls, and convention centers.",
+        "Conducted comprehensive threat assessments, security audits, and risk minimization strategies.",
+        "Supervised maintenance contracts and performance benchmarks for surveillance systems."
+      ]
+    },
+    {
+      "role": "Technical Support & Security Consultant",
+      "company": "D-Net Service",
+      "period": "DEC 2022 - MAR 2023",
+      "points": [
+        "Delivered responsive Tier-1/2 customer support with rapid first-contact resolution metrics.",
+        "Consulted on business security solutions and coordinated directly with enterprise clients (BRAC Bank)."
+      ]
+    },
+    {
+      "role": "Sr. Executive (Network Operation Centre - NOC)",
+      "company": "Royal Green Ltd. (PacENet)",
+      "period": "NOV 2020 - NOV 2022",
+      "points": [
+        "Administered enterprise network backbones, sustaining 99.9% uptime across routing infrastructures.",
+        "Led a 7-engineer NOC team, reducing incident response latency by 50%.",
+        "Maintained core data center servers, firewalls, routing protocols, and disaster recovery architectures."
+      ]
+    }
+  ]
+}
