@@ -9,62 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* CSS Variables for Dynamic Multi-Theme Switching */
     :root {
-      /* Theme 1: Silicon Cyber (Default) */
-      --bg-dark: #020617;
-      --panel-bg: rgba(10, 18, 36, 0.88);
-      --panel-hover: rgba(15, 27, 54, 0.95);
-      --accent-primary: #00f0ff;
-      --accent-glow: rgba(0, 240, 255, 0.3);
-      --accent-secondary: #10b981;
-      --accent-gold: #f59e0b;
-      --border-subtle: rgba(0, 240, 255, 0.16);
-      --border-focus: rgba(0, 240, 255, 0.55);
+      --bg-dark: #030712;
+      --panel-bg: rgba(9, 15, 32, 0.85);
+      --panel-hover: rgba(14, 24, 52, 0.95);
+      
+      /* Unified Multi-Spectrum Semiconductor Palette */
+      --cyan: #00f0ff;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --emerald: #10b981;
+      --purple: #a855f7;
+      --gold: #f59e0b;
+      
+      --border-subtle: rgba(0, 240, 255, 0.14);
+      --border-focus: rgba(0, 240, 255, 0.45);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-    }
-
-    [data-theme="matrix"] {
-      --bg-dark: #010a05;
-      --panel-bg: rgba(4, 20, 12, 0.9);
-      --panel-hover: rgba(8, 32, 18, 0.95);
-      --accent-primary: #00ff66;
-      --accent-glow: rgba(0, 255, 102, 0.35);
-      --accent-secondary: #00f0ff;
-      --accent-gold: #eab308;
-      --border-subtle: rgba(0, 255, 102, 0.18);
-      --border-focus: rgba(0, 255, 102, 0.6);
-      --text-main: #f0fdf4;
-      --text-muted: #86efac;
-    }
-
-    [data-theme="quantum"] {
-      --bg-dark: #070314;
-      --panel-bg: rgba(20, 10, 42, 0.9);
-      --panel-hover: rgba(30, 15, 62, 0.95);
-      --accent-primary: #a855f7;
-      --accent-glow: rgba(168, 85, 247, 0.35);
-      --accent-secondary: #ec4899;
-      --accent-gold: #fbbf24;
-      --border-subtle: rgba(168, 85, 247, 0.2);
-      --border-focus: rgba(168, 85, 247, 0.6);
-      --text-main: #faf5ff;
-      --text-muted: #d8b4fe;
-    }
-
-    [data-theme="gold"] {
-      --bg-dark: #0c0a04;
-      --panel-bg: rgba(26, 20, 8, 0.9);
-      --panel-hover: rgba(40, 32, 12, 0.95);
-      --accent-primary: #eab308;
-      --accent-glow: rgba(234, 179, 8, 0.35);
-      --accent-secondary: #f97316;
-      --accent-gold: #38bdf8;
-      --border-subtle: rgba(234, 179, 8, 0.2);
-      --border-focus: rgba(234, 179, 8, 0.6);
-      --text-main: #fefce8;
-      --text-muted: #fde047;
     }
 
     * {
@@ -81,10 +41,10 @@
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
-      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    #live-canvas {
+    /* Multi-Spectrum Hybrid Interactive Canvas */
+    #hybrid-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -92,9 +52,10 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
+      background: radial-gradient(circle at center, #071026 0%, #030712 95%);
     }
 
-    /* Top Floating Nav */
+    /* Floating Ultra-Sleek Glass Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1rem;
@@ -109,37 +70,36 @@
     nav {
       width: 100%;
       max-width: 1200px;
-      background: var(--panel-bg);
+      background: rgba(8, 15, 31, 0.92);
       backdrop-filter: blur(25px);
       border: 1px solid var(--border-subtle);
       border-radius: 999px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.6rem 1.6rem;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
-      transition: all 0.3s ease;
+      padding: 0.65rem 1.8rem;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.08);
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
     }
 
     .chip-die-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--accent-primary);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1.5px solid var(--cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 1rem;
-      box-shadow: 0 0 12px var(--accent-glow);
+      box-shadow: 0 0 14px var(--cyan-glow);
     }
 
     .brand-title {
@@ -151,24 +111,18 @@
     }
 
     .brand-sub {
-      font-size: 0.62rem;
+      font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--accent-primary);
+      color: var(--cyan);
       letter-spacing: 1px;
       font-weight: 600;
-    }
-
-    .nav-center-group {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 0.6rem;
+      gap: 0.8rem;
     }
 
     .nav-item {
@@ -180,7 +134,7 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
-      padding: 0.45rem 0.8rem;
+      padding: 0.5rem 0.85rem;
       border-radius: 8px;
       display: inline-flex;
       align-items: center;
@@ -190,8 +144,8 @@
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--accent-primary);
-      background: rgba(255, 255, 255, 0.05);
+      color: var(--cyan);
+      background: rgba(0, 240, 255, 0.08);
     }
 
     .dropdown-menu {
@@ -199,13 +153,13 @@
       top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: var(--bg-dark);
+      background: rgba(7, 13, 27, 0.98);
       backdrop-filter: blur(28px);
       border: 1px solid var(--border-focus);
       border-radius: 14px;
       padding: 0.8rem;
-      min-width: 260px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+      min-width: 270px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 240, 255, 0.12);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -225,7 +179,7 @@
     .dropdown-item a {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 0.65rem 0.9rem;
       color: var(--text-muted);
       text-decoration: none;
@@ -236,41 +190,9 @@
 
     .dropdown-item a:hover {
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(0, 240, 255, 0.12);
       transform: translateX(4px);
     }
-
-    /* Live Theme Switcher Floating Bar */
-    .theme-switcher-bar {
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid var(--border-subtle);
-      border-radius: 999px;
-      padding: 3px 6px;
-      gap: 5px;
-    }
-
-    .theme-btn {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      position: relative;
-    }
-
-    .theme-btn:hover, .theme-btn.active {
-      transform: scale(1.18);
-      border-color: #ffffff;
-      box-shadow: 0 0 10px var(--accent-primary);
-    }
-
-    .t-cyan { background: #00f0ff; }
-    .t-matrix { background: #00ff66; }
-    .t-quantum { background: #a855f7; }
-    .t-gold { background: #eab308; }
 
     .mobile-menu-btn {
       display: none;
@@ -309,29 +231,29 @@
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(0, 240, 255, 0.05);
       border: 1px solid var(--border-subtle);
       border-radius: 999px;
       font-size: 0.76rem;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
     }
 
     .chip-status-tag:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 12px var(--accent-glow);
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
       transform: translateY(-2px);
     }
 
     .pulse-core {
       width: 7px;
       height: 7px;
-      background: var(--accent-secondary);
+      background: var(--emerald);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-secondary);
+      box-shadow: 0 0 10px var(--emerald);
       animation: pulseAnim 2s infinite;
     }
 
@@ -351,8 +273,9 @@
       color: #ffffff;
     }
 
+    /* Merged Hybrid Multi-Gradient */
     .chip-gradient {
-      background: linear-gradient(135deg, var(--accent-primary) 0%, #38bdf8 50%, var(--accent-secondary) 100%);
+      background: linear-gradient(135deg, var(--cyan) 0%, #38bdf8 35%, var(--purple) 70%, var(--gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -385,16 +308,16 @@
     }
 
     .chip-btn-primary {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(16, 185, 129, 0.25));
-      border: 1.5px solid var(--accent-primary);
-      color: var(--accent-primary);
-      box-shadow: 0 0 25px var(--accent-glow);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
+      border: 1.5px solid var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
     }
 
     .chip-btn-primary:hover {
-      background: var(--accent-primary);
+      background: var(--cyan);
       color: #020617;
-      box-shadow: 0 0 40px var(--accent-primary);
+      box-shadow: 0 0 40px var(--cyan);
       transform: translateY(-3px);
     }
 
@@ -405,8 +328,8 @@
     }
 
     .chip-btn-glass:hover {
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
+      border-color: var(--cyan);
+      color: var(--cyan);
       transform: translateY(-3px);
     }
 
@@ -424,16 +347,16 @@
       max-width: 100%;
       border-radius: 28px;
       padding: 10px;
-      background: var(--panel-bg);
+      background: linear-gradient(145deg, rgba(15, 27, 54, 0.85), rgba(6, 12, 26, 0.95));
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px var(--accent-glow);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.15);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .executive-portrait-card:hover {
       transform: translateY(-6px);
       border-color: var(--border-focus);
-      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 50px var(--accent-glow);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.25);
     }
 
     .portrait-image-wrapper {
@@ -455,6 +378,10 @@
       transition: transform 0.5s ease;
     }
 
+    .executive-portrait-card:hover .portrait-image-wrapper img {
+      transform: scale(1.03);
+    }
+
     .portrait-image-wrapper::after {
       content: '';
       position: absolute;
@@ -465,7 +392,7 @@
 
     .floating-metric-badge {
       position: absolute;
-      background: var(--bg-dark);
+      background: rgba(8, 15, 31, 0.92);
       backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: 14px;
@@ -478,6 +405,11 @@
       transition: all 0.3s ease;
     }
 
+    .floating-metric-badge:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
     .badge-top-left { top: -12px; left: -16px; }
     .badge-bottom-right { bottom: -14px; right: -12px; }
 
@@ -485,12 +417,12 @@
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--accent-primary);
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 0.85rem;
     }
 
@@ -504,11 +436,11 @@
 
     .badge-text-sub {
       font-size: 0.68rem;
-      color: var(--accent-secondary);
+      color: var(--emerald);
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Section Global */
+    /* Section Styling */
     section {
       padding: 6.5rem 8%;
       position: relative;
@@ -549,8 +481,15 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     }
 
+    .pro-glass-card:hover {
+      border-color: var(--border-focus);
+      background: var(--panel-hover);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 255, 0.15);
+    }
+
     .about-sub-card {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(3, 8, 20, 0.6);
       border: 1px solid var(--border-subtle);
       border-radius: 14px;
       padding: 1.5rem;
@@ -561,7 +500,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--accent-primary);
+      color: var(--cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -576,7 +515,7 @@
     }
 
     .system-badge {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(0, 240, 255, 0.04);
       border: 1px solid var(--border-subtle);
       padding: 0.65rem 1rem;
       border-radius: 10px;
@@ -588,7 +527,7 @@
     }
 
     .system-badge i {
-      color: var(--accent-primary);
+      color: var(--cyan);
     }
 
     .metrics-grid {
@@ -604,7 +543,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2.1rem;
       font-weight: 800;
-      color: var(--accent-primary);
+      color: var(--cyan);
     }
 
     .metric-box p {
@@ -639,7 +578,7 @@
       border-color: var(--border-focus);
       background: var(--panel-hover);
       transform: translateY(-5px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 25px var(--accent-glow);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 255, 0.15);
     }
 
     .exp-top-banner {
@@ -663,15 +602,15 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(168, 85, 247, 0.1));
       border: 1px solid var(--border-focus);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 1.3rem;
       flex-shrink: 0;
-      box-shadow: 0 0 15px var(--accent-glow);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
     }
 
     .role-company-wrapper h3 {
@@ -683,7 +622,7 @@
     }
 
     .company-title {
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 0.95rem;
       font-weight: 600;
       display: flex;
@@ -694,9 +633,9 @@
     .job-meta-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--accent-secondary);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+      color: var(--emerald);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 5px 14px;
       border-radius: 999px;
       font-weight: 600;
@@ -713,9 +652,9 @@
     }
 
     .pro-badge {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      color: var(--accent-primary);
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: var(--gold);
       font-size: 0.76rem;
       padding: 4px 11px;
       border-radius: 6px;
@@ -732,8 +671,8 @@
     }
 
     .exp-category-box {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--border-subtle);
+      background: rgba(3, 8, 20, 0.55);
+      border: 1px solid rgba(0, 240, 255, 0.08);
       border-radius: 12px;
       padding: 1.2rem;
     }
@@ -742,7 +681,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.92rem;
       font-weight: 700;
-      color: var(--accent-primary);
+      color: var(--cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -770,7 +709,7 @@
       content: '▹';
       position: absolute;
       left: 0;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 0.95rem;
     }
 
@@ -785,7 +724,7 @@
 
     .filter-btn {
       padding: 0.6rem 1.4rem;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(0, 240, 255, 0.04);
       border: 1px solid var(--border-subtle);
       border-radius: 999px;
       color: var(--text-muted);
@@ -796,9 +735,10 @@
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--accent-primary);
-      color: #020617;
-      box-shadow: 0 0 20px var(--accent-glow);
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+      border-color: transparent;
     }
 
     .skills-grid {
@@ -813,12 +753,12 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1.5px solid var(--accent-primary);
+      background: rgba(0, 240, 255, 0.08);
+      border: 1.5px solid var(--cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-primary);
+      color: var(--cyan);
       font-size: 1.3rem;
       margin-bottom: 1.2rem;
     }
@@ -831,19 +771,19 @@
       margin: 0 auto;
     }
 
-    /* Contact Console */
+    /* Terminal Console & Map Integration */
     .terminal-console {
       max-width: 950px;
       margin: 0 auto;
       background: #020617;
       border: 1px solid var(--border-focus);
       border-radius: 20px;
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
       overflow: hidden;
     }
 
     .terminal-topbar {
-      background: var(--panel-bg);
+      background: rgba(6, 14, 30, 0.95);
       padding: 0.75rem 1.2rem;
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
@@ -871,6 +811,7 @@
       border: 1px solid var(--border-subtle);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       height: 180px;
+      position: relative;
     }
 
     .map-wrapper iframe {
@@ -887,7 +828,7 @@
 
     .form-input-tech {
       width: 100%;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(0, 240, 255, 0.03);
       border: 1px solid var(--border-subtle);
       border-radius: 10px;
       padding: 0.85rem 1rem;
@@ -899,8 +840,8 @@
     }
 
     .form-input-tech:focus {
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 20px var(--accent-glow);
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
     }
 
     /* Modal */
@@ -923,13 +864,13 @@
     .modal-overlay.active { opacity: 1; visibility: visible; }
 
     .modal-hud {
-      background: var(--bg-dark);
-      border: 1px solid var(--accent-primary);
+      background: #070d1e;
+      border: 1px solid var(--cyan);
       border-radius: 20px;
       padding: 2.4rem;
       max-width: 650px;
       width: 100%;
-      box-shadow: 0 0 50px var(--accent-glow);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.3);
       position: relative;
     }
 
@@ -950,9 +891,7 @@
       font-size: 0.85rem;
     }
 
-    /* ========================================================
-       PERFECT MOBILE OPTIMIZATION (FLAWLESS VIEWPORT)
-       ======================================================== */
+    /* Mobile Overrides */
     @media (max-width: 900px) {
       section { padding: 4.5rem 5%; }
       .hero {
@@ -990,7 +929,7 @@
         top: calc(100% + 10px);
         left: 0;
         width: 100%;
-        background: var(--bg-dark);
+        background: #030712;
         border: 1px solid var(--border-subtle);
         border-radius: 16px;
         flex-direction: column;
@@ -1014,10 +953,10 @@
 </head>
 <body>
 
-  <!-- Live Dynamic Canvas Engine (Handles 4 Themes) -->
-  <canvas id="live-canvas"></canvas>
+  <!-- Hybrid Multi-Spectrum Live Canvas -->
+  <canvas id="hybrid-canvas"></canvas>
 
-  <!-- Floating Navigation with Live Theme Selector -->
+  <!-- Floating Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
@@ -1030,17 +969,7 @@
         </div>
       </a>
 
-      <div class="nav-center-group">
-        <!-- Live Theme Switcher Floating Buttons -->
-        <div class="theme-switcher-bar">
-          <button class="theme-btn t-cyan active" onclick="switchTheme('cyan')" title="Silicon Cyber"></button>
-          <button class="theme-btn t-matrix" onclick="switchTheme('matrix')" title="Matrix Stream"></button>
-          <button class="theme-btn t-quantum" onclick="switchTheme('quantum')" title="Quantum Violet"></button>
-          <button class="theme-btn t-gold" onclick="switchTheme('gold')" title="Titanium Gold"></button>
-        </div>
-
-        <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
-      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
 
       <ul class="nav-links" id="mobileNav">
         <li class="nav-item"><a href="#home" class="nav-link" onclick="closeNav()">Home</a></li>
@@ -1081,19 +1010,19 @@
           <span class="pulse-core"></span> Security & Administration Professional
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-plane-shield"></i> Aviation & Corporate Security Management
+          <i class="fa-solid fa-plane-shield" style="color:var(--gold);"></i> Aviation & Corporate Security Management
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-award"></i> Airport Security Manager (ASM) Trained
+          <i class="fa-solid fa-award" style="color:var(--gold);"></i> Airport Security Manager (ASM) Trained
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-video"></i> CCTV & Access Control
+          <i class="fa-solid fa-video" style="color:var(--gold);"></i> CCTV & Access Control
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-shield-halved"></i> Risk Management & Technology
+          <i class="fa-solid fa-shield-halved" style="color:var(--gold);"></i> Risk Management & Technology
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-users-gear"></i> Security Leadership
+          <i class="fa-solid fa-users-gear" style="color:var(--gold);"></i> Security Leadership
         </span>
       </div>
 
@@ -1179,7 +1108,7 @@
         I have completed <strong>Airport Security Manager (ASM)</strong> training, strengthening my knowledge of aviation security principles, risk mitigation, access control, emergency preparedness, and operational security management.
       </p>
 
-      <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-primary); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--cyan); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
         <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
           "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
         </p>
@@ -1436,34 +1365,34 @@
     </div>
     <div class="cert-grid">
       <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--accent-primary);"></i>
+        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
-          <p style="color:var(--accent-secondary); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
+          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
         </div>
       </div>
 
       <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--accent-primary);"></i>
+        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--accent-secondary); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
+          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
       <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--accent-primary);"></i>
+        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">ASP.NET Core MVC Web Applications</h4>
-          <p style="color:var(--accent-secondary); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
+          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
       <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--accent-primary);"></i>
+        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
-          <p style="color:var(--accent-secondary); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
+          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
         </div>
       </div>
     </div>
@@ -1478,19 +1407,19 @@
       <div class="pro-glass-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Gopalganj Science and Technology University (GSTU)</p>
-        <p style="color:var(--accent-primary); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
+        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
       </div>
 
       <div class="pro-glass-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science)</p>
-        <p style="color:var(--accent-primary); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
+        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
       </div>
 
       <div class="pro-glass-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School</p>
-        <p style="color:var(--accent-primary); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
+        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
       </div>
     </div>
   </section>
@@ -1508,7 +1437,7 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--accent-primary); font-size:0.8rem;">root@mehedi-security:~$</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--cyan); font-size:0.8rem;">root@mehedi-security:~$</div>
         <div></div>
       </div>
 
@@ -1522,15 +1451,15 @@
           <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.92rem;">
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">LOCATION:</span>
-              <span style="color:var(--accent-primary);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh</span>
+              <span style="color:var(--cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh</span>
             </div>
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">PHONE:</span>
-              <a href="tel:+8801680450882" style="color:var(--accent-secondary); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882</a>
+              <a href="tel:+8801680450882" style="color:var(--emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882</a>
             </div>
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">EMAIL:</span>
-              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--accent-primary); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com</a>
+              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com</a>
             </div>
 
             <!-- Dark-Themed Responsive Google Map Integration -->
@@ -1552,15 +1481,15 @@
 
         <form onsubmit="handleCyberSubmit(event)">
           <div>
-            <label style="font-size:0.82rem; color:var(--accent-primary); font-weight:600;">SENDER IDENTIFIER *</label>
+            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">SENDER IDENTIFIER *</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--accent-primary); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) *</label>
+            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) *</label>
             <input type="text" id="contactInp" class="form-input-tech" placeholder="name@company.com or phone" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--accent-primary); font-weight:600;">MESSAGE *</label>
+            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">MESSAGE *</label>
             <textarea id="msgInp" class="form-input-tech" rows="4" placeholder="Write your project details or inquiry..." required></textarea>
           </div>
           <button type="submit" class="chip-btn chip-btn-primary" style="width:100%; margin-top:1.5rem; justify-content:center;">
@@ -1575,7 +1504,7 @@
   <div class="modal-overlay" id="refModal">
     <div class="modal-hud">
       <button class="modal-close-btn" onclick="closeModal('refModal')"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--accent-primary); font-size:1.3rem; margin-bottom:0.4rem;">
+      <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--cyan); font-size:1.3rem; margin-bottom:0.4rem;">
         <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES
       </h3>
       <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.5rem;">
@@ -1583,18 +1512,18 @@
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
-        <div style="border:1px solid var(--border-subtle); background:rgba(255,255,255,0.02); padding:1.2rem; border-radius:12px;">
+        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd)</h4>
-          <p style="color:var(--accent-primary); font-size:0.85rem; font-weight:600;">Executive Director</p>
+          <p style="color:var(--cyan); font-size:0.85rem; font-weight:600;">Executive Director</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
-          <p style="color:var(--accent-secondary); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
+          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
         </div>
 
-        <div style="border:1px solid var(--border-subtle); background:rgba(255,255,255,0.02); padding:1.2rem; border-radius:12px;">
+        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam</h4>
-          <p style="color:var(--accent-primary); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
+          <p style="color:var(--cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
-          <p style="color:var(--accent-secondary); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
+          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
         </div>
       </div>
     </div>
@@ -1604,24 +1533,9 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- Live Multi-Theme Dynamic Engine & Canvas Physics JS -->
+  <!-- Unified Multi-Spectrum Neural Canvas Script -->
   <script>
-    // 1. Multi-Theme Live Switcher Engine
-    let currentThemeMode = 'cyan';
-
-    function switchTheme(theme) {
-      currentThemeMode = theme;
-      document.body.setAttribute('data-theme', theme);
-
-      document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = document.querySelector(`.t-${theme}`);
-      if (activeBtn) activeBtn.classList.add('active');
-
-      // Update particle colors based on active live theme
-      initParticles();
-    }
-
-    // 2. Intersection Observer for Scroll Animations
+    // 1. Intersection Observer for Smooth Scroll Animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -30px 0px"
@@ -1639,8 +1553,8 @@
       scrollObserver.observe(el);
     });
 
-    // 3. Ultra-Responsive Live Canvas Engine
-    const canvas = document.getElementById('live-canvas');
+    // 2. Multi-Color Semiconductor Particle Matrix
+    const canvas = document.getElementById('hybrid-canvas');
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
@@ -1650,7 +1564,7 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const mouse = { x: null, y: null, radius: 130 };
+    const mouse = { x: null, y: null, radius: 140 };
 
     window.addEventListener('mousemove', function(e) {
       mouse.x = e.x;
@@ -1674,7 +1588,9 @@
       mouse.y = null;
     });
 
-    let particles = [];
+    const colors = ['#00f0ff', '#10b981', '#a855f7', '#f59e0b'];
+    const particles = [];
+    const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 10000), 90);
 
     class Particle {
       constructor() {
@@ -1684,14 +1600,7 @@
         this.density = Math.random() * 25 + 1;
         this.vx = (Math.random() - 0.5) * 0.7;
         this.vy = (Math.random() - 0.5) * 0.7;
-        this.color = this.getThemeColor();
-      }
-
-      getThemeColor() {
-        if (currentThemeMode === 'matrix') return Math.random() > 0.3 ? '#00ff66' : '#00f0ff';
-        if (currentThemeMode === 'quantum') return Math.random() > 0.3 ? '#a855f7' : '#ec4899';
-        if (currentThemeMode === 'gold') return Math.random() > 0.3 ? '#eab308' : '#f97316';
-        return Math.random() > 0.35 ? '#00f0ff' : '#10b981'; // Cyan default
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       draw() {
@@ -1728,14 +1637,9 @@
       }
     }
 
-    function initParticles() {
-      particles = [];
-      const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 11000), 80);
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
     }
-    initParticles();
 
     function connectParticles() {
       for (let a = 0; a < particles.length; a++) {
@@ -1744,12 +1648,9 @@
           let dy = particles[a].y - particles[b].y;
           let distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
-            let opacity = 1 - (distance / 120);
-            ctx.strokeStyle = currentThemeMode === 'matrix' ? `rgba(0, 255, 102, ${opacity * 0.2})` :
-                              currentThemeMode === 'quantum' ? `rgba(168, 85, 247, ${opacity * 0.22})` :
-                              currentThemeMode === 'gold' ? `rgba(234, 179, 8, ${opacity * 0.22})` :
-                              `rgba(0, 240, 255, ${opacity * 0.2})`;
+          if (distance < 130) {
+            let opacity = 1 - (distance / 130);
+            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity * 0.2})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -1764,7 +1665,7 @@
           let mDist = Math.sqrt(mdx * mdx + mdy * mdy);
           if (mDist < mouse.radius) {
             let mOpacity = 1 - (mDist / mouse.radius);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${mOpacity * 0.4})`;
+            ctx.strokeStyle = `rgba(168, 85, 247, ${mOpacity * 0.45})`;
             ctx.lineWidth = 1.2;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -1786,7 +1687,7 @@
     }
     animateCanvas();
 
-    // 4. UI Handlers
+    // 3. UI Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
