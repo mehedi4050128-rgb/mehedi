@@ -19,7 +19,6 @@
       --panel-glass: rgba(7, 15, 34, 0.88);
       --panel-hover: rgba(12, 24, 52, 0.96);
       
-      /* High-Visibility Neon Semiconductor Matrix */
       --trace-cyan: #00f0ff;
       --trace-cyan-glow: rgba(0, 240, 255, 0.7);
       --trace-gold: #f59e0b;
@@ -51,7 +50,6 @@
       position: relative;
     }
 
-    /* High-Visibility Live Background Canvas */
     #scroll-live-canvas {
       position: fixed;
       top: 0;
@@ -66,13 +64,13 @@
     /* Floating Microchip Navbar */
     .nav-wrapper {
       position: fixed;
-      top: 1.2rem;
+      top: 1rem;
       left: 0;
       width: 100%;
       display: flex;
       justify-content: center;
       z-index: 1000;
-      padding: 0 1.2rem;
+      padding: 0 0.8rem;
     }
 
     nav {
@@ -86,7 +84,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 1.8rem;
+      padding: 0.55rem 1.4rem;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 255, 0.15);
       position: relative;
     }
@@ -105,37 +103,37 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
     }
 
     .brand-core-die {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
       border: 2px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       box-shadow: 0 0 20px var(--trace-cyan-glow);
     }
 
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 0.98rem;
+      font-size: 0.88rem;
       letter-spacing: 0.5px;
       color: #ffffff;
     }
 
     .brand-sub {
-      font-size: 0.65rem;
+      font-size: 0.58rem;
       font-family: 'JetBrains Mono', monospace;
       color: var(--trace-cyan);
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       font-weight: 600;
     }
 
@@ -143,7 +141,7 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 0.8rem;
+      gap: 0.4rem;
     }
 
     .nav-item {
@@ -153,13 +151,13 @@
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.86rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      padding: 0.5rem 0.85rem;
+      padding: 0.4rem 0.7rem;
       border-radius: 8px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       transition: all 0.25s ease;
       cursor: pointer;
     }
@@ -179,7 +177,7 @@
       border: 1px solid var(--wire-focus);
       border-radius: 16px;
       padding: 0.8rem;
-      min-width: 280px;
+      min-width: 260px;
       box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 240, 255, 0.2);
       opacity: 0;
       visibility: hidden;
@@ -201,10 +199,10 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 0.7rem 1rem;
+      padding: 0.65rem 0.9rem;
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       border-radius: 10px;
       transition: 0.2s;
     }
@@ -220,7 +218,7 @@
       background: transparent;
       border: 1px solid var(--wire-border);
       color: var(--text-main);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
       font-size: 1.1rem;
       cursor: pointer;
@@ -260,13 +258,6 @@
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
-    }
-
-    .chip-status-tag:hover {
-      background: rgba(0, 240, 255, 0.15);
-      border-color: var(--trace-cyan);
-      box-shadow: 0 0 15px var(--trace-cyan-glow);
-      transform: translateY(-2px);
     }
 
     .pulse-core {
@@ -332,13 +323,13 @@
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
-      box-shadow: 0 0 30px var(--trace-cyan-glow);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
     }
 
     .chip-btn-primary:hover {
       background: var(--trace-cyan);
       color: #020617;
-      box-shadow: 0 0 45px var(--trace-cyan);
+      box-shadow: 0 0 40px var(--trace-cyan);
       transform: translateY(-3px);
     }
 
@@ -354,7 +345,7 @@
       transform: translateY(-3px);
     }
 
-    /* High-Visibility Live Circuit Embedded Profile Architecture */
+    /* Hero Visual Profile Card */
     .hero-visual {
       flex: 0.95;
       display: flex;
@@ -364,10 +355,10 @@
 
     .circuit-motherboard-frame {
       position: relative;
-      width: 390px;
+      width: 380px;
       max-width: 100%;
       border-radius: 32px;
-      padding: 24px;
+      padding: 20px;
       background: radial-gradient(circle at center, rgba(16, 33, 72, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
       border: 2px solid var(--wire-focus);
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
@@ -406,7 +397,7 @@
     .silicon-processor-socket {
       position: relative;
       width: 100%;
-      height: 420px;
+      height: 400px;
       border-radius: 20px;
       overflow: hidden;
       background: #020612;
@@ -421,11 +412,6 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .circuit-motherboard-frame:hover .silicon-processor-socket img {
-      transform: scale(1.03);
     }
 
     .die-grid-overlay {
@@ -440,10 +426,8 @@
 
     .die-laser-beam {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
       background: linear-gradient(90deg, transparent, var(--trace-cyan), #ffffff, var(--trace-cyan), transparent);
       box-shadow: 0 0 20px var(--trace-cyan);
       opacity: 0.9;
@@ -464,46 +448,40 @@
       backdrop-filter: blur(18px);
       border: 1.5px solid var(--trace-cyan);
       border-radius: 14px;
-      padding: 0.7rem 1.1rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 20px var(--trace-cyan-glow);
+      padding: 0.6rem 0.9rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       z-index: 6;
-      transition: all 0.3s ease;
     }
 
-    .floating-metric-badge:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95), 0 0 30px var(--trace-cyan-glow);
-    }
-
-    .badge-top-left { top: -14px; left: -16px; }
-    .badge-bottom-right { bottom: -14px; right: -12px; }
+    .badge-top-left { top: -12px; left: -12px; }
+    .badge-bottom-right { bottom: -12px; right: -10px; }
 
     .badge-icon-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
       background: rgba(0, 240, 255, 0.15);
       border: 1px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
     .badge-text-primary {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.1;
     }
 
     .badge-text-sub {
-      font-size: 0.68rem;
+      font-size: 0.6rem;
       color: var(--trace-emerald);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
@@ -957,35 +935,42 @@
       font-size: 0.85rem;
     }
 
+    /* Flawless Mobile Optimization Media Query */
     @media (max-width: 900px) {
-      section { padding: 4.5rem 5%; }
+      section { padding: 4rem 4%; }
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 6.5rem;
-        padding-left: 5%;
-        padding-right: 5%;
-        gap: 2.5rem;
+        padding-top: 6rem;
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 2.2rem;
       }
-      .hero-content h1 { font-size: 2.2rem; }
-      .tech-badge-container { justify-content: center; }
-      .btn-group { justify-content: center; }
+      /* Mobile হেডিং সাইজ ছোট করা হয়েছে যাতে স্ক্রিনে সুন্দরভাবে ফিট হয় */
+      .hero-content h1 { font-size: 2.1rem; line-height: 1.2; }
+      .hero-desc { font-size: 0.92rem; }
+      .tech-badge-container { justify-content: center; gap: 6px; }
+      .chip-status-tag { font-size: 0.7rem; padding: 5px 10px; }
+      .btn-group { justify-content: center; gap: 0.8rem; }
+      .chip-btn { padding: 0.75rem 1.2rem; font-size: 0.8rem; }
 
       .circuit-motherboard-frame {
-        width: 300px;
-        padding: 12px;
+        width: 270px;
+        padding: 10px;
       }
-      .silicon-processor-socket { height: 330px; }
-      .badge-top-left { left: 0; top: -12px; }
-      .badge-bottom-right { right: 0; bottom: -12px; }
+      .silicon-processor-socket { height: 300px; }
+      .badge-top-left { left: -6px; top: -10px; padding: 0.4rem 0.6rem; }
+      .badge-bottom-right { right: -6px; bottom: -10px; padding: 0.4rem 0.6rem; }
+      .badge-text-primary { font-size: 0.72rem; }
+      .badge-text-sub { font-size: 0.55rem; }
 
-      .exp-pro-card { padding: 1.5rem; }
-      .exp-top-banner { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .exp-pro-card { padding: 1.2rem; }
+      .exp-top-banner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
       .role-company-wrapper { gap: 0.8rem; }
-      .role-company-wrapper h3 { font-size: 1.15rem; }
+      .role-company-wrapper h3 { font-size: 1.05rem; }
       .exp-grid-details { grid-template-columns: 1fr; }
 
-      .terminal-body { grid-template-columns: 1fr; padding: 1.5rem; }
+      .terminal-body { grid-template-columns: 1fr; padding: 1.2rem; }
       .map-wrapper { height: 160px; }
 
       .mobile-menu-btn { display: block; }
@@ -1428,7 +1413,7 @@
     </div>
   </section>
 
-  <!-- Certifications & Training Section (Updated with HCSA & Critical Infrastructure) -->
+  <!-- Certifications Section (With HCSA & Critical Infrastructure) -->
   <section id="trainings" class="reveal-on-scroll">
     <div class="section-header">
       <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
@@ -1619,9 +1604,8 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- High-Visibility Live Circuit & Slow Cinematic Scroll Script -->
+  <!-- High-Visibility Live Circuit & Cinematic Scroll Script -->
   <script>
-    // 1. Smooth Scroll Observer
     const observerOptions = {
       threshold: 0.08,
       rootMargin: "0px 0px -40px 0px"
@@ -1639,7 +1623,7 @@
       scrollObserver.observe(el);
     });
 
-    // 2. High-Visibility Live Profile Circuit Tracing Engine
+    // Profile Circuit Tracing Engine
     const profileCanvas = document.getElementById('profile-circuit-canvas');
     const pCtx = profileCanvas.getContext('2d');
 
@@ -1675,8 +1659,8 @@
         const currentY = !t.horizontal ? (t.y + (t.progress * 1.9)) % profileCanvas.height : t.y;
 
         pCtx.beginPath();
-        pCtx.strokeStyle = t.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.65)' : 'rgba(245, 158, 11, 0.65)';
-        pCtx.lineWidth = 2.2;
+        pCtx.strokeStyle = t.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.75)' : 'rgba(245, 158, 11, 0.75)';
+        pCtx.lineWidth = 2.5;
 
         if (t.horizontal) {
           pCtx.moveTo(currentX, currentY);
@@ -1687,11 +1671,10 @@
         }
         pCtx.stroke();
 
-        // High-Vis Glowing Node Head
         pCtx.beginPath();
-        pCtx.arc(t.horizontal ? currentX + t.length : currentX, !t.horizontal ? currentY + t.length : currentY, 3.2, 0, Math.PI * 2);
+        pCtx.arc(t.horizontal ? currentX + t.length : currentX, !t.horizontal ? currentY + t.length : currentY, 3.8, 0, Math.PI * 2);
         pCtx.fillStyle = t.color;
-        pCtx.shadowBlur = 14;
+        pCtx.shadowBlur = 16;
         pCtx.shadowColor = t.color;
         pCtx.fill();
         pCtx.shadowBlur = 0;
@@ -1701,7 +1684,7 @@
     }
     drawProfileLiveCircuit();
 
-    // 3. High-Visibility Background Canvas with Slow Damped Scroll
+    // Background Canvas
     const canvas = document.getElementById('scroll-live-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1755,10 +1738,10 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.2 + 1.4;
+        this.size = Math.random() * 2.4 + 1.6;
         this.density = Math.random() * 20 + 1;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -1766,7 +1749,7 @@
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = 14;
         ctx.shadowColor = this.color;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -1810,8 +1793,8 @@
 
           if (distance < 130) {
             let opacity = 1 - (distance / 130);
-            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity * 0.35})`;
-            ctx.lineWidth = 1.1;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity * 0.45})`;
+            ctx.lineWidth = 1.3;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(particles[b].x, particles[b].y);
@@ -1825,8 +1808,8 @@
           let mDist = Math.sqrt(mdx * mdx + mdy * mdy);
           if (mDist < mouse.radius) {
             let mOpacity = 1 - (mDist / mouse.radius);
-            ctx.strokeStyle = `rgba(245, 158, 11, ${mOpacity * 0.6})`;
-            ctx.lineWidth = 1.4;
+            ctx.strokeStyle = `rgba(245, 158, 11, ${mOpacity * 0.7})`;
+            ctx.lineWidth = 1.5;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(mouse.x, mouse.y);
@@ -1850,7 +1833,7 @@
     }
     animateEngine();
 
-    // 4. UI Handlers
+    // UI Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
@@ -1859,7 +1842,7 @@
     }
 
     function filterSkills(category, btnElement) {
-      if(btnElement) {
+      if(dev = btnElement) {
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         btnElement.classList.add('active');
       }
