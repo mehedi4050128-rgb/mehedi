@@ -14,10 +14,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
+    /* ========================================================
+       THEME COLOR CONFIGURATION (DARK & LIGHT MODE)
+       ======================================================== */
     :root {
       --bg-void: #01040a;
       --panel-glass: rgba(7, 15, 34, 0.88);
       --panel-hover: rgba(12, 24, 52, 0.96);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --nav-bg: rgba(4, 10, 24, 0.95);
+      --card-bg: rgba(7, 15, 34, 0.88);
+      --terminal-bg: #020617;
+      --canvas-grad-1: #071638;
+      --canvas-grad-2: #01040a;
       
       --trace-cyan: #00f0ff;
       --trace-cyan-glow: rgba(0, 240, 255, 0.7);
@@ -28,9 +38,29 @@
       
       --wire-border: rgba(0, 240, 255, 0.3);
       --wire-focus: rgba(0, 240, 255, 0.8);
+    }
+
+    /* Light (Day) Mode Variables */
+    [data-theme="light"] {
+      --bg-void: #f1f5f9;
+      --panel-glass: rgba(255, 255, 255, 0.9);
+      --panel-hover: rgba(241, 245, 249, 0.98);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --terminal-bg: #ffffff;
+      --canvas-grad-1: #e2e8f0;
+      --canvas-grad-2: #cbd5e1;
       
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --trace-cyan: #0284c7;
+      --trace-cyan-glow: rgba(2, 132, 199, 0.4);
+      --trace-gold: #d97706;
+      --trace-emerald: #059669;
+      --trace-purple: #7c3aed;
+      
+      --wire-border: rgba(2, 132, 199, 0.25);
+      --wire-focus: rgba(2, 132, 199, 0.6);
     }
 
     * {
@@ -47,6 +77,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     #scroll-live-canvas {
@@ -57,15 +88,13 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background: radial-gradient(circle at 50% 45%, #071638 0%, #01040a 95%);
+      background: radial-gradient(circle at 50% 45%, var(--canvas-grad-1) 0%, var(--canvas-grad-2) 95%);
     }
 
-    /* ========================================================
-       NEW SOPHISTICATED FLOATING TOP BAR (EXECUTIVE COMMAND STYLE)
-       ======================================================== */
+    /* Floating Microchip Navbar */
     .nav-wrapper {
       position: fixed;
-      top: 1rem;
+      top: 1.2rem;
       left: 0;
       width: 100%;
       display: flex;
@@ -77,16 +106,17 @@
     nav {
       width: 100%;
       max-width: 1280px;
-      background: linear-gradient(135deg, rgba(6, 15, 36, 0.95), rgba(3, 8, 20, 0.98));
+      background: var(--nav-bg);
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
-      border: 1.5px solid rgba(0, 240, 255, 0.4);
+      border: 1.5px solid var(--wire-focus);
       border-radius: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.75rem 1.8rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 0 15px rgba(0, 240, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      transition: background 0.4s ease, border-color 0.4s ease;
     }
 
     .brand-logo {
@@ -115,7 +145,7 @@
       font-weight: 700;
       font-size: 0.92rem;
       letter-spacing: 0.5px;
-      color: #ffffff;
+      color: var(--text-main);
     }
 
     .brand-sub {
@@ -125,19 +155,24 @@
       letter-spacing: 1px;
     }
 
-    /* Live Digital Clock Hub (Replaces Node Online) */
+    /* Center Utilities in Nav (Clock & Theme Switcher) */
+    .nav-utilities {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .nav-live-clock {
       display: flex;
       align-items: center;
       gap: 8px;
       background: rgba(0, 240, 255, 0.06);
-      border: 1px solid rgba(0, 240, 255, 0.3);
-      padding: 5px 14px;
+      border: 1px solid var(--wire-border);
+      padding: 5px 12px;
       border-radius: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--trace-cyan);
-      box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
     }
 
     .clock-icon {
@@ -148,6 +183,28 @@
     @keyframes spinSlow {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
+    }
+
+    /* Day/Night Theme Toggle Button */
+    .theme-toggle-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1.5px solid var(--trace-cyan);
+      color: var(--trace-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px var(--trace-cyan-glow);
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--trace-cyan);
+      color: var(--bg-void);
+      transform: translateY(-2px);
     }
 
     .nav-links {
@@ -176,7 +233,7 @@
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: #ffffff;
+      color: var(--text-main);
       background: rgba(0, 240, 255, 0.12);
     }
 
@@ -185,12 +242,12 @@
       top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(8px);
-      background: rgba(4, 9, 22, 0.98);
+      background: var(--nav-bg);
       border: 1px solid var(--wire-focus);
       border-radius: 14px;
       padding: 0.7rem;
       min-width: 260px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       opacity: 0;
       visibility: hidden;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -220,7 +277,7 @@
     }
 
     .dropdown-item a:hover {
-      color: #ffffff;
+      color: var(--text-main);
       background: rgba(0, 240, 255, 0.15);
     }
 
@@ -268,7 +325,6 @@
       color: var(--trace-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
-      transition: all 0.25s ease;
     }
 
     .pulse-core {
@@ -293,14 +349,13 @@
       line-height: 1.15;
       letter-spacing: -1px;
       margin-bottom: 1.2rem;
-      color: #ffffff;
+      color: var(--text-main);
     }
 
     .chip-gradient {
       background: linear-gradient(135deg, var(--trace-cyan) 0%, #38bdf8 35%, var(--trace-purple) 70%, var(--trace-gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 35px rgba(0, 240, 255, 0.25);
     }
 
     .hero-desc {
@@ -334,19 +389,19 @@
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
-      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 25px var(--trace-cyan-glow);
     }
 
     .chip-btn-primary:hover {
       background: var(--trace-cyan);
-      color: #020617;
+      color: var(--bg-void);
       box-shadow: 0 0 40px var(--trace-cyan);
       transform: translateY(-3px);
     }
 
     .chip-btn-glass {
-      background: rgba(255, 255, 255, 0.03);
-      color: #e2e8f0;
+      background: rgba(100, 116, 139, 0.1);
+      color: var(--text-main);
       border: 1px solid var(--wire-border);
     }
 
@@ -370,17 +425,15 @@
       max-width: 100%;
       border-radius: 32px;
       padding: 24px;
-      background: radial-gradient(circle at center, rgba(16, 33, 72, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
+      background: var(--panel-glass);
       border: 2px solid var(--wire-focus);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 0 50px var(--trace-cyan-glow);
     }
 
     #profile-circuit-canvas {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       border-radius: 32px;
       pointer-events: none;
       z-index: 2;
@@ -412,12 +465,10 @@
       background: #020612;
       border: 2px solid var(--trace-cyan);
       z-index: 3;
-      box-shadow: 0 0 30px var(--trace-cyan-glow);
     }
 
     .silicon-processor-socket img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
@@ -426,9 +477,7 @@
     .die-grid-overlay {
       position: absolute;
       inset: 0;
-      background: 
-        linear-gradient(180deg, transparent 60%, rgba(2, 6, 23, 0.9) 100%),
-        repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0, 240, 255, 0.05) 3px, rgba(0, 240, 255, 0.05) 4px);
+      background: linear-gradient(180deg, transparent 60%, rgba(2, 6, 23, 0.9) 100%);
       pointer-events: none;
       z-index: 4;
     }
@@ -438,7 +487,6 @@
       top: 0; left: 0;
       width: 100%; height: 4px;
       background: linear-gradient(90deg, transparent, var(--trace-cyan), #ffffff, var(--trace-cyan), transparent);
-      box-shadow: 0 0 20px var(--trace-cyan);
       opacity: 0.9;
       z-index: 5;
       animation: laserScan 4s ease-in-out infinite alternate;
@@ -453,12 +501,12 @@
 
     .floating-metric-badge {
       position: absolute;
-      background: rgba(4, 10, 26, 0.98);
+      background: var(--panel-glass);
       backdrop-filter: blur(18px);
       border: 1.5px solid var(--trace-cyan);
       border-radius: 14px;
       padding: 0.7rem 1.1rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -469,14 +517,11 @@
     .badge-bottom-right { bottom: -14px; right: -12px; }
 
     .badge-icon-box {
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 10px;
       background: rgba(0, 240, 255, 0.15);
       border: 1px solid var(--trace-cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--trace-cyan);
       font-size: 0.95rem;
     }
@@ -485,7 +530,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-main);
       line-height: 1.1;
     }
 
@@ -510,7 +555,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2.3rem;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--text-main);
       letter-spacing: -0.5px;
     }
 
@@ -535,18 +580,18 @@
       backdrop-filter: blur(20px);
       position: relative;
       transition: all 0.4s ease;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
     .wafer-panel-card:hover {
       border-color: var(--wire-focus);
       background: var(--panel-hover);
       transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 30px var(--trace-cyan-glow);
     }
 
     .about-sub-card {
-      background: rgba(4, 9, 20, 0.65);
+      background: rgba(100, 116, 139, 0.05);
       border: 1px solid var(--wire-border);
       border-radius: 14px;
       padding: 1.5rem;
@@ -559,9 +604,7 @@
       font-weight: 700;
       color: var(--trace-cyan);
       margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      display: flex; align-items: center; gap: 8px;
     }
 
     .system-badge-grid {
@@ -577,15 +620,11 @@
       padding: 0.65rem 1rem;
       border-radius: 10px;
       font-size: 0.84rem;
-      color: #e2e8f0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: var(--text-main);
+      display: flex; align-items: center; gap: 8px;
     }
 
-    .system-badge i {
-      color: var(--trace-cyan);
-    }
+    .system-badge i { color: var(--trace-cyan); }
 
     .metrics-grid {
       display: grid;
@@ -626,7 +665,7 @@
       backdrop-filter: blur(20px);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       scroll-margin-top: 6rem;
     }
 
@@ -634,7 +673,7 @@
       border-color: var(--wire-focus);
       background: var(--panel-hover);
       transform: translateY(-4px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 25px var(--trace-cyan-glow);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 25px var(--trace-cyan-glow);
     }
 
     .exp-top-banner {
@@ -644,7 +683,7 @@
       flex-wrap: wrap;
       gap: 1rem;
       padding-bottom: 1.2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--wire-border);
       margin-bottom: 1.2rem;
     }
 
@@ -655,25 +694,21 @@
     }
 
     .exp-corp-icon {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       border-radius: 12px;
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(245, 158, 11, 0.1));
       border: 1px solid var(--wire-focus);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--trace-cyan);
       font-size: 1.3rem;
       flex-shrink: 0;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
     }
 
     .role-company-wrapper h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.35rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-main);
       margin-bottom: 0.2rem;
     }
 
@@ -681,9 +716,7 @@
       color: var(--trace-cyan);
       font-size: 0.95rem;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      display: flex; align-items: center; gap: 8px;
     }
 
     .job-meta-tag {
@@ -695,15 +728,11 @@
       padding: 5px 14px;
       border-radius: 999px;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-flex; align-items: center; gap: 6px;
     }
 
     .project-tags-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: flex; flex-wrap: wrap; gap: 8px;
       margin-bottom: 1.4rem;
     }
 
@@ -715,9 +744,7 @@
       padding: 4px 11px;
       border-radius: 6px;
       font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-flex; align-items: center; gap: 6px;
     }
 
     .exp-grid-details {
@@ -727,7 +754,7 @@
     }
 
     .exp-category-box {
-      background: rgba(3, 7, 18, 0.6);
+      background: rgba(100, 116, 139, 0.04);
       border: 1px solid var(--wire-border);
       border-radius: 12px;
       padding: 1.2rem;
@@ -739,52 +766,42 @@
       font-weight: 700;
       color: var(--trace-cyan);
       margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 8px;
+      text-transform: uppercase; letter-spacing: 0.5px;
     }
 
     .exp-bullets {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
     }
 
     .exp-bullets li {
       position: relative;
       padding-left: 18px;
       font-size: 0.9rem;
-      color: #cbd5e1;
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
     .exp-bullets li::before {
       content: '▹';
-      position: absolute;
-      left: 0;
+      position: absolute; left: 0;
       color: var(--trace-cyan);
       font-size: 0.95rem;
     }
 
     .filter-tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem;
       margin-bottom: 2.8rem;
     }
 
     .filter-btn {
       padding: 0.6rem 1.4rem;
-      background: rgba(0, 240, 255, 0.04);
+      background: rgba(100, 116, 139, 0.06);
       border: 1px solid var(--wire-border);
       border-radius: 999px;
       color: var(--text-muted);
-      font-size: 0.84rem;
-      font-weight: 600;
+      font-size: 0.84rem; font-weight: 600;
       cursor: pointer;
       transition: all 0.25s ease;
     }
@@ -792,7 +809,7 @@
     .filter-btn.active, .filter-btn:hover {
       background: linear-gradient(135deg, var(--trace-cyan), var(--trace-purple));
       color: #ffffff;
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 20px var(--trace-cyan-glow);
       border-color: transparent;
     }
 
@@ -805,14 +822,11 @@
     }
 
     .skill-chip-icon {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       border-radius: 12px;
       background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       color: var(--trace-cyan);
       font-size: 1.3rem;
       margin-bottom: 1.2rem;
@@ -829,20 +843,18 @@
     .terminal-console {
       max-width: 950px;
       margin: 0 auto;
-      background: #020617;
+      background: var(--terminal-bg);
       border: 1px solid var(--wire-focus);
       border-radius: 20px;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.15);
       overflow: hidden;
     }
 
     .terminal-topbar {
-      background: rgba(5, 11, 24, 0.95);
-      padding: 0.75rem 1.2rem;
+      background: var(--panel-glass);
+      padding: 0.9rem 1.4rem;
       border-bottom: 1px solid var(--wire-border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
     .terminal-dots { display: flex; gap: 6px; }
@@ -863,30 +875,26 @@
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--wire-border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       height: 180px;
       position: relative;
     }
 
     .map-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+      width: 100%; height: 100%; border: 0;
       filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
       transition: filter 0.3s ease;
     }
 
-    .map-wrapper:hover iframe {
-      filter: invert(0%) hue-rotate(0deg);
-    }
+    .map-wrapper:hover iframe { filter: invert(0%) hue-rotate(0deg); }
 
     .form-input-tech {
       width: 100%;
-      background: rgba(0, 240, 255, 0.03);
+      background: rgba(100, 116, 139, 0.05);
       border: 1px solid var(--wire-border);
       border-radius: 10px;
       padding: 0.85rem 1rem;
-      color: #ffffff;
+      color: var(--text-main);
       font-size: 0.92rem;
       outline: none;
       transition: 0.3s;
@@ -895,21 +903,17 @@
 
     .form-input-tech:focus {
       border-color: var(--trace-cyan);
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+      box-shadow: 0 0 20px var(--trace-cyan-glow);
     }
 
     .modal-overlay {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(2, 6, 23, 0.92);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(2, 6, 23, 0.85);
       backdrop-filter: blur(16px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 0; visibility: hidden;
       transition: all 0.3s ease;
       padding: 1rem;
     }
@@ -917,58 +921,41 @@
     .modal-overlay.active { opacity: 1; visibility: visible; }
 
     .modal-hud {
-      background: #050b18;
+      background: var(--panel-glass);
       border: 1px solid var(--trace-cyan);
       border-radius: 20px;
       padding: 2.4rem;
-      max-width: 650px;
-      width: 100%;
+      max-width: 650px; width: 100%;
       box-shadow: 0 0 50px var(--trace-cyan-glow);
       position: relative;
     }
 
     .modal-close-btn {
-      position: absolute;
-      top: 1.2rem; right: 1.2rem;
+      position: absolute; top: 1.2rem; right: 1.2rem;
       background: none; border: none;
       color: var(--text-muted);
-      font-size: 1.3rem;
-      cursor: pointer;
+      font-size: 1.3rem; cursor: pointer;
     }
 
-    /* Back to Top Button */
     .back-to-top-btn {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 48px;
-      height: 48px;
-      background: rgba(4, 10, 24, 0.92);
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 48px; height: 48px;
+      background: var(--panel-glass);
       border: 1.5px solid var(--trace-cyan);
       border-radius: 14px;
       color: var(--trace-cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(15px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; cursor: pointer; z-index: 999;
+      box-shadow: 0 0 20px var(--trace-cyan-glow);
+      opacity: 0; visibility: hidden; transform: translateY(15px);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .back-to-top-btn.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
+    .back-to-top-btn.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
     .back-to-top-btn:hover {
       background: var(--trace-cyan);
-      color: #020617;
+      color: var(--bg-void);
       box-shadow: 0 0 35px var(--trace-cyan);
       transform: translateY(-4px);
     }
@@ -986,9 +973,7 @@
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 5.5rem;
-        padding-left: 4%;
-        padding-right: 4%;
+        padding-top: 5.5rem; padding-left: 4%; padding-right: 4%;
         gap: 2.2rem;
       }
       .hero-content h1 { font-size: 1.95rem; line-height: 1.25; }
@@ -998,10 +983,7 @@
       .btn-group { justify-content: center; gap: 0.7rem; }
       .chip-btn { padding: 0.7rem 1.1rem; font-size: 0.78rem; }
 
-      .circuit-motherboard-frame {
-        width: 260px;
-        padding: 10px;
-      }
+      .circuit-motherboard-frame { width: 260px; padding: 10px; }
       .silicon-processor-socket { height: 310px; }
       .badge-top-left { left: -6px; top: -10px; padding: 0.4rem 0.6rem; }
       .badge-bottom-right { right: -6px; bottom: -10px; padding: 0.4rem 0.6rem; }
@@ -1021,38 +1003,27 @@
 
       .mobile-menu-btn { display: block; }
       .nav-links {
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 0;
-        width: 100%;
-        background: #050b18;
+        position: absolute; top: calc(100% + 10px); left: 0; width: 100%;
+        background: var(--nav-bg);
         border: 1px solid var(--wire-border);
         border-radius: 16px;
-        flex-direction: column;
-        padding: 1.2rem;
-        gap: 0.5rem;
-        display: none;
+        flex-direction: column; padding: 1.2rem; gap: 0.5rem; display: none;
       }
       .nav-links.active { display: flex; }
       .dropdown-menu {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        display: block;
-        margin-top: 6px;
-        background: rgba(255, 255, 255, 0.02);
+        position: static; transform: none; box-shadow: none;
+        opacity: 1; visibility: visible; display: block; margin-top: 6px;
+        background: rgba(100, 116, 139, 0.04);
       }
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
 
   <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Navigation -->
+  <!-- Navigation with Day/Night Switcher -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
@@ -1065,10 +1036,15 @@
         </div>
       </a>
 
-      <!-- Live Digital Clock Widget -->
-      <div class="nav-live-clock">
-        <i class="fa-regular fa-clock clock-icon"></i>
-        <span id="liveClock">00:00:00 AM</span>
+      <div class="nav-utilities">
+        <div class="nav-live-clock">
+          <i class="fa-regular fa-clock clock-icon"></i>
+          <span id="liveClock">00:00:00 AM</span>
+        </div>
+        <!-- Day/Night Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch Day/Night Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
       </div>
 
       <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
@@ -1177,11 +1153,11 @@
     </div>
     <div class="wafer-panel-card" style="max-width: 1050px; margin: 0 auto;">
       
-      <p style="font-size: 1.06rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+      <p style="font-size: 1.06rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
         I am a <strong>Security & Administration professional</strong> specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution.
       </p>
 
-      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
         My professional experience spans high-profile hospitality, commercial, retail, office, convention, and airport-related environments. I have worked across projects including <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>, gaining practical experience in both operational security and technology-driven security solutions.
       </p>
 
@@ -1202,25 +1178,25 @@
         </div>
       </div>
 
-      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-top: 1.5rem; margin-bottom: 1.2rem;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-top: 1.5rem; margin-bottom: 1.2rem;">
         My project and operational experience also includes <strong>Security Risk Assessment, Loss Prevention, Incident Management, Emergency Preparedness, Security Manpower Planning & Deployment, Security Inspection, SOP Implementation, Compliance Monitoring, Vendor Coordination, and Stakeholder Management</strong>.
       </p>
 
-      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
         Working in international hospitality environments has strengthened my understanding of guest safety, employee protection, asset security, access management, emergency response, and business continuity while maintaining high security standards.
       </p>
 
-      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
         I have completed <strong>Airport Security Manager (ASM)</strong> training, strengthening my knowledge of aviation security principles, risk mitigation, access control, emergency preparedness, and operational security management.
       </p>
 
       <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--trace-cyan); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
-        <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
+        <p style="font-size: 1rem; color: var(--text-main); font-style: italic; line-height: 1.8;">
           "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
         </p>
       </div>
 
-      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85;">
+      <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85;">
         I am passionate about Security Management, Aviation & Hospitality Security, Advanced Surveillance Technology, Security Systems, and Strategic Security Operations, with a long-term goal of progressing into strategic security leadership.
       </p>
 
@@ -1428,37 +1404,37 @@
     <div class="skills-grid">
       <div class="wafer-panel-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
       </div>
 
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
 
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
 
       <div class="wafer-panel-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
       </div>
 
       <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
       </div>
 
       <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
       </div>
     </div>
@@ -1473,7 +1449,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
         </div>
       </div>
@@ -1481,7 +1457,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-solid fa-video" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">HCSA CCTV Certification</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">HCSA CCTV Certification</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Hikvision Certified Security Associate</p>
         </div>
       </div>
@@ -1489,7 +1465,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-solid fa-network-wired" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">HCSA Networking Certification</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">HCSA Networking Certification</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Hikvision Certified Security Associate</p>
         </div>
       </div>
@@ -1497,7 +1473,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-solid fa-shield-halved" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Critical Infrastructure Protection</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Critical Infrastructure Protection</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Advanced Physical Security & Risk Defense</p>
         </div>
       </div>
@@ -1505,7 +1481,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
@@ -1513,7 +1489,7 @@
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
         <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
         </div>
       </div>
@@ -1527,19 +1503,19 @@
     </div>
     <div class="skills-grid" style="max-width:950px;">
       <div class="wafer-panel-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022)</h3>
+        <h3 style="color:var(--text-main); font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Gopalganj Science and Technology University (GSTU)</p>
         <p style="color:var(--trace-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
       </div>
 
       <div class="wafer-panel-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017)</h3>
+        <h3 style="color:var(--text-main); font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science)</p>
         <p style="color:var(--trace-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
       </div>
 
       <div class="wafer-panel-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015)</h3>
+        <h3 style="color:var(--text-main); font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School</p>
         <p style="color:var(--trace-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
       </div>
@@ -1565,7 +1541,7 @@
 
       <div class="terminal-body">
         <div>
-          <h3 style="font-family:'Space Grotesk'; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT</h3>
+          <h3 style="font-family:'Space Grotesk'; font-size:1.3rem; font-weight:700; color:var(--text-main); margin-bottom:1rem;">COMMUNICATION PORT</h3>
           <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1.5rem;">
             Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations.
           </p>
@@ -1643,15 +1619,15 @@
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
-        <div style="border:1px solid var(--wire-border); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd)</h4>
+        <div style="border:1px solid var(--wire-border); background:rgba(100,116,139,0.04); padding:1.2rem; border-radius:12px;">
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd)</h4>
           <p style="color:var(--trace-cyan); font-size:0.85rem; font-weight:600;">Executive Director</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
           <p style="color:var(--trace-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
         </div>
 
-        <div style="border:1px solid var(--wire-border); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam</h4>
+        <div style="border:1px solid var(--wire-border); background:rgba(100,116,139,0.04); padding:1.2rem; border-radius:12px;">
+          <h4 style="color:var(--text-main); font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam</h4>
           <p style="color:var(--trace-cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
           <p style="color:var(--trace-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
@@ -1671,6 +1647,20 @@
 
   <!-- Script Engine -->
   <script>
+    // Day / Night Theme Toggle Handler
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('themeIcon');
+      
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fa-solid fa-sun';
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fa-solid fa-moon';
+      }
+    }
+
     // Live Digital Clock & Time Updater ( Dhaka Local Time )
     setInterval(() => {
       const now = new Date();
