@@ -50,7 +50,7 @@
       background: radial-gradient(circle at center, #071329 0%, #020617 95%);
     }
 
-    /* Floating Glass Navbar */
+    /* Floating Navigation */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -577,6 +577,7 @@
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      scroll-margin-top: 6rem;
     }
 
     .exp-pro-card:hover {
@@ -966,10 +967,10 @@
         <li class="nav-item">
           <a class="nav-link">Experience <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#experience" onclick="closeNav()">Ulkasemi Pvt. Ltd.</a></li>
-            <li class="dropdown-item"><a href="#experience" onclick="closeNav()">United Group (UGSSL)</a></li>
-            <li class="dropdown-item"><a href="#experience" onclick="closeNav()">D-Net Service</a></li>
-            <li class="dropdown-item"><a href="#experience" onclick="closeNav()">Royal Green Ltd.</a></li>
+            <li class="dropdown-item"><a href="#exp-ulkasemi" onclick="closeNav()">Ulkasemi Pvt. Ltd.</a></li>
+            <li class="dropdown-item"><a href="#exp-united" onclick="closeNav()">United Group (UGSSL)</a></li>
+            <li class="dropdown-item"><a href="#exp-dnet" onclick="closeNav()">D-Net Service</a></li>
+            <li class="dropdown-item"><a href="#exp-royalgreen" onclick="closeNav()">Royal Green Ltd.</a></li>
           </ul>
         </li>
 
@@ -1133,7 +1134,7 @@
     </div>
   </section>
 
-  <!-- Work Experience Section -->
+  <!-- Work Experience Section with Dedicated IDs for Navigation -->
   <section id="experience">
     <div class="section-header reveal-on-scroll">
       <h2 class="section-title">WORK EXPERIENCE</h2>
@@ -1142,7 +1143,7 @@
     <div class="experience-container">
 
       <!-- 1. Ulkasemi -->
-      <div class="exp-pro-card reveal-on-scroll">
+      <div class="exp-pro-card reveal-on-scroll" id="exp-ulkasemi">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
             <div class="exp-corp-icon"><i class="fa-solid fa-microchip"></i></div>
@@ -1151,7 +1152,7 @@
               <div class="company-title"><i class="fa-solid fa-building"></i> Ulkasemi Pvt. Ltd.</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT [cite: 7]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT</span>
         </div>
 
         <div class="project-tags-row">
@@ -1182,7 +1183,7 @@
       </div>
 
       <!-- 2. United Group -->
-      <div class="exp-pro-card reveal-on-scroll">
+      <div class="exp-pro-card reveal-on-scroll" id="exp-united">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
             <div class="exp-corp-icon"><i class="fa-solid fa-hotel"></i></div>
@@ -1191,7 +1192,7 @@
               <div class="company-title"><i class="fa-solid fa-shield-halved"></i> United Group (UGSSL)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026 [cite: 7]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026</span>
         </div>
 
         <div class="project-tags-row">
@@ -1222,7 +1223,7 @@
       </div>
 
       <!-- 3. D-Net Service -->
-      <div class="exp-pro-card reveal-on-scroll">
+      <div class="exp-pro-card reveal-on-scroll" id="exp-dnet">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
             <div class="exp-corp-icon"><i class="fa-solid fa-headset"></i></div>
@@ -1231,7 +1232,7 @@
               <div class="company-title"><i class="fa-solid fa-network-wired"></i> D-Net Service</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023 [cite: 7]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023</span>
         </div>
 
         <div class="project-tags-row">
@@ -1244,14 +1245,14 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-user-shield"></i> Security Consulting & Liaison</h4>
             <ul class="exp-bullets">
-              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans [cite: 7].</li>
-              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution [cite: 7].</li>
+              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans.</li>
+              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution.</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-headset"></i> Technical Escalation & Resolution</h4>
             <ul class="exp-bullets">
-              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks [cite: 7].</li>
+              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks.</li>
               <li>Diagnosed client connectivity disruptions, monitored network protection logs, and streamlined issue escalations.</li>
             </ul>
           </div>
@@ -1259,7 +1260,7 @@
       </div>
 
       <!-- 4. Royal Green -->
-      <div class="exp-pro-card reveal-on-scroll">
+      <div class="exp-pro-card reveal-on-scroll" id="exp-royalgreen">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
             <div class="exp-corp-icon"><i class="fa-solid fa-server"></i></div>
@@ -1268,7 +1269,7 @@
               <div class="company-title"><i class="fa-solid fa-globe"></i> Royal Green Ltd. (PacENet)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022 [cite: 7]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022</span>
         </div>
 
         <div class="project-tags-row">
@@ -1282,15 +1283,15 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-server"></i> Network Infrastructure & Data Center</h4>
             <ul class="exp-bullets">
-              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance [cite: 7].</li>
-              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans [cite: 7].</li>
+              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance.</li>
+              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans.</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-users-gear"></i> NOC Team Leadership & Tier-3 Support</h4>
             <ul class="exp-bullets">
-              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50% [cite: 7].</li>
-              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate [cite: 7].</li>
+              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%.</li>
+              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate.</li>
             </ul>
           </div>
         </div>
@@ -1362,7 +1363,7 @@
         <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
-          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026) [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
         </div>
       </div>
 
@@ -1370,7 +1371,7 @@
         <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
@@ -1378,7 +1379,7 @@
         <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">ASP.NET Core MVC Web Applications</h4>
-          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
@@ -1386,7 +1387,7 @@
         <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
-          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
         </div>
       </div>
     </div>
@@ -1399,21 +1400,21 @@
     </div>
     <div class="skills-grid" style="max-width:950px;">
       <div class="pro-glass-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022) [cite: 7]</h3>
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Gopalganj Science and Technology University (GSTU)</p>
-        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 7]</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
       </div>
 
       <div class="pro-glass-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017) [cite: 7]</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science) [cite: 7]</p>
-        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 7]</p>
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017)</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science)</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
       </div>
 
       <div class="pro-glass-card">
-        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015) [cite: 7]</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School [cite: 7]</p>
-        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden) [cite: 7]</p>
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015)</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
       </div>
     </div>
   </section>
@@ -1431,29 +1432,29 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--accent-cyan); font-size:0.8rem;">root@mehedi-security:~$ [cite: 7]</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--accent-cyan); font-size:0.8rem;">root@mehedi-security:~$</div>
         <div></div>
       </div>
 
       <div class="terminal-body">
         <div>
-          <h3 style="font-family:'Space Grotesk'; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT [cite: 7]</h3>
+          <h3 style="font-family:'Space Grotesk'; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT</h3>
           <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1.5rem;">
-            Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations [cite: 7].
+            Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations.
           </p>
 
           <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.92rem;">
             <div>
-              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">LOCATION: [cite: 7]</span>
-              <span style="color:var(--accent-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh [cite: 7]</span>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">LOCATION:</span>
+              <span style="color:var(--accent-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh</span>
             </div>
             <div>
-              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">PHONE: [cite: 7]</span>
-              <a href="tel:+8801680450882" style="color:var(--accent-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882 [cite: 7]</a>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">PHONE:</span>
+              <a href="tel:+8801680450882" style="color:var(--accent-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882</a>
             </div>
             <div>
-              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">EMAIL: [cite: 7]</span>
-              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--accent-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com [cite: 7]</a>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">EMAIL:</span>
+              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--accent-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com</a>
             </div>
 
             <!-- Dark-Themed Responsive Google Map Integration -->
@@ -1475,19 +1476,19 @@
 
         <form onsubmit="handleCyberSubmit(event)">
           <div>
-            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">SENDER IDENTIFIER * [cite: 7]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">SENDER IDENTIFIER *</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) * [cite: 7]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) *</label>
             <input type="text" id="contactInp" class="form-input-tech" placeholder="name@company.com or phone" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">MESSAGE * [cite: 7]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">MESSAGE *</label>
             <textarea id="msgInp" class="form-input-tech" rows="4" placeholder="Write your project details or inquiry..." required></textarea>
           </div>
           <button type="submit" class="chip-btn chip-btn-primary" style="width:100%; margin-top:1.5rem; justify-content:center;">
-            <i class="fa-solid fa-paper-plane"></i> TRANSMIT VIA EMAIL [cite: 7]
+            <i class="fa-solid fa-paper-plane"></i> TRANSMIT VIA EMAIL
           </button>
         </form>
       </div>
@@ -1499,36 +1500,37 @@
     <div class="modal-hud">
       <button class="modal-close-btn" onclick="closeModal('refModal')"><i class="fa-solid fa-xmark"></i></button>
       <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--accent-cyan); font-size:1.3rem; margin-bottom:0.4rem;">
-        <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES [cite: 7]
+        <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES
       </h3>
       <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.5rem;">
-        Defense & executive leadership verification records [cite: 7].
+        Defense & executive leadership verification records.
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
         <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd) [cite: 7]</h4>
-          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">Executive Director [cite: 7]</p>
-          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 7]</p>
-          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121 [cite: 7]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd)</h4>
+          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">Executive Director</p>
+          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
+          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
         </div>
 
         <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam [cite: 7]</h4>
-          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security) [cite: 7]</p>
-          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 7]</p>
-          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495 [cite: 7]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam</h4>
+          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
+          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
+          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST [cite: 7]</p>
+    <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
   <!-- Interactive Silicon Canvas + Scroll Reveal Observer JS -->
   <script>
+    // 1. Intersection Observer for Scroll Animations
     const observerOptions = {
       threshold: 0.15,
       rootMargin: "0px 0px -40px 0px"
@@ -1546,6 +1548,7 @@
       scrollObserver.observe(el);
     });
 
+    // 2. Interactive Silicon Particle Canvas with Mouse/Touch Physics
     const canvas = document.getElementById('interactive-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1678,7 +1681,7 @@
     }
     animateInteractiveCanvas();
 
-    // UI Handlers
+    // 3. UI Navigation Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
