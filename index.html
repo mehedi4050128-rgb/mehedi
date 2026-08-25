@@ -16,15 +16,14 @@
   <style>
     :root {
       --bg-void: #01040a;
-      --bg-surface: #040915;
       --panel-glass: rgba(7, 15, 34, 0.86);
       --panel-hover: rgba(12, 24, 52, 0.96);
       
-      /* Executive Semiconductor Circuit Matrix */
+      /* Executive Semiconductor Matrix */
       --trace-cyan: #00f0ff;
-      --trace-cyan-glow: rgba(0, 240, 255, 0.35);
+      --trace-cyan-glow: rgba(0, 240, 255, 0.45);
       --trace-gold: #f59e0b;
-      --trace-gold-glow: rgba(245, 158, 11, 0.3);
+      --trace-gold-glow: rgba(245, 158, 11, 0.35);
       --trace-emerald: #10b981;
       --trace-purple: #a855f7;
       
@@ -34,7 +33,6 @@
       
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
     }
 
     * {
@@ -53,7 +51,7 @@
       position: relative;
     }
 
-    /* Live Multilayer Silicon Wafer Engine Canvas */
+    /* Live Background Canvas */
     #scroll-live-canvas {
       position: fixed;
       top: 0;
@@ -65,7 +63,7 @@
       background: radial-gradient(circle at 50% 45%, #06132d 0%, #01040a 95%);
     }
 
-    /* Floating Microchip Die Architecture Navbar */
+    /* Floating Microchip Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -357,7 +355,7 @@
     }
 
     /* ========================================================
-       ULTRA-SMART SEMICONDUCTOR PROCESSOR DIE PACKAGING
+       LIVE CIRCUIT EMBEDDED PROFILE ARCHITECTURE
        ======================================================== */
     .hero-visual {
       flex: 0.95;
@@ -366,74 +364,94 @@
       position: relative;
     }
 
-    .processor-die-package {
+    .circuit-motherboard-frame {
       position: relative;
-      width: 370px;
+      width: 380px;
       max-width: 100%;
-      border-radius: 30px;
-      padding: 14px;
-      background: linear-gradient(145deg, rgba(14, 28, 62, 0.95), rgba(3, 7, 18, 0.98));
-      border: 1.5px solid var(--wire-border);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.92), 0 0 40px rgba(0, 240, 255, 0.18);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 32px;
+      padding: 24px;
+      background: radial-gradient(circle at center, rgba(14, 28, 62, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
+      border: 2px solid var(--wire-border);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 240, 255, 0.15);
     }
 
-    .processor-die-package:hover {
-      transform: translateY(-6px);
-      border-color: var(--wire-focus);
-      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95), 0 0 60px rgba(0, 240, 255, 0.3);
+    /* Embedded Live Circuit Canvas around Profile */
+    #profile-circuit-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      pointer-events: none;
+      z-index: 2;
     }
 
-    /* Precision Gold Bond Pads */
-    .processor-die-package::before {
+    /* Gold PCB Bus Edge Connectors */
+    .circuit-motherboard-frame::before {
       content: '';
       position: absolute;
-      top: -6px; left: 18%; right: 18%;
-      height: 4px;
+      top: -8px; left: 16%; right: 16%;
+      height: 5px;
       background: repeating-linear-gradient(90deg, var(--trace-gold) 0px, var(--trace-gold) 6px, transparent 6px, transparent 13px);
       z-index: 5;
     }
-    .processor-die-package::after {
+    .circuit-motherboard-frame::after {
       content: '';
       position: absolute;
-      bottom: -6px; left: 18%; right: 18%;
-      height: 4px;
+      bottom: -8px; left: 16%; right: 16%;
+      height: 5px;
       background: repeating-linear-gradient(90deg, var(--trace-gold) 0px, var(--trace-gold) 6px, transparent 6px, transparent 13px);
       z-index: 5;
     }
 
-    .portrait-silicon-die {
+    .silicon-processor-socket {
       position: relative;
       width: 100%;
-      height: 430px;
+      height: 410px;
       border-radius: 20px;
       overflow: hidden;
-      background: #030712;
-      border: 1.5px solid rgba(0, 240, 255, 0.35);
+      background: #020612;
+      border: 1.5px solid rgba(0, 240, 255, 0.45);
+      z-index: 3;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
     }
 
-    .portrait-silicon-die img {
+    .silicon-processor-socket img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.6s ease;
     }
 
-    .processor-die-package:hover .portrait-silicon-die img {
+    .circuit-motherboard-frame:hover .silicon-processor-socket img {
       transform: scale(1.03);
     }
 
-    /* Dynamic Laser Scan Shimmer on Profile */
-    .die-laser-beam {
+    /* Micro-grid Die Texture on Top of Picture */
+    .die-grid-overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 3px;
+      inset: 0;
+      background: 
+        linear-gradient(180deg, transparent 65%, rgba(2, 6, 23, 0.85) 100%),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0, 240, 255, 0.03) 3px, rgba(0, 240, 255, 0.03) 4px);
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* Live Shimmering Laser Scanner */
+    .circuit-scan-beam {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
       background: linear-gradient(90deg, transparent, var(--trace-cyan), #ffffff, var(--trace-cyan), transparent);
       box-shadow: 0 0 15px var(--trace-cyan);
-      opacity: 0.65;
-      z-index: 3;
+      opacity: 0.7;
+      z-index: 5;
       animation: laserScan 4.5s ease-in-out infinite alternate;
       pointer-events: none;
     }
@@ -444,17 +462,9 @@
       100% { top: 95%; opacity: 0.3; }
     }
 
-    .portrait-silicon-die::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(2, 6, 23, 0.85) 100%);
-      pointer-events: none;
-    }
-
     .floating-metric-badge {
       position: absolute;
-      background: rgba(4, 10, 26, 0.95);
+      background: rgba(4, 10, 26, 0.96);
       backdrop-filter: blur(18px);
       border: 1px solid var(--wire-border);
       border-radius: 14px;
@@ -463,7 +473,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      z-index: 5;
+      z-index: 6;
       transition: all 0.3s ease;
     }
 
@@ -520,7 +530,6 @@
       letter-spacing: -0.5px;
     }
 
-    /* Smooth Slow Cinematic Scroll Reveal */
     .reveal-on-scroll {
       opacity: 0;
       transform: translateY(40px);
@@ -617,7 +626,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Structured Work Experience Architecture */
     .experience-container {
       max-width: 1050px;
       margin: 0 auto;
@@ -966,11 +974,11 @@
       .tech-badge-container { justify-content: center; }
       .btn-group { justify-content: center; }
 
-      .processor-die-package {
-        width: 290px;
-        padding: 8px;
+      .circuit-motherboard-frame {
+        width: 300px;
+        padding: 12px;
       }
-      .portrait-silicon-die { height: 330px; }
+      .silicon-processor-socket { height: 330px; }
       .badge-top-left { left: 0; top: -12px; }
       .badge-bottom-right { right: 0; bottom: -12px; }
 
@@ -1013,7 +1021,7 @@
 </head>
 <body>
 
-  <!-- Live Dynamic Wafer Canvas -->
+  <!-- Live Dynamic Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
   <!-- Navigation -->
@@ -1062,7 +1070,7 @@
     </nav>
   </div>
 
-  <!-- Hero Section with Gorgeous Semiconductor Packaging -->
+  <!-- Hero Section with Embedded Circuit Motherboard Frame -->
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="tech-badge-container">
@@ -1099,9 +1107,11 @@
       </div>
     </div>
     
-    <!-- Smart Semiconductor Processor Die Packaging Frame -->
+    <!-- Live Circuit-Embedded Motherboard Frame -->
     <div class="hero-visual">
-      <div class="processor-die-package">
+      <div class="circuit-motherboard-frame">
+        <canvas id="profile-circuit-canvas"></canvas>
+
         <div class="floating-metric-badge badge-top-left">
           <div class="badge-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
           <div>
@@ -1110,8 +1120,9 @@
           </div>
         </div>
 
-        <div class="portrait-silicon-die">
+        <div class="silicon-processor-socket">
           <div class="die-laser-beam"></div>
+          <div class="die-grid-overlay"></div>
           <img src="profile.jpg" alt="Md. Mehedi Hassan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
         </div>
 
@@ -1595,7 +1606,7 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- Ultra-Smooth Cinematic Scroll Engine (Page Size ~40KB total) -->
+  <!-- Ultra-Smooth Cinematic Scroll Engine + Live Profile Circuit Animation -->
   <script>
     // 1. Smooth Scroll Observer
     const observerOptions = {
@@ -1615,7 +1626,71 @@
       scrollObserver.observe(el);
     });
 
-    // 2. Gentle Damped Scroll Velocity Canvas Physics
+    // 2. Profile Photo Live Embedded Circuit Tracing Engine
+    const profileCanvas = document.getElementById('profile-circuit-canvas');
+    const pCtx = profileCanvas.getContext('2d');
+
+    function resizeProfileCanvas() {
+      const rect = profileCanvas.parentElement.getBoundingClientRect();
+      profileCanvas.width = rect.width;
+      profileCanvas.height = rect.height;
+    }
+    resizeProfileCanvas();
+    window.addEventListener('resize', resizeProfileCanvas);
+
+    const circuitTracks = [];
+    const numTracks = 14;
+
+    for (let i = 0; i < numTracks; i++) {
+      circuitTracks.push({
+        x: Math.random() * 380,
+        y: Math.random() * 450,
+        length: 25 + Math.random() * 45,
+        speed: 0.8 + Math.random() * 1.2,
+        progress: Math.random() * 100,
+        horizontal: Math.random() > 0.5,
+        color: Math.random() > 0.4 ? '#00f0ff' : '#f59e0b'
+      });
+    }
+
+    function drawProfileLiveCircuit() {
+      pCtx.clearRect(0, 0, profileCanvas.width, profileCanvas.height);
+
+      circuitTracks.forEach(t => {
+        t.progress += t.speed;
+        if (t.progress > 100) t.progress = 0;
+
+        const currentX = t.horizontal ? (t.x + (t.progress * 1.5)) % profileCanvas.width : t.x;
+        const currentY = !t.horizontal ? (t.y + (t.progress * 1.5)) % profileCanvas.height : t.y;
+
+        pCtx.beginPath();
+        pCtx.strokeStyle = t.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.25)' : 'rgba(245, 158, 11, 0.25)';
+        pCtx.lineWidth = 1.5;
+
+        if (t.horizontal) {
+          pCtx.moveTo(currentX, currentY);
+          pCtx.lineTo(currentX + t.length, currentY);
+        } else {
+          pCtx.moveTo(currentX, currentY);
+          pCtx.lineTo(currentX, currentY + t.length);
+        }
+        pCtx.stroke();
+
+        // Node Head Pulse
+        pCtx.beginPath();
+        pCtx.arc(t.horizontal ? currentX + t.length : currentX, !t.horizontal ? currentY + t.length : currentY, 2, 0, Math.PI * 2);
+        pCtx.fillStyle = t.color;
+        pCtx.shadowBlur = 6;
+        pCtx.shadowColor = t.color;
+        pCtx.fill();
+        pCtx.shadowBlur = 0;
+      });
+
+      requestAnimationFrame(drawProfileLiveCircuit);
+    }
+    drawProfileLiveCircuit();
+
+    // 3. Gentle Background Live Canvas
     const canvas = document.getElementById('scroll-live-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1634,8 +1709,7 @@
       const currentScrollY = window.scrollY;
       const delta = currentScrollY - lastScrollY;
       lastScrollY = currentScrollY;
-      // Damped target velocity so it never jerks fast
-      targetVelocity = Math.max(Math.min(delta * 0.12, 4), -4);
+      targetVelocity = Math.max(Math.min(delta * 0.08, 2.5), -2.5);
     }, { passive: true });
 
     const mouse = { x: null, y: null, radius: 140 };
@@ -1672,8 +1746,8 @@
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 1.2;
         this.density = Math.random() * 20 + 1;
-        this.vx = (Math.random() - 0.5) * 0.45;
-        this.vy = (Math.random() - 0.5) * 0.45;
+        this.vx = (Math.random() - 0.5) * 0.35;
+        this.vy = (Math.random() - 0.5) * 0.35;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -1689,8 +1763,7 @@
 
       update() {
         this.x += this.vx;
-        // Smooth cinematic slow drift responding to scroll
-        this.y += this.vy - (scrollVelocity * (this.density * 0.025));
+        this.y += this.vy - (scrollVelocity * (this.density * 0.015));
 
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0) this.y = canvas.height;
@@ -1706,8 +1779,8 @@
             let directionX = (dx / distance) * force * this.density;
             let directionY = (dy / distance) * force * this.density;
 
-            this.x -= directionX * 0.6;
-            this.y -= directionY * 0.6;
+            this.x -= directionX * 0.5;
+            this.y -= directionY * 0.5;
           }
         }
       }
@@ -1754,10 +1827,8 @@
 
     function animateEngine() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Interpolate scroll velocity smoothly
-      scrollVelocity += (targetVelocity - scrollVelocity) * 0.08;
-      targetVelocity *= 0.92;
+      scrollVelocity += (targetVelocity - scrollVelocity) * 0.05;
+      targetVelocity *= 0.94;
 
       for (let i = 0; i < particles.length; i++) {
         particles[i].draw();
@@ -1768,7 +1839,7 @@
     }
     animateEngine();
 
-    // 3. UI Handlers
+    // 4. UI Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
