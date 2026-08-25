@@ -5,24 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Md. Mehedi Hassan | Security & Administration Specialist</title>
   <!-- Google Fonts & Font Awesome 6.5.1 -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
-      --silicon-bg: #020617;
-      --pcb-panel: rgba(8, 17, 34, 0.88);
-      --pcb-hover: rgba(14, 28, 54, 0.95);
-      --neon-cyan: #00f0ff;
-      --cyan-glow: rgba(0, 240, 255, 0.35);
-      --bus-gold: #fbbf24;
-      --gold-glow: rgba(251, 191, 36, 0.4);
-      --logic-emerald: #10b981;
-      --wafer-purple: #8b5cf6;
-      --trace-line: rgba(0, 240, 255, 0.16);
-      --trace-active: rgba(0, 240, 255, 0.65);
-      --text-pure: #f8fafc;
-      --text-dim: #94a3b8;
+      --bg-dark: #020617;
+      --panel-bg: rgba(10, 18, 36, 0.85);
+      --panel-hover: rgba(15, 27, 54, 0.95);
+      --accent-cyan: #00f0ff;
+      --accent-glow: rgba(0, 240, 255, 0.25);
+      --accent-emerald: #10b981;
+      --accent-gold: #f59e0b;
+      --border-subtle: rgba(0, 240, 255, 0.14);
+      --border-focus: rgba(0, 240, 255, 0.5);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
     * {
@@ -34,14 +32,14 @@
     }
 
     body {
-      background-color: var(--silicon-bg);
-      color: var(--text-pure);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Interactive Silicon Matrix Canvas */
+    /* Interactive Silicon Particle Matrix Canvas */
     #interactive-canvas {
       position: fixed;
       top: 0;
@@ -53,7 +51,7 @@
       background: radial-gradient(circle at center, #071329 0%, #020617 95%);
     }
 
-    /* Floating Microchip Glass Navbar */
+    /* Floating Ultra-Clean Glass Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -68,28 +66,17 @@
     nav {
       width: 100%;
       max-width: 1200px;
-      background: rgba(6, 14, 29, 0.92);
+      background: rgba(8, 15, 31, 0.92);
       backdrop-filter: blur(25px);
-      border: 1px solid var(--trace-line);
-      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 1.6rem;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.1);
+      padding: 0.65rem 1.8rem;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.08);
       position: relative;
     }
-
-    nav::before, nav::after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-color: var(--neon-cyan);
-      pointer-events: none;
-    }
-    nav::before { top: -2px; left: -2px; border-top: 2px solid; border-left: 2px solid; }
-    nav::after { bottom: -2px; right: -2px; border-bottom: 2px solid; border-right: 2px solid; }
 
     .brand-logo {
       display: flex;
@@ -99,32 +86,31 @@
     }
 
     .chip-die-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
       background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--neon-cyan);
+      border: 1.5px solid var(--accent-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--neon-cyan);
-      font-size: 1.1rem;
-      box-shadow: 0 0 15px var(--cyan-glow);
+      color: var(--accent-cyan);
+      font-size: 1rem;
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     .brand-title {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
       font-size: 0.95rem;
-      letter-spacing: 1px;
-      color: var(--neon-cyan);
-      text-shadow: 0 0 10px var(--cyan-glow);
+      letter-spacing: 0.5px;
+      color: #ffffff;
     }
 
     .brand-sub {
       font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--logic-emerald);
+      color: var(--accent-cyan);
       letter-spacing: 1px;
       font-weight: 600;
     }
@@ -141,13 +127,12 @@
     }
 
     .nav-link {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--text-dim);
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 500;
       padding: 0.5rem 0.85rem;
-      border-radius: 6px;
+      border-radius: 8px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -156,20 +141,19 @@
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--neon-cyan);
-      background: rgba(0, 240, 255, 0.1);
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+      color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.08);
     }
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: rgba(5, 11, 24, 0.98);
+      background: rgba(8, 15, 31, 0.98);
       backdrop-filter: blur(28px);
-      border: 1px solid var(--trace-active);
-      border-radius: 12px;
+      border: 1px solid var(--border-focus);
+      border-radius: 14px;
       padding: 0.8rem;
       min-width: 270px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 240, 255, 0.15);
@@ -194,27 +178,26 @@
       align-items: center;
       gap: 12px;
       padding: 0.65rem 0.9rem;
-      color: var(--text-dim);
+      color: var(--text-muted);
       text-decoration: none;
       font-size: 0.82rem;
-      font-family: 'JetBrains Mono', monospace;
       border-radius: 8px;
       transition: 0.2s;
     }
 
     .dropdown-item a:hover {
       color: #ffffff;
-      background: rgba(0, 240, 255, 0.15);
+      background: rgba(0, 240, 255, 0.12);
       transform: translateX(4px);
     }
 
     .mobile-menu-btn {
       display: none;
       background: transparent;
-      border: 1px solid var(--neon-cyan);
-      color: var(--neon-cyan);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
       padding: 6px 12px;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 1.1rem;
       cursor: pointer;
     }
@@ -246,10 +229,10 @@
       gap: 8px;
       padding: 6px 14px;
       background: rgba(0, 240, 255, 0.05);
-      border: 1px solid var(--trace-line);
-      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
       font-size: 0.76rem;
-      color: var(--neon-cyan);
+      color: var(--accent-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
@@ -257,22 +240,22 @@
 
     .chip-status-tag:hover {
       background: rgba(0, 240, 255, 0.12);
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 12px var(--cyan-glow);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 12px var(--accent-glow);
       transform: translateY(-2px);
     }
 
     .chip-status-tag i {
-      color: var(--bus-gold);
+      color: var(--accent-gold);
       font-size: 0.78rem;
     }
 
     .pulse-core {
       width: 7px;
       height: 7px;
-      background: var(--logic-emerald);
+      background: var(--accent-emerald);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--logic-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
       animation: pulseAnim 2s infinite;
     }
 
@@ -283,24 +266,24 @@
     }
 
     .hero-content h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.2rem;
-      font-weight: 900;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.4rem;
+      font-weight: 800;
       line-height: 1.15;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
       margin-bottom: 1.2rem;
+      color: #ffffff;
     }
 
     .chip-gradient {
-      background: linear-gradient(135deg, var(--neon-cyan) 0%, #38bdf8 40%, var(--wafer-purple) 100%);
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, #38bdf8 50%, var(--accent-emerald) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 35px rgba(0, 240, 255, 0.3);
     }
 
     .hero-desc {
-      font-size: 1.02rem;
-      color: var(--text-dim);
+      font-size: 1.05rem;
+      color: var(--text-muted);
       max-width: 620px;
       margin-bottom: 2.2rem;
       line-height: 1.8;
@@ -314,8 +297,7 @@
 
     .chip-btn {
       padding: 0.9rem 1.8rem;
-      border-radius: 8px;
-      font-family: 'JetBrains Mono', monospace;
+      border-radius: 12px;
       font-weight: 700;
       font-size: 0.88rem;
       text-decoration: none;
@@ -327,32 +309,32 @@
     }
 
     .chip-btn-primary {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.25));
-      border: 1.5px solid var(--neon-cyan);
-      color: var(--neon-cyan);
-      box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(16, 185, 129, 0.25));
+      border: 1.5px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
     }
 
     .chip-btn-primary:hover {
-      background: var(--neon-cyan);
+      background: var(--accent-cyan);
       color: #020617;
-      box-shadow: 0 0 40px var(--neon-cyan);
+      box-shadow: 0 0 40px var(--accent-cyan);
       transform: translateY(-3px);
     }
 
     .chip-btn-glass {
       background: rgba(255, 255, 255, 0.03);
       color: #e2e8f0;
-      border: 1px solid var(--trace-line);
+      border: 1px solid var(--border-subtle);
     }
 
     .chip-btn-glass:hover {
-      border-color: var(--neon-cyan);
-      color: var(--neon-cyan);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
       transform: translateY(-3px);
     }
 
-    /* Live Futuristic Cyber Hologram Profile Visual */
+    /* Live Cyber Hologram Profile Visual */
     .hero-visual {
       flex: 0.9;
       display: flex;
@@ -364,93 +346,56 @@
       position: relative;
       width: 340px;
       height: 340px;
-      padding: 12px;
-      background: rgba(7, 15, 32, 0.88);
-      border: 2px solid var(--trace-line);
-      border-radius: 20px;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.25), inset 0 0 25px rgba(0, 240, 255, 0.1);
+      padding: 10px;
+      background: rgba(8, 15, 31, 0.88);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2), inset 0 0 25px rgba(0, 240, 255, 0.08);
       overflow: hidden;
-    }
-
-    .live-holo-socket::before {
-      content: '';
-      position: absolute;
-      top: -10px; left: 15%; right: 15%;
-      height: 6px;
-      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
-      z-index: 5;
-    }
-    .live-holo-socket::after {
-      content: '';
-      position: absolute;
-      bottom: -10px; left: 15%; right: 15%;
-      height: 6px;
-      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
-      z-index: 5;
     }
 
     .live-holo-socket img {
       width: 100%;
       height: 100%;
-      border-radius: 12px;
+      border-radius: 18px;
       object-fit: cover;
       background: #060c1d;
       display: block;
-      border: 2px solid var(--trace-active);
+      border: 1.5px solid var(--border-focus);
       position: relative;
       z-index: 1;
     }
 
-    /* Holographic Laser Scanner Laser Beam */
     .holo-laser-beam {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--neon-cyan), #ffffff, var(--neon-cyan), transparent);
-      box-shadow: 0 0 20px var(--neon-cyan), 0 0 35px var(--neon-cyan);
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), #ffffff, var(--accent-cyan), transparent);
+      box-shadow: 0 0 15px var(--accent-cyan);
       z-index: 3;
       animation: laserScan 3.5s ease-in-out infinite alternate;
       pointer-events: none;
     }
 
     @keyframes laserScan {
-      0% { top: 4%; opacity: 0.4; }
+      0% { top: 4%; opacity: 0.3; }
       50% { opacity: 1; }
-      100% { top: 94%; opacity: 0.4; }
+      100% { top: 94%; opacity: 0.3; }
     }
 
-    /* Live HUD Radar Reticle Orbiting Ring */
-    .hud-radar-ring {
-      position: absolute;
-      top: -6px; left: -6px;
-      width: calc(100% + 12px);
-      height: calc(100% + 12px);
-      border-radius: 24px;
-      border: 2px dashed rgba(0, 240, 255, 0.45);
-      animation: rotateRing 24s linear infinite;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    @keyframes rotateRing {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Live System Telemetry Badge */
     .live-status-hud {
       position: absolute;
       bottom: 18px;
       right: 18px;
       background: rgba(3, 7, 18, 0.9);
-      border: 1px solid var(--logic-emerald);
-      padding: 4px 10px;
-      border-radius: 6px;
+      border: 1px solid var(--accent-emerald);
+      padding: 4px 12px;
+      border-radius: 999px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      color: var(--logic-emerald);
+      color: var(--accent-emerald);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -458,7 +403,7 @@
       box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
     }
 
-    /* Sections */
+    /* Section Styling */
     section {
       padding: 6.5rem 8%;
       position: relative;
@@ -469,28 +414,17 @@
       margin-bottom: 3.8rem;
     }
 
-    .section-module-tag {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--logic-emerald);
-      font-size: 0.78rem;
-      letter-spacing: 2px;
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
     .section-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.3rem;
       font-weight: 800;
       color: #ffffff;
-      letter-spacing: 0.5px;
+      letter-spacing: -0.5px;
     }
 
-    /* Scroll-Triggered Reveal Effect Base Styles */
     .reveal-on-scroll {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(35px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -499,46 +433,37 @@
       transform: translateY(0);
     }
 
-    /* Semiconductor Module Architecture Card */
-    .chip-module-card {
-      background: var(--pcb-panel);
-      border: 1px solid var(--trace-line);
-      border-radius: 16px;
-      padding: 2.4rem;
+    .pro-glass-card {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.5rem;
       backdrop-filter: blur(20px);
       position: relative;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+      transition: all 0.35s ease;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     }
 
-    .chip-module-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 25px;
-      width: 45px; height: 3px;
-      background: linear-gradient(90deg, var(--bus-gold), var(--neon-cyan));
-      box-shadow: 0 0 12px var(--cyan-glow);
-    }
-
-    .chip-module-card:hover {
-      border-color: var(--trace-active);
-      background: var(--pcb-hover);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
+    .pro-glass-card:hover {
+      border-color: var(--border-focus);
+      background: var(--panel-hover);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 255, 0.15);
     }
 
     .about-sub-card {
-      background: rgba(3, 8, 20, 0.7);
-      border: 1px solid var(--trace-line);
-      border-radius: 12px;
+      background: rgba(3, 8, 20, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
       padding: 1.5rem;
       margin-top: 1.5rem;
     }
 
     .about-sub-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1rem;
-      color: var(--neon-cyan);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -554,11 +479,10 @@
 
     .system-badge {
       background: rgba(0, 240, 255, 0.04);
-      border: 1px solid var(--trace-line);
+      border: 1px solid var(--border-subtle);
       padding: 0.65rem 1rem;
-      border-radius: 8px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
       color: #e2e8f0;
       display: flex;
       align-items: center;
@@ -566,7 +490,7 @@
     }
 
     .system-badge i {
-      color: var(--neon-cyan);
+      color: var(--accent-cyan);
     }
 
     .metrics-grid {
@@ -575,112 +499,106 @@
       gap: 1.5rem;
       margin-top: 2.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--trace-line);
+      border-top: 1px solid var(--border-subtle);
     }
 
     .metric-box h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.1rem;
       font-weight: 800;
-      color: var(--neon-cyan);
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+      color: var(--accent-cyan);
     }
 
     .metric-box p {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--text-dim);
-      letter-spacing: 1px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
     }
 
-    /* Enhanced Smart Experience Circuit Architecture */
-    .timeline {
-      position: relative;
+    /* Executive Professional Work Experience Timeline */
+    .experience-container {
       max-width: 1050px;
       margin: 0 auto;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 20px; top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--neon-cyan), var(--wafer-purple), var(--bus-gold), transparent);
-      box-shadow: 0 0 12px var(--neon-cyan);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 65px;
-      margin-bottom: 3.2rem;
-    }
-
-    .timeline-node {
-      position: absolute;
-      left: 6px; top: 0;
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      background: #020617;
-      border: 2px solid var(--neon-cyan);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--neon-cyan);
-      font-size: 0.9rem;
-      box-shadow: 0 0 15px var(--neon-cyan);
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .job-top-row {
+    .exp-pro-card {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.2rem 2.5rem;
+      backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .exp-pro-card:hover {
+      border-color: var(--border-focus);
+      background: var(--panel-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.12);
+    }
+
+    .exp-card-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .job-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
+    .role-company-group h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: #ffffff;
-      letter-spacing: 0.3px;
+      margin-bottom: 0.3rem;
     }
 
     .company-title {
-      color: var(--neon-cyan);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      font-size: 0.98rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .job-duration {
+    .job-duration-badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--logic-emerald);
+      color: var(--accent-emerald);
       background: rgba(16, 185, 129, 0.1);
       border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 4px 12px;
-      border-radius: 6px;
+      padding: 5px 14px;
+      border-radius: 999px;
       font-weight: 600;
     }
 
     .project-tags-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin: 0.8rem 0 1.2rem;
+      gap: 8px;
+      margin-bottom: 1.2rem;
     }
 
     .pro-badge {
-      background: rgba(251, 191, 36, 0.08);
-      border: 1px solid rgba(251, 191, 36, 0.25);
-      color: var(--bus-gold);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: var(--accent-gold);
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 6px;
       font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .job-bullets {
@@ -692,18 +610,18 @@
 
     .job-bullets li {
       position: relative;
-      padding-left: 22px;
-      font-size: 0.94rem;
+      padding-left: 20px;
+      font-size: 0.95rem;
       color: #cbd5e1;
       line-height: 1.65;
     }
 
     .job-bullets li::before {
-      content: '◆';
+      content: '▹';
       position: absolute;
       left: 0;
-      color: var(--neon-cyan);
-      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-size: 1rem;
     }
 
     /* Skills Grid */
@@ -716,22 +634,21 @@
     }
 
     .filter-btn {
-      padding: 0.55rem 1.4rem;
+      padding: 0.6rem 1.4rem;
       background: rgba(0, 240, 255, 0.04);
-      border: 1px solid var(--trace-line);
-      border-radius: 8px;
-      color: var(--text-dim);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.25s ease;
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--neon-cyan);
+      background: var(--accent-cyan);
       color: #020617;
-      box-shadow: 0 0 25px var(--neon-cyan);
-      font-weight: 700;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
     }
 
     .skills-grid {
@@ -743,21 +660,19 @@
     }
 
     .skill-chip-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--neon-cyan);
+      border: 1.5px solid var(--accent-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--neon-cyan);
-      font-size: 1.4rem;
+      color: var(--accent-cyan);
+      font-size: 1.3rem;
       margin-bottom: 1.2rem;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
     }
 
-    /* Certifications Grid */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -771,16 +686,16 @@
       max-width: 950px;
       margin: 0 auto;
       background: #020617;
-      border: 1px solid var(--trace-active);
-      border-radius: 16px;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.25);
+      border: 1px solid var(--border-focus);
+      border-radius: 20px;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
       overflow: hidden;
     }
 
     .terminal-topbar {
       background: rgba(6, 14, 30, 0.95);
       padding: 0.75rem 1.2rem;
-      border-bottom: 1px solid var(--trace-line);
+      border-bottom: 1px solid var(--border-subtle);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -802,21 +717,19 @@
     .form-input-tech {
       width: 100%;
       background: rgba(0, 240, 255, 0.03);
-      border: 1px solid var(--trace-line);
-      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
       padding: 0.85rem 1rem;
-      color: var(--neon-cyan);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
+      color: #ffffff;
+      font-size: 0.92rem;
       outline: none;
       transition: 0.3s;
       margin-top: 0.35rem;
     }
 
     .form-input-tech:focus {
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
-      background: rgba(0, 240, 255, 0.08);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
     }
 
     /* Modal */
@@ -840,12 +753,12 @@
 
     .modal-hud {
       background: #070d1e;
-      border: 2px solid var(--neon-cyan);
-      border-radius: 16px;
+      border: 1px solid var(--accent-cyan);
+      border-radius: 20px;
       padding: 2.4rem;
       max-width: 650px;
       width: 100%;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.35);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.3);
       position: relative;
     }
 
@@ -853,7 +766,7 @@
       position: absolute;
       top: 1.2rem; right: 1.2rem;
       background: none; border: none;
-      color: var(--neon-cyan);
+      color: var(--text-muted);
       font-size: 1.3rem;
       cursor: pointer;
     }
@@ -861,10 +774,9 @@
     footer {
       text-align: center;
       padding: 2.5rem 8%;
-      border-top: 1px solid var(--trace-line);
-      color: var(--text-dim);
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
       font-size: 0.85rem;
-      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Mobile Overrides */
@@ -876,8 +788,8 @@
         left: 0;
         width: 100%;
         background: rgba(6, 12, 26, 0.98);
-        border: 1px solid var(--trace-line);
-        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
         flex-direction: column;
         padding: 1.2rem;
         gap: 0.5rem;
@@ -899,26 +811,24 @@
         text-align: center;
         padding-top: 7.5rem;
       }
-      .hero-content h1 { font-size: 2.3rem; }
+      .hero-content h1 { font-size: 2.4rem; }
       .btn-group { justify-content: center; }
       .terminal-body { grid-template-columns: 1fr; }
-      .timeline-item { padding-left: 45px; }
-      .timeline::before { left: 14px; }
-      .timeline-node { left: 0; }
+      .exp-pro-card { padding: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Interactive Semiconductor Silicon Node Canvas -->
+  <!-- Interactive Silicon Node Canvas -->
   <canvas id="interactive-canvas"></canvas>
 
-  <!-- Floating Microchip Navigation -->
+  <!-- Floating Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
         <div class="chip-die-icon">
-          <i class="fa-solid fa-microchip"></i>
+          <i class="fa-solid fa-shield-halved"></i>
         </div>
         <div>
           <span class="brand-title">MEHEDI HASSAN</span><br>
@@ -954,7 +864,7 @@
 
         <li class="nav-item"><a href="#trainings" class="nav-link" onclick="closeNav()">Certifications</a></li>
         <li class="nav-item"><a href="#education" class="nav-link" onclick="closeNav()">Education</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeNav()">Interface</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeNav()">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -999,7 +909,6 @@
     <!-- Live Cyber Hologram Socket with Laser Scan & Telemetry -->
     <div class="hero-visual">
       <div class="live-holo-socket">
-        <div class="hud-radar-ring"></div>
         <div class="holo-laser-beam"></div>
         <img src="profile.jpg" alt="Md. Mehedi Hassan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
         <div class="live-status-hud">
@@ -1009,13 +918,12 @@
     </div>
   </header>
 
-  <!-- Executive Overview (Scroll-Animated) -->
+  <!-- Executive Overview -->
   <section id="about" class="reveal-on-scroll">
     <div class="section-header">
-      <span class="section-module-tag">MODULE // 01</span>
       <h2 class="section-title">ABOUT ME</h2>
     </div>
-    <div class="chip-module-card" style="max-width: 1050px; margin: 0 auto;">
+    <div class="pro-glass-card" style="max-width: 1050px; margin: 0 auto;">
       
       <p style="font-size: 1.06rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
         I am a <strong>Security & Administration professional</strong> specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution.
@@ -1028,7 +936,7 @@
       <!-- Integrated Security Systems Breakdown -->
       <div class="about-sub-card">
         <div class="about-sub-title"><i class="fa-solid fa-network-wired"></i> Core Implementation & Integrated Systems Expertise:</div>
-        <p style="font-size: 0.95rem; color: var(--text-dim); margin-bottom: 0.8rem;">
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem;">
           A significant part of my expertise is in the planning, coordination, execution, and operational implementation of integrated security systems:
         </p>
         <div class="system-badge-grid">
@@ -1056,7 +964,7 @@
       </p>
 
       <!-- Vision Block -->
-      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--neon-cyan); padding: 1.2rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--accent-cyan); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
         <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
           "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
         </p>
@@ -1088,133 +996,115 @@
     </div>
   </section>
 
-  <!-- Work Experience Timeline (Super Smart & Scroll Animated) -->
+  <!-- Work Experience Section (Professional & Clean Layout) -->
   <section id="experience">
     <div class="section-header reveal-on-scroll">
-      <span class="section-module-tag">MODULE // 02</span>
-      <h2 class="section-title">CAREER TRAJECTORY</h2>
+      <h2 class="section-title">WORK EXPERIENCE</h2>
     </div>
 
-    <div class="timeline">
+    <div class="experience-container">
 
       <!-- Ulkasemi -->
-      <div class="timeline-item reveal-on-scroll">
-        <div class="timeline-node"><i class="fa-solid fa-microchip"></i></div>
-        <div class="chip-module-card">
-          <div class="job-top-row">
-            <div>
-              <h3 class="job-title">Executive (Security & Administration)</h3>
-              <div class="company-title">Ulkasemi Pvt. Ltd.</div>
-            </div>
-            <span class="job-duration">JUNE 2026 – PRESENT [cite: 4, 5, 6]</span>
+      <div class="exp-pro-card reveal-on-scroll">
+        <div class="exp-card-header">
+          <div class="role-company-group">
+            <h3>Executive (Security & Administration)</h3>
+            <div class="company-title"><i class="fa-solid fa-building"></i> Ulkasemi Pvt. Ltd.</div>
           </div>
-
-          <!-- Project & Scope Badges -->
-          <div class="project-tags-row">
-            <span class="pro-badge"><i class="fa-solid fa-building-user"></i> Semiconductor Corporate HQ</span>
-            <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Suprema BioStar 2</span>
-            <span class="pro-badge"><i class="fa-solid fa-shield-virus"></i> Safety & SOP Compliance</span>
-          </div>
-
-          <ul class="job-bullets">
-            <li>Directing end-to-end security operations, administrative governance, and workplace safety compliance for high-tech semiconductor corporate offices.</li>
-            <li>Supervising deployed security workforce, formulating duty rosters, post allocation, and emergency incident response mechanisms.</li>
-            <li>Monitoring centralized CCTV matrices, BioStar biometric access systems, visitor databases, and server room access policies.</li>
-            <li>Developing corporate safety SOPs, crisis evacuation blueprints, risk assessment logs, and vendor SLA performance audits.</li>
-          </ul>
+          <span class="job-duration-badge">JUNE 2026 – PRESENT </span>
         </div>
+
+        <div class="project-tags-row">
+          <span class="pro-badge"><i class="fa-solid fa-building-user"></i> Semiconductor Corporate HQ</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Suprema BioStar 2</span>
+          <span class="pro-badge"><i class="fa-solid fa-shield-virus"></i> Safety & SOP Compliance</span>
+        </div>
+
+        <ul class="job-bullets">
+          <li>Directing end-to-end security operations, administrative governance, and workplace safety compliance for high-tech semiconductor corporate offices.</li>
+          <li>Supervising deployed security workforce, formulating duty rosters, post allocation, and emergency incident response mechanisms.</li>
+          <li>Monitoring centralized CCTV matrices, BioStar biometric access systems, visitor databases, and server room access policies.</li>
+          <li>Developing corporate safety SOPs, crisis evacuation blueprints, risk assessment logs, and vendor SLA performance audits.</li>
+        </ul>
       </div>
 
       <!-- United Group -->
-      <div class="timeline-item reveal-on-scroll">
-        <div class="timeline-node"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="chip-module-card">
-          <div class="job-top-row">
-            <div>
-              <h3 class="job-title">Executive (Safety & Security)</h3>
-              <div class="company-title">United Group (UGSSL)</div>
-            </div>
-            <span class="job-duration">FEB 2024 – JUNE 2026 [cite: 4, 5, 6]</span>
+      <div class="exp-pro-card reveal-on-scroll">
+        <div class="exp-card-header">
+          <div class="role-company-group">
+            <h3>Executive (Safety & Security)</h3>
+            <div class="company-title"><i class="fa-solid fa-shield-halved"></i> United Group (UGSSL)</div>
           </div>
-
-          <!-- Project & Scope Badges -->
-          <div class="project-tags-row">
-            <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental Dhaka</span>
-            <span class="pro-badge"><i class="fa-solid fa-hotel"></i> Crowne Plaza Dhaka</span>
-            <span class="pro-badge"><i class="fa-solid fa-cart-shopping"></i> Unimart Airport</span>
-            <span class="pro-badge"><i class="fa-solid fa-car"></i> ANPR & Barrier Control</span>
-          </div>
-
-          <ul class="job-bullets">
-            <li>Spearheaded integrated physical security, command center monitoring, and safety operations across 5-star international hotels (InterContinental Dhaka, Crowne Plaza Dhaka), convention centres, and Unimart Airport retail operations.</li>
-            <li>Managed central CCTV control monitoring rooms, automated barrier gates, ANPR, and RFID access points.</li>
-            <li>Conducted routine site audits, threat assessments, risk mitigation strategies, and forensic investigations.</li>
-            <li>Supervised maintenance contracts, troubleshooting, and vendor SLA compliance for electronic surveillance systems.</li>
-          </ul>
+          <span class="job-duration-badge">FEB 2024 – JUNE 2026 </span>
         </div>
+
+        <div class="project-tags-row">
+          <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental Dhaka</span>
+          <span class="pro-badge"><i class="fa-solid fa-hotel"></i> Crowne Plaza Dhaka</span>
+          <span class="pro-badge"><i class="fa-solid fa-cart-shopping"></i> Unimart Airport</span>
+          <span class="pro-badge"><i class="fa-solid fa-car"></i> ANPR & Barrier Control</span>
+        </div>
+
+        <ul class="job-bullets">
+          <li>Spearheaded integrated physical security, command center monitoring, and safety operations across 5-star international hotels (InterContinental Dhaka, Crowne Plaza Dhaka), convention centres, and Unimart Airport retail operations.</li>
+          <li>Managed central CCTV control monitoring rooms, automated barrier gates, ANPR, and RFID access points.</li>
+          <li>Conducted routine site audits, threat assessments, risk mitigation strategies, and forensic investigations.</li>
+          <li>Supervised maintenance contracts, troubleshooting, and vendor SLA compliance for electronic surveillance systems.</li>
+        </ul>
       </div>
 
       <!-- D-Net Service -->
-      <div class="timeline-item reveal-on-scroll">
-        <div class="timeline-node"><i class="fa-solid fa-headset"></i></div>
-        <div class="chip-module-card">
-          <div class="job-top-row">
-            <div>
-              <h3 class="job-title">Customer Support & Security Consultant</h3>
-              <div class="company-title">D-Net Service</div>
-            </div>
-            <span class="job-duration">DEC 2022 – MAR 2023 [cite: 4, 5, 6]</span>
+      <div class="exp-pro-card reveal-on-scroll">
+        <div class="exp-card-header">
+          <div class="role-company-group">
+            <h3>Customer Support & Security Consultant</h3>
+            <div class="company-title"><i class="fa-solid fa-headset"></i> D-Net Service</div>
           </div>
-
-          <!-- Project & Scope Badges -->
-          <div class="project-tags-row">
-            <span class="pro-badge"><i class="fa-solid fa-building-columns"></i> BRAC Bank Enterprise Liaison</span>
-            <span class="pro-badge"><i class="fa-solid fa-network-wired"></i> Infrastructure Protection</span>
-          </div>
-
-          <ul class="job-bullets">
-            <li>Delivered high-responsiveness technical support for client escalations with rapid first-contact resolution benchmarks [cite: 4, 5, 6].</li>
-            <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans [cite: 4, 5, 6].</li>
-            <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank [cite: 4, 5, 6].</li>
-          </ul>
+          <span class="job-duration-badge">DEC 2022 – MAR 2023 [cite: 7]</span>
         </div>
+
+        <div class="project-tags-row">
+          <span class="pro-badge"><i class="fa-solid fa-building-columns"></i> BRAC Bank Enterprise Liaison</span>
+          <span class="pro-badge"><i class="fa-solid fa-network-wired"></i> Infrastructure Protection</span>
+        </div>
+
+        <ul class="job-bullets">
+          <li>Delivered high-responsiveness technical support for client escalations with rapid first-contact resolution benchmarks [cite: 7].</li>
+          <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans [cite: 7].</li>
+          <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank [cite: 7].</li>
+        </ul>
       </div>
 
       <!-- Royal Green -->
-      <div class="timeline-item reveal-on-scroll">
-        <div class="timeline-node"><i class="fa-solid fa-server"></i></div>
-        <div class="chip-module-card">
-          <div class="job-top-row">
-            <div>
-              <h3 class="job-title">Sr. Executive (Network Operation Centre - NOC)</h3>
-              <div class="company-title">Royal Green Ltd. (PacENet)</div>
-            </div>
-            <span class="job-duration">NOV 2020 – NOV 2022 [cite: 4, 5, 6]</span>
+      <div class="exp-pro-card reveal-on-scroll">
+        <div class="exp-card-header">
+          <div class="role-company-group">
+            <h3>Sr. Executive (Network Operation Centre - NOC)</h3>
+            <div class="company-title"><i class="fa-solid fa-server"></i> Royal Green Ltd. (PacENet)</div>
           </div>
-
-          <!-- Project & Scope Badges -->
-          <div class="project-tags-row">
-            <span class="pro-badge"><i class="fa-solid fa-database"></i> Tier-3 NOC Core Operations</span>
-            <span class="pro-badge"><i class="fa-solid fa-shield-halved"></i> Firewall & Disaster Recovery</span>
-            <span class="pro-badge"><i class="fa-solid fa-users"></i> 7-Engineer Team Lead</span>
-          </div>
-
-          <ul class="job-bullets">
-            <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% uptime [cite: 4, 5, 6].</li>
-            <li>Led a 7-engineer NOC operations team, reducing incident response latency by 50% [cite: 4, 5, 6].</li>
-            <li>Managed data center environments, MikroTik routing switches, firewall security rules, and disaster recovery plans [cite: 4, 5, 6].</li>
-            <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions [cite: 4, 5, 6].</li>
-          </ul>
+          <span class="job-duration-badge">NOV 2020 – NOV 2022 [cite: 7]</span>
         </div>
+
+        <div class="project-tags-row">
+          <span class="pro-badge"><i class="fa-solid fa-database"></i> Tier-3 NOC Core Operations</span>
+          <span class="pro-badge"><i class="fa-solid fa-shield-halved"></i> Firewall & Disaster Recovery</span>
+          <span class="pro-badge"><i class="fa-solid fa-users"></i> 7-Engineer Team Lead</span>
+        </div>
+
+        <ul class="job-bullets">
+          <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% uptime [cite: 7].</li>
+          <li>Led a 7-engineer NOC operations team, reducing incident response latency by 50% [cite: 7].</li>
+          <li>Managed data center environments, MikroTik routing switches, firewall security rules, and disaster recovery plans [cite: 7].</li>
+          <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions [cite: 7].</li>
+        </ul>
       </div>
 
     </div>
   </section>
 
-  <!-- Core Expertise Matrix (Scroll-Animated) -->
+  <!-- Core Expertise Matrix -->
   <section id="skills" class="reveal-on-scroll">
     <div class="section-header">
-      <span class="section-module-tag">MODULE // 03</span>
       <h2 class="section-title">CORE EXPERTISE</h2>
     </div>
 
@@ -1227,116 +1117,113 @@
     </div>
 
     <div class="skills-grid">
-      <div class="chip-module-card" data-cat="aviation">
+      <div class="pro-glass-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="surveillance">
+      <div class="pro-glass-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="surveillance">
+      <div class="pro-glass-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="risk">
+      <div class="pro-glass-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="leadership">
+      <div class="pro-glass-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="leadership">
+      <div class="pro-glass-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
-        <p style="font-size:0.92rem; color:var(--text-dim);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
       </div>
     </div>
   </section>
 
-  <!-- Certifications (Scroll-Animated) -->
+  <!-- Certifications -->
   <section id="trainings" class="reveal-on-scroll">
     <div class="section-header">
-      <span class="section-module-tag">MODULE // 04</span>
       <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
     </div>
     <div class="cert-grid">
-      <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
+      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem;">Airport Security Manager (ASM)</h4>
-          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026) [cite: 4, 5, 6]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026) [cite: 7]</p>
         </div>
       </div>
 
-      <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
+      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4, 5, 6]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 7]</p>
         </div>
       </div>
 
-      <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
+      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem;">ASP.NET Core MVC Web Applications</h4>
-          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4, 5, 6]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">ASP.NET Core MVC Web Applications</h4>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 7]</p>
         </div>
       </div>
 
-      <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
+      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--accent-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem;">Community Civil Defense Training</h4>
-          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence [cite: 4, 5, 6]</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
+          <p style="color:var(--accent-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence [cite: 7]</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education Section (Scroll-Animated) -->
+  <!-- Education Section -->
   <section id="education" class="reveal-on-scroll">
     <div class="section-header">
-      <span class="section-module-tag">MODULE // 05</span>
       <h2 class="section-title">ACADEMIC BACKGROUND</h2>
     </div>
     <div class="skills-grid" style="max-width:950px;">
-      <div class="chip-module-card">
-        <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">B.Sc in Physics (2022) [cite: 4, 5, 6]</h3>
-        <p style="color:var(--text-dim); font-size:0.88rem;">Gopalganj Science and Technology University (GSTU)</p>
-        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 4, 5, 6]</p>
+      <div class="pro-glass-card">
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022) [cite: 7]</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Gopalganj Science and Technology University (GSTU)</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 7]</p>
       </div>
 
-      <div class="chip-module-card">
-        <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">Higher Secondary Certificate (2017) [cite: 4, 5, 6]</h3>
-        <p style="color:var(--text-dim); font-size:0.88rem;">Motijheel Govt. Boys College (Science) [cite: 4, 5, 6]</p>
-        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 4, 5, 6]</p>
+      <div class="pro-glass-card">
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017) [cite: 7]</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science) [cite: 7]</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 7]</p>
       </div>
 
-      <div class="chip-module-card">
-        <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">Secondary School Certificate (2015) [cite: 4, 5, 6]</h3>
-        <p style="color:var(--text-dim); font-size:0.88rem;">Shahjahanpur Railway Govt. High School [cite: 4, 5, 6]</p>
-        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden) [cite: 4, 5, 6]</p>
+      <div class="pro-glass-card">
+        <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015) [cite: 7]</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School [cite: 7]</p>
+        <p style="color:var(--accent-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden) [cite: 7]</p>
       </div>
     </div>
   </section>
 
-  <!-- Interface / Contact Section (Scroll-Animated) -->
+  <!-- Interface / Contact Section -->
   <section id="contact" class="reveal-on-scroll">
     <div class="section-header">
-      <span class="section-module-tag">MODULE // 06</span>
       <h2 class="section-title">CONNECT INTERFACE</h2>
     </div>
 
@@ -1347,29 +1234,29 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--neon-cyan); font-size:0.8rem;">root@mehedi-security:~$ [cite: 4, 5, 6]</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--accent-cyan); font-size:0.8rem;">root@mehedi-security:~$ [cite: 7]</div>
         <div></div>
       </div>
 
       <div class="terminal-body">
         <div>
-          <h3 style="font-family:'Orbitron'; font-size:1.2rem; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT [cite: 4, 5, 6]</h3>
-          <p style="font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--text-dim); margin-bottom:1.5rem;">
-            Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations [cite: 4, 5, 6].
+          <h3 style="font-family:'Space Grotesk'; font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT [cite: 7]</h3>
+          <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:1.5rem;">
+            Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations [cite: 7].
           </p>
 
-          <div style="display:flex; flex-direction:column; gap:1rem; font-family:'JetBrains Mono'; font-size:0.88rem;">
+          <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.92rem;">
             <div>
-              <span style="color:var(--text-dim);">LOCATION: [cite: 4, 5, 6]</span><br>
-              <span style="color:var(--neon-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh [cite: 4, 5, 6]</span>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">LOCATION: [cite: 7]</span>
+              <span style="color:var(--accent-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh [cite: 7]</span>
             </div>
             <div>
-              <span style="color:var(--text-dim);">PHONE: [cite: 4, 5, 6]</span><br>
-              <a href="tel:+8801680450882" style="color:var(--logic-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882 [cite: 4, 5, 6]</a>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">PHONE: [cite: 7]</span>
+              <a href="tel:+8801680450882" style="color:var(--accent-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882 [cite: 7]</a>
             </div>
             <div>
-              <span style="color:var(--text-dim);">EMAIL: [cite: 4, 5, 6]</span><br>
-              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--neon-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com [cite: 4, 5, 6]</a>
+              <span style="color:var(--text-muted); font-size:0.8rem; display:block;">EMAIL: [cite: 7]</span>
+              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--accent-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com [cite: 7]</a>
             </div>
           </div>
 
@@ -1381,19 +1268,19 @@
 
         <form onsubmit="handleCyberSubmit(event)">
           <div>
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">SENDER IDENTIFIER * [cite: 4, 5, 6]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">SENDER IDENTIFIER * [cite: 7]</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">RETURN CONTACT (EMAIL/PHONE) * [cite: 4, 5, 6]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) * [cite: 7]</label>
             <input type="text" id="contactInp" class="form-input-tech" placeholder="name@company.com or phone" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">MESSAGE * [cite: 4, 5, 6]</label>
+            <label style="font-size:0.82rem; color:var(--accent-cyan); font-weight:600;">MESSAGE * [cite: 7]</label>
             <textarea id="msgInp" class="form-input-tech" rows="4" placeholder="Write your project details or inquiry..." required></textarea>
           </div>
           <button type="submit" class="chip-btn chip-btn-primary" style="width:100%; margin-top:1.5rem; justify-content:center;">
-            <i class="fa-solid fa-paper-plane"></i> TRANSMIT VIA EMAIL [cite: 4, 5, 6]
+            <i class="fa-solid fa-paper-plane"></i> TRANSMIT VIA EMAIL [cite: 7]
           </button>
         </form>
       </div>
@@ -1404,41 +1291,41 @@
   <div class="modal-overlay" id="refModal">
     <div class="modal-hud">
       <button class="modal-close-btn" onclick="closeModal('refModal')"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-family:'Orbitron'; color:var(--neon-cyan); font-size:1.3rem; margin-bottom:0.4rem;">
-        <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES [cite: 4, 5, 6]
+      <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--accent-cyan); font-size:1.3rem; margin-bottom:0.4rem;">
+        <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES [cite: 7]
       </h3>
-      <p style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--text-dim); margin-bottom:1.5rem;">
-        Defense & executive leadership verification records [cite: 4, 5, 6].
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Defense & executive leadership verification records [cite: 7].
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
-        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
-          <h4 style="color:#fff; font-size:1.05rem;">Air Commodore Md Salamot Ullah (Retd) [cite: 4, 5, 6]</h4>
-          <p style="color:var(--neon-cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">Executive Director [cite: 4, 5, 6]</p>
-          <p style="color:var(--text-dim); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4, 5, 6]</p>
-          <p style="color:var(--logic-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121 [cite: 4, 5, 6]</p>
+        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd) [cite: 7]</h4>
+          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">Executive Director [cite: 7]</p>
+          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121 [cite: 7]</p>
         </div>
 
-        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
-          <h4 style="color:#fff; font-size:1.05rem;">Wing Commander Joarder Sirajul Islam [cite: 4, 5, 6]</h4>
-          <p style="color:var(--neon-cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">DGM (Admin & Security) [cite: 4, 5, 6]</p>
-          <p style="color:var(--text-dim); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4, 5, 6]</p>
-          <p style="color:var(--logic-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495 [cite: 4, 5, 6]</p>
+        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam [cite: 7]</h4>
+          <p style="color:var(--accent-cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security) [cite: 7]</p>
+          <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 7]</p>
+          <p style="color:var(--accent-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495 [cite: 7]</p>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST [cite: 4, 5, 6]</p>
+    <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST [cite: 7]</p>
   </footer>
 
   <!-- Interactive Silicon Canvas + Scroll Reveal Observer JS -->
   <script>
-    // 1. Intersection Observer for Scroll-triggered View Animations
+    // 1. Intersection Observer for Scroll Animations
     const observerOptions = {
       threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -40px 0px"
     };
 
     const scrollObserver = new IntersectionObserver((entries, observer) => {
@@ -1489,7 +1376,7 @@
     });
 
     const particles = [];
-    const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 10000), 95);
+    const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 10000), 90);
 
     class Particle {
       constructor() {
@@ -1586,7 +1473,7 @@
     }
     animateInteractiveCanvas();
 
-    // 3. UI Filters & Handlers
+    // 3. UI Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
@@ -1600,7 +1487,7 @@
         btnElement.classList.add('active');
       }
 
-      const cards = document.querySelectorAll('.skills-grid .chip-module-card');
+      const cards = document.querySelectorAll('.skills-grid .pro-glass-card');
       cards.forEach(card => {
         const cat = card.getAttribute('data-cat');
         if(!cat || category === 'all' || cat === category) {
@@ -1627,3 +1514,9 @@
 
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(pro_executive_code)
+
+print("Generated super clean, executive-level index.html with professional cards.")
