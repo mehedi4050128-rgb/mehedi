@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md. Mehedi Hassan | Technical Security & Aviation Specialist</title>
+  <title>Md. Mehedi Hassan | Security & Administration Specialist</title>
   <!-- Google Fonts & Font Awesome 6.5.1 -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -264,7 +264,7 @@
 
     .hero-content h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.4rem;
+      font-size: 3.2rem;
       font-weight: 900;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -280,14 +280,15 @@
 
     .sub-tech-tag {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--emerald);
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.5rem;
       font-weight: 600;
+      line-height: 1.5;
     }
 
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-muted);
       max-width: 620px;
       margin-bottom: 2.2rem;
@@ -441,6 +442,49 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
     }
 
+    /* About Section Detailed Sub-sections */
+    .about-sub-card {
+      background: rgba(2, 6, 23, 0.6);
+      border: 1px solid var(--border-wire);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .about-sub-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .system-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .system-badge {
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px solid var(--border-wire);
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .system-badge i {
+      color: var(--cyan);
+    }
+
     /* Core Metrics Dashboard in About */
     .metrics-grid {
       display: grid;
@@ -561,7 +605,7 @@
       font-size: 0.75rem;
     }
 
-    /* Skills Grid */
+    /* Core Expertise Matrix Grid */
     .filter-tabs {
       display: flex;
       justify-content: center;
@@ -773,11 +817,11 @@
     <nav>
       <a href="#home" class="brand-logo">
         <div class="chip-core-icon">
-          <i class="fa-solid fa-microchip"></i>
+          <i class="fa-solid fa-shield-halved"></i>
         </div>
         <div>
           <span class="brand-title">MEHEDI HASSAN</span><br>
-          <span class="brand-sub">SECURITY & TECH SPECIALIST</span>
+          <span class="brand-sub">SECURITY & ADMINISTRATION SPECIALIST</span>
         </div>
       </a>
 
@@ -785,7 +829,7 @@
 
       <ul class="nav-links" id="mobileNav">
         <li class="nav-item"><a href="#home" class="nav-link" onclick="closeNav()">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link" onclick="closeNav()">Overview</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link" onclick="closeNav()">About Me</a></li>
         
         <li class="nav-item">
           <a class="nav-link">Experience <i class="fa-solid fa-chevron-down"></i></a>
@@ -798,12 +842,12 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link">Skills <i class="fa-solid fa-chevron-down"></i></a>
+          <a class="nav-link">Expertise <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('aviation'); closeNav();">Aviation & Defense</a></li>
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('surveillance'); closeNav();">Surveillance Matrix</a></li>
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('access'); closeNav();">BioStar 2 & Biometrics</a></li>
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('networking'); closeNav();">IP & NOC Architecture</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('aviation'); closeNav();">Aviation & Corporate Security</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('surveillance'); closeNav();">CCTV & Access Control</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('risk'); closeNav();">Risk Management & Tech</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('leadership'); closeNav();">Security Leadership & NOC</a></li>
           </ul>
         </li>
 
@@ -818,12 +862,12 @@
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="chip-status-tag">
-        <span class="pulse-core"></span> HCSA CERTIFIED | CAAB AVIATION SPECIALIST
+        <span class="pulse-core"></span> AIRPORT SECURITY MANAGER (ASM) | HCSA CERTIFIED
       </div>
-      <h1>SECURING MODERN <br><span class="chip-gradient">TECH INFRASTRUCTURE</span></h1>
-      <div class="sub-tech-tag">&gt; IT & AVIATION SECURITY SPECIALIST_</div>
+      <h1>SECURITY & <br><span class="chip-gradient">ADMINISTRATION</span></h1>
+      <div class="sub-tech-tag">&gt; Corporate & Aviation Security | Advanced Surveillance & Strategic Operations_</div>
       <p class="hero-desc">
-        Specializing in mission-critical CCTV surveillance command centers, biometric access control architectures (BioStar 2), aviation security risk management, and enterprise high-availability NOC network infrastructure .
+        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution across high-profile environments.
       </p>
       <div class="btn-group">
         <a href="./cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="chip-btn chip-btn-primary">
@@ -841,41 +885,86 @@
     </div>
   </header>
 
-  <!-- Executive Overview (Enhanced & Strong Content) -->
+  <!-- Executive Overview (Your Complete & Powerful About Me Statement) -->
   <section id="about">
     <div class="section-header">
       <span class="section-module-tag">MODULE // 01</span>
-      <h2 class="section-title">EXECUTIVE PROFILE</h2>
+      <h2 class="section-title">ABOUT ME</h2>
     </div>
-    <div class="chip-module-card" style="max-width: 1000px; margin: 0 auto;">
-      <p style="font-size: 1.08rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
-        Accomplished <strong>Technical Security & Aviation Specialist</strong> with over 5 years of multidisciplinary expertise in orchestrating enterprise-grade physical security systems, biometric access architectures, and Tier-3 NOC network infrastructures. Demonstrates a verified record of managing physical defenses, central command centers, and safety administration across multinational semiconductor facilities, five-star luxury hotels, convention centers, and major shopping complexes .
+    <div class="chip-module-card" style="max-width: 1050px; margin: 0 auto;">
+      
+      <p style="font-size: 1.06rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+        I am a <strong>Security & Administration professional</strong> specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution.
       </p>
-      <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.85;">
-        Certified in <strong>Hikvision Certified Security Associate (HCSA)</strong> and trained by the <strong>Civil Aviation Authority of Bangladesh (CAAB)</strong> in Airport Security Management . Highly proficient in designing preventive security Standard Operating Procedures (SOPs), conducting comprehensive vulnerability assessments, managing multi-vendor technology lifecycles, and leading high-reliability technical support teams during mission-critical operations.
+
+      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+        My professional experience spans high-profile hospitality, commercial, retail, office, convention, and airport-related environments. I have worked across projects including <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>, gaining practical experience in both operational security and technology-driven security solutions.
       </p>
+
+      <!-- Integrated Security Systems Breakdown -->
+      <div class="about-sub-card">
+        <div class="about-sub-title"><i class="fa-solid fa-network-wired"></i> Core Implementation & Integrated Systems Expertise:</div>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+          A significant part of my expertise is in the planning, coordination, execution, and operational implementation of integrated security systems:
+        </p>
+        <div class="system-badge-grid">
+          <div class="system-badge"><i class="fa-solid fa-video"></i> Advanced CCTV & Surveillance</div>
+          <div class="system-badge"><i class="fa-solid fa-brain"></i> Intelligent Video Analytics</div>
+          <div class="system-badge"><i class="fa-solid fa-car-side"></i> ANPR & Advanced Monitoring</div>
+          <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> Access Control & Biometrics</div>
+          <div class="system-badge"><i class="fa-solid fa-square-parking"></i> Parking Management Systems</div>
+          <div class="system-badge"><i class="fa-solid fa-volume-high"></i> AV & Public Address (PA)</div>
+          <div class="system-badge"><i class="fa-solid fa-desktop"></i> Command Center Monitoring</div>
+          <div class="system-badge"><i class="fa-solid fa-shield-virus"></i> Loss Prevention & Inspection</div>
+        </div>
+      </div>
+
+      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-top: 1.5rem; margin-bottom: 1.2rem;">
+        My project and operational experience also includes <strong>Security Risk Assessment, Loss Prevention, Incident Management, Emergency Preparedness, Security Manpower Planning & Deployment, Security Inspection, SOP Implementation, Compliance Monitoring, Vendor Coordination, and Stakeholder Management</strong>.
+      </p>
+
+      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+        Working in international hospitality environments has strengthened my understanding of guest safety, employee protection, asset security, access management, emergency response, and business continuity while maintaining high security standards.
+      </p>
+
+      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
+        I have completed <strong>Airport Security Manager (ASM)</strong> training, strengthening my knowledge of aviation security principles, risk mitigation, access control, emergency preparedness, and operational security management.
+      </p>
+
+      <!-- Vision Block -->
+      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--cyan); padding: 1.2rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0;">
+        <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
+          "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
+        </p>
+      </div>
+
+      <p style="font-size: 1.02rem; color: #cbd5e1; line-height: 1.85;">
+        I am passionate about Security Management, Aviation & Hospitality Security, Advanced Surveillance Technology, Security Systems, and Strategic Security Operations, with a long-term goal of progressing into strategic security leadership.
+      </p>
+
+      <!-- Metrics Row -->
       <div class="metrics-grid">
         <div class="metric-box">
           <h3>5+ YRS</h3>
-          <p>TECHNICAL EXPERIENCE </p>
-        </div>
-        <div class="metric-box">
-          <h3>HCSA</h3>
-          <p>HIKVISION CERTIFIED [cite: 4]</p>
+          <p>TECHNICAL & ADMIN LEADERSHIP</p>
         </div>
         <div class="metric-box">
           <h3>ASM</h3>
-          <p>CAAB AVIATION SPEC [cite: 4]</p>
+          <p>CAAB AIRPORT SECURITY MGR</p>
+        </div>
+        <div class="metric-box">
+          <h3>HCSA</h3>
+          <p>HIKVISION CERTIFIED</p>
         </div>
         <div class="metric-box">
           <h3>B.Sc</h3>
-          <p>PHYSICS (CGPA 3.55) [cite: 4]</p>
+          <p>PHYSICS (CGPA 3.55)</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Work Experience Timeline (Enhanced & Professional Content) -->
+  <!-- Work Experience Timeline -->
   <section id="experience">
     <div class="section-header">
       <span class="section-module-tag">MODULE // 02</span>
@@ -893,14 +982,13 @@
               <h3 class="job-title">Executive (Security & Administration)</h3>
               <div class="company-title">Ulkasemi Pvt. Ltd.</div>
             </div>
-            <span class="job-duration">JUNE 2026 – PRESENT [cite: 4]</span>
+            <span class="job-duration">JUNE 2026 – PRESENT </span>
           </div>
           <ul class="job-bullets">
-            <li>Directed full-scope workplace physical security operations, administrative governance, and environmental safety protocols for high-tech corporate facilities [cite: 4].</li>
-            <li>Supervised deployed security personnel, structured 24/7 duty rosters, post assignments, and strategic threat mitigation measures [cite: 4].</li>
-            <li>Monitored centralized IP CCTV surveillance matrices, Suprema BioStar biometric access control, and automated visitor tracking systems [cite: 4].</li>
-            <li>Developed standard operating procedures (SOPs), crisis escalation protocols, incident investigation logs, and regulatory compliance audits.</li>
-            <li>Collaborated with leading hardware and network technology vendors to execute infrastructure maintenance, CCTV upgrades, and firmware optimizations [cite: 4].</li>
+            <li>Directing end-to-end security operations, administrative governance, and workplace safety compliance for high-tech semiconductor corporate offices.</li>
+            <li>Supervising deployed security workforce, formulating duty rosters, post allocation, and emergency incident response mechanisms.</li>
+            <li>Monitoring centralized CCTV matrices, BioStar biometric access systems, visitor databases, and server room access policies.</li>
+            <li>Developing corporate safety SOPs, crisis evacuation blueprints, risk assessment logs, and vendor SLA performance audits.</li>
           </ul>
         </div>
       </div>
@@ -917,11 +1005,10 @@
             <span class="job-duration">FEB 2024 – JUNE 2026 [cite: 4]</span>
           </div>
           <ul class="job-bullets">
-            <li>Spearheaded integrated physical safety and electronic surveillance operations across 5-star international hotels, large-scale convention centers, and prime shopping malls [cite: 4].</li>
-            <li>Oversaw continuous monitoring of centralized CCTV control rooms, automated security barrier gates, and RFID access points [cite: 4].</li>
-            <li>Managed third-party vendor relationships, maintenance SLA contracts, performance audits, and emergency system troubleshooting [cite: 4].</li>
-            <li>Conducted routine security inspections, vulnerability risk assessments, and forensic investigations for security incident management [cite: 4].</li>
-            <li>Maintained rigorous documentation including daily security logs, compliance checklists, and management reporting for executive reviews [cite: 4].</li>
+            <li>Spearheaded integrated physical security, command center monitoring, and safety operations across 5-star international hotels (InterContinental Dhaka, Crowne Plaza Dhaka), convention centres, and Unimart Airport retail operations.</li>
+            <li>Managed central CCTV control monitoring rooms, automated barrier gates, ANPR, and RFID access points.</li>
+            <li>Conducted routine site audits, threat assessments, risk mitigation strategies, and forensic investigations.</li>
+            <li>Supervised maintenance contracts, troubleshooting, and vendor SLA compliance for electronic surveillance systems.</li>
           </ul>
         </div>
       </div>
@@ -938,9 +1025,9 @@
             <span class="job-duration">DEC 2022 – MAR 2023 [cite: 4]</span>
           </div>
           <ul class="job-bullets">
-            <li>Delivered high-responsiveness technical support for inbound and outbound client service escalations, maintaining first-call resolution benchmarks [cite: 4].</li>
-            <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and recommending tailored protection architectures [cite: 4].</li>
-            <li>Managed direct operational communications with enterprise financial partners, including BRAC Bank, ensuring compliance and prompt ticket resolution [cite: 4].</li>
+            <li>Delivered high-responsiveness technical support for client escalations with rapid first-contact resolution benchmarks [cite: 4].</li>
+            <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans [cite: 4].</li>
+            <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank [cite: 4].</li>
           </ul>
         </div>
       </div>
@@ -957,10 +1044,10 @@
             <span class="job-duration">NOV 2020 – NOV 2022 [cite: 4]</span>
           </div>
           <ul class="job-bullets">
-            <li>Administered end-to-end IP network infrastructure for enterprise clients, maintaining 99.9% network availability and SLA compliance [cite: 4].</li>
-            <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50% [cite: 4].</li>
-            <li>Managed Data Centre environments, MikroTik routing switches, firewall security policies, bandwidth distribution, and disaster recovery architectures [cite: 4].</li>
-            <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions with an 88% first-contact resolution rate [cite: 4].</li>
+            <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% uptime [cite: 4].</li>
+            <li>Led a 7-engineer NOC operations team, reducing incident response latency by 50% [cite: 4].</li>
+            <li>Managed data center environments, MikroTik routing switches, firewall security rules, and disaster recovery plans [cite: 4].</li>
+            <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions [cite: 4].</li>
           </ul>
         </div>
       </div>
@@ -968,56 +1055,56 @@
     </div>
   </section>
 
-  <!-- Technical Capabilities -->
+  <!-- Core Expertise Matrix -->
   <section id="skills">
     <div class="section-header">
       <span class="section-module-tag">MODULE // 03</span>
-      <h2 class="section-title">CORE CAPABILITIES</h2>
+      <h2 class="section-title">CORE EXPERTISE</h2>
     </div>
 
     <div class="filter-tabs">
       <button class="filter-btn active" onclick="filterSkills('all', this)">ALL DOMAINS</button>
-      <button class="filter-btn" onclick="filterSkills('aviation', this)">AVIATION & DEFENSE</button>
-      <button class="filter-btn" onclick="filterSkills('surveillance', this)">SURVEILLANCE & CCTV</button>
-      <button class="filter-btn" onclick="filterSkills('networking', this)">IP ROUTING & NOC</button>
-      <button class="filter-btn" onclick="filterSkills('access', this)">BIOSTAR & ACCESS</button>
+      <button class="filter-btn" onclick="filterSkills('aviation', this)">AVIATION & CORPORATE</button>
+      <button class="filter-btn" onclick="filterSkills('surveillance', this)">CCTV & ACCESS CONTROL</button>
+      <button class="filter-btn" onclick="filterSkills('risk', this)">RISK MANAGEMENT & TECH</button>
+      <button class="filter-btn" onclick="filterSkills('leadership', this)">SECURITY LEADERSHIP</button>
     </div>
 
     <div class="skills-grid">
       <div class="chip-module-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">Aviation & Physical Defense</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Airport security procedures, threat vector analysis, perimeter fortification, security SOP development, and emergency evacuation drills [cite: 4].</p>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
       </div>
 
       <div class="chip-module-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">CCTV & Surveillance Matrix</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Enterprise IP/Analog CCTV systems, Hikvision solutions, NVR/DVR routing architecture, PTZ controls, and central command display walls [cite: 4].</p>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="access">
+      <div class="chip-module-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">BioStar 2 & Biometrics</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric attendance hardware, BioStar 2 database configuration, RFID access privileges, and automated security barrier integrations [cite: 4].</p>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
 
-      <div class="chip-module-card" data-cat="networking">
-        <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">IP Routing & NOC Operations</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik configuration, CCNA routing protocols, OLT optical distribution, firewall traffic policies, and high-availability uptime assurance [cite: 4].</p>
-      </div>
-
-      <div class="chip-module-card" data-cat="aviation">
-        <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">Leadership & Vendor SLAs</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Workforce deployment, duty roster management, vendor procurement, SLA performance auditing, and technical project lifecycle execution [cite: 4].</p>
-      </div>
-
-      <div class="chip-module-card" data-cat="networking">
+      <div class="chip-module-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
-        <h3 style="font-family:'Orbitron'; font-size:1.1rem; color:#fff; margin-bottom:0.5rem;">Cyber Defense & Compliance</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Network vulnerability hardening, compliance reporting, security audit logging, incident response planning, and data recovery readiness [cite: 4].</p>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
+      </div>
+
+      <div class="chip-module-card" data-cat="leadership">
+        <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
+      </div>
+
+      <div class="chip-module-card" data-cat="leadership">
+        <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
       </div>
     </div>
   </section>
@@ -1026,7 +1113,7 @@
   <section id="trainings">
     <div class="section-header">
       <span class="section-module-tag">MODULE // 04</span>
-      <h2 class="section-title">CERTIFICATIONS</h2>
+      <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
     </div>
     <div class="cert-grid">
       <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
@@ -1072,7 +1159,7 @@
     <div class="skills-grid" style="max-width:950px;">
       <div class="chip-module-card">
         <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">B.Sc in Physics (2022) [cite: 4]</h3>
-        <p style="color:var(--text-muted); font-size:0.88rem;">Gopalgonj University of Science & Technology [cite: 4]</p>
+        <p style="color:var(--text-muted); font-size:0.88rem;">Gopalganj Science and Technology University (GSTU)</p>
         <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 4]</p>
       </div>
 
@@ -1112,7 +1199,7 @@
         <div>
           <h3 style="font-family:'Orbitron'; font-size:1.2rem; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT [cite: 4]</h3>
           <p style="font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">
-            Ready to establish secure communication for enterprise infrastructure consulting, surveillance deployment, and technical operations [cite: 4].
+            Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations [cite: 4].
           </p>
 
           <div style="display:flex; flex-direction:column; gap:1rem; font-family:'JetBrains Mono'; font-size:0.88rem;">
@@ -1187,7 +1274,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 MD. MEHEDI HASSAN | TECHNICAL DEFENSE & INFRASTRUCTURE [cite: 4]</p>
+    <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST [cite: 4]</p>
   </footer>
 
   <!-- Matrix Digital Stream Rain Animation Script -->
@@ -1202,7 +1289,7 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const chars = '01 MEHEDI SECURITY NETWORK HIKVISION BIOSTAR CCTV NOC ACCESS 0101';
+    const chars = '01 MEHEDI SECURITY AVIATION CCTV ACCESS NOC RISK MANAGEMENT 0101';
     const fontSize = 13;
     const columns = Math.floor(canvas.width / fontSize);
     const drops = Array(columns).fill(1);
@@ -1264,7 +1351,7 @@
       const msg = document.getElementById('msgInp').value;
 
       const body = `NAME: ${name}%0D%0ACONTACT: ${contact}%0D%0A%0D%0APAYLOAD:%0D%0A${encodeURIComponent(msg)}`;
-      window.location.href = `mailto:mehedi4050128@gmail.com?subject=Technical%20Consultation%20Inquiry&body=${body}`;
+      window.location.href = `mailto:mehedi4050128@gmail.com?subject=Professional%20Inquiry%20from%20Portfolio&body=${body}`;
     }
   </script>
 
@@ -1273,6 +1360,6 @@
 """
 
 with open("index.html", "w", encoding="utf-8") as f:
-    f.write(super_smart_code)
+    f.write(refined_about_code)
 
-print("Generated enhanced and professional content index.html successfully.")
+print("Updated index.html with your complete, detailed About Me statement and structured system badges successfully.")
