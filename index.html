@@ -28,7 +28,6 @@
       
       --wire-border: rgba(0, 240, 255, 0.3);
       --wire-focus: rgba(0, 240, 255, 0.8);
-      --wire-gold: rgba(245, 158, 11, 0.5);
       
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
@@ -61,87 +60,75 @@
       background: radial-gradient(circle at 50% 45%, #071638 0%, #01040a 95%);
     }
 
-    /* Floating Microchip Navbar */
+    /* ========================================================
+       NEW REFINED EXECUTIVE HEADER (CLEAN, SHARP & PROFESSIONAL)
+       ======================================================== */
     .nav-wrapper {
       position: fixed;
-      top: 1rem;
+      top: 1.2rem;
       left: 0;
       width: 100%;
       display: flex;
       justify-content: center;
       z-index: 1000;
-      padding: 0 0.8rem;
+      padding: 0 1.2rem;
     }
 
     nav {
       width: 100%;
       max-width: 1250px;
-      background: rgba(5, 12, 28, 0.94);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1px solid var(--wire-border);
-      border-radius: 999px;
+      background: rgba(4, 10, 24, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.55rem 1.4rem;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 255, 0.15);
-      position: relative;
+      padding: 0.8rem 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.1);
     }
-
-    nav::before, nav::after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-color: var(--trace-cyan);
-      pointer-events: none;
-    }
-    nav::before { top: 4px; left: 16px; border-top: 2px solid; border-left: 2px solid; }
-    nav::after { bottom: 4px; right: 16px; border-bottom: 2px solid; border-right: 2px solid; }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
     }
 
     .brand-core-die {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
-      border: 2px solid var(--trace-cyan);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
-      font-size: 0.95rem;
-      box-shadow: 0 0 20px var(--trace-cyan-glow);
+      font-size: 1rem;
     }
 
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
       color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
     .brand-sub {
-      font-size: 0.58rem;
+      font-size: 0.62rem;
       font-family: 'JetBrains Mono', monospace;
       color: var(--trace-cyan);
       letter-spacing: 1px;
-      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
 
     .nav-item {
@@ -151,41 +138,40 @@
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 0.4rem 0.7rem;
-      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      transition: all 0.25s ease;
+      gap: 6px;
+      transition: all 0.2s ease;
       cursor: pointer;
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--trace-cyan);
-      background: rgba(0, 240, 255, 0.12);
+      color: #ffffff;
+      background: rgba(0, 240, 255, 0.1);
     }
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 14px);
+      top: calc(100% + 12px);
       left: 50%;
-      transform: translateX(-50%) translateY(10px);
+      transform: translateX(-50%) translateY(8px);
       background: rgba(4, 9, 22, 0.98);
-      backdrop-filter: blur(28px);
       border: 1px solid var(--wire-focus);
-      border-radius: 16px;
-      padding: 0.8rem;
+      border-radius: 12px;
+      padding: 0.6rem;
       min-width: 260px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
       z-index: 1050;
     }
 
@@ -198,19 +184,18 @@
     .dropdown-item a {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 0.65rem 0.9rem;
+      gap: 10px;
+      padding: 0.6rem 0.8rem;
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.82rem;
-      border-radius: 10px;
+      border-radius: 6px;
       transition: 0.2s;
     }
 
     .dropdown-item a:hover {
       color: #ffffff;
-      background: rgba(0, 240, 255, 0.15);
-      transform: translateX(4px);
+      background: rgba(0, 240, 255, 0.12);
     }
 
     .mobile-menu-btn {
@@ -355,10 +340,10 @@
 
     .circuit-motherboard-frame {
       position: relative;
-      width: 380px;
+      width: 390px;
       max-width: 100%;
       border-radius: 32px;
-      padding: 20px;
+      padding: 24px;
       background: radial-gradient(circle at center, rgba(16, 33, 72, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
       border: 2px solid var(--wire-focus);
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
@@ -382,7 +367,6 @@
       height: 5px;
       background: repeating-linear-gradient(90deg, var(--trace-gold) 0px, var(--trace-gold) 6px, transparent 6px, transparent 13px);
       z-index: 5;
-      box-shadow: 0 0 10px var(--trace-gold-glow);
     }
     .circuit-motherboard-frame::after {
       content: '';
@@ -391,13 +375,12 @@
       height: 5px;
       background: repeating-linear-gradient(90deg, var(--trace-gold) 0px, var(--trace-gold) 6px, transparent 6px, transparent 13px);
       z-index: 5;
-      box-shadow: 0 0 10px var(--trace-gold-glow);
     }
 
     .silicon-processor-socket {
       position: relative;
       width: 100%;
-      height: 400px;
+      height: 420px;
       border-radius: 20px;
       overflow: hidden;
       background: #020612;
@@ -448,40 +431,40 @@
       backdrop-filter: blur(18px);
       border: 1.5px solid var(--trace-cyan);
       border-radius: 14px;
-      padding: 0.6rem 0.9rem;
+      padding: 0.7rem 1.1rem;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       z-index: 6;
     }
 
-    .badge-top-left { top: -12px; left: -12px; }
-    .badge-bottom-right { bottom: -12px; right: -10px; }
+    .badge-top-left { top: -14px; left: -16px; }
+    .badge-bottom-right { bottom: -14px; right: -12px; }
 
     .badge-icon-box {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
       background: rgba(0, 240, 255, 0.15);
       border: 1px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
 
     .badge-text-primary {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.1;
     }
 
     .badge-text-sub {
-      font-size: 0.6rem;
+      font-size: 0.68rem;
       color: var(--trace-emerald);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
@@ -941,28 +924,28 @@
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 6rem;
+        padding-top: 5.5rem;
         padding-left: 4%;
         padding-right: 4%;
-        gap: 2.2rem;
+        gap: 2rem;
       }
-      /* Mobile হেডিং সাইজ ছোট করা হয়েছে যাতে স্ক্রিনে সুন্দরভাবে ফিট হয় */
-      .hero-content h1 { font-size: 2.1rem; line-height: 1.2; }
-      .hero-desc { font-size: 0.92rem; }
-      .tech-badge-container { justify-content: center; gap: 6px; }
-      .chip-status-tag { font-size: 0.7rem; padding: 5px 10px; }
-      .btn-group { justify-content: center; gap: 0.8rem; }
-      .chip-btn { padding: 0.75rem 1.2rem; font-size: 0.8rem; }
+      /* মোবাইল হেডিং আরও মার্জিত ও প্রফেশনাল করা হয়েছে */
+      .hero-content h1 { font-size: 1.95rem; line-height: 1.25; }
+      .hero-desc { font-size: 0.9rem; }
+      .tech-badge-container { justify-content: center; gap: 5px; }
+      .chip-status-tag { font-size: 0.68rem; padding: 4px 8px; }
+      .btn-group { justify-content: center; gap: 0.7rem; }
+      .chip-btn { padding: 0.7rem 1.1rem; font-size: 0.78rem; }
 
       .circuit-motherboard-frame {
-        width: 270px;
+        width: 260px;
         padding: 10px;
       }
-      .silicon-processor-socket { height: 300px; }
+      .silicon-processor-socket { height: 310px; }
       .badge-top-left { left: -6px; top: -10px; padding: 0.4rem 0.6rem; }
       .badge-bottom-right { right: -6px; bottom: -10px; padding: 0.4rem 0.6rem; }
-      .badge-text-primary { font-size: 0.72rem; }
-      .badge-text-sub { font-size: 0.55rem; }
+      .badge-text-primary { font-size: 0.7rem; }
+      .badge-text-sub { font-size: 0.52rem; }
 
       .exp-pro-card { padding: 1.2rem; }
       .exp-top-banner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
@@ -1015,7 +998,7 @@
         </div>
         <div>
           <span class="brand-title">MEHEDI HASSAN</span><br>
-          <span class="brand-sub">SECURITY & ADMINISTRATION SPECIALIST</span>
+          <span class="brand-sub">SECURITY & ADMINISTRATION</span>
         </div>
       </a>
 
@@ -1413,7 +1396,7 @@
     </div>
   </section>
 
-  <!-- Certifications Section (With HCSA & Critical Infrastructure) -->
+  <!-- Certifications Section -->
   <section id="trainings" class="reveal-on-scroll">
     <div class="section-header">
       <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
@@ -1604,7 +1587,7 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- High-Visibility Live Circuit & Cinematic Scroll Script -->
+  <!-- Script Engine -->
   <script>
     const observerOptions = {
       threshold: 0.08,
@@ -1623,7 +1606,6 @@
       scrollObserver.observe(el);
     });
 
-    // Profile Circuit Tracing Engine
     const profileCanvas = document.getElementById('profile-circuit-canvas');
     const pCtx = profileCanvas.getContext('2d');
 
@@ -1684,7 +1666,6 @@
     }
     drawProfileLiveCircuit();
 
-    // Background Canvas
     const canvas = document.getElementById('scroll-live-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1833,7 +1814,6 @@
     }
     animateEngine();
 
-    // UI Handlers
     function toggleMobileNav() {
       document.getElementById('mobileNav').classList.toggle('active');
     }
@@ -1842,7 +1822,7 @@
     }
 
     function filterSkills(category, btnElement) {
-      if(dev = btnElement) {
+      if(btnElement) {
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         btnElement.classList.add('active');
       }
