@@ -5,28 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Md. Mehedi Hassan | Security & Administration Specialist</title>
   
-  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome 6.5.1 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
       --bg-void: #01040a;
-      --bg-surface: #040914;
-      --panel-glass: rgba(8, 16, 36, 0.82);
-      --panel-hover: rgba(14, 26, 56, 0.94);
+      --panel-glass: rgba(8, 16, 36, 0.85);
+      --panel-hover: rgba(14, 26, 56, 0.95);
       
-      /* Multi-Spectrum Microprocessor Bus Lines */
       --trace-cyan: #00f0ff;
       --trace-cyan-glow: rgba(0, 240, 255, 0.4);
       --trace-gold: #f59e0b;
-      --trace-gold-glow: rgba(245, 158, 11, 0.35);
       --trace-emerald: #10b981;
-      --trace-emerald-glow: rgba(16, 185, 129, 0.35);
       --trace-purple: #a855f7;
       
       --wire-border: rgba(0, 240, 255, 0.16);
@@ -35,7 +28,6 @@
       
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
     }
 
     * {
@@ -54,8 +46,7 @@
       position: relative;
     }
 
-    /* Live Multilayer Silicon Wafer Engine Canvas */
-    #wafer-canvas {
+    #scroll-live-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -63,10 +54,9 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background: radial-gradient(circle at center, #061229 0%, #01040a 95%);
+      background: radial-gradient(circle at 50% 50%, #061229 0%, #01040a 95%);
     }
 
-    /* Floating Microchip Die Architecture Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -229,7 +219,6 @@
       cursor: pointer;
     }
 
-    /* Executive Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -357,9 +346,6 @@
       transform: translateY(-3px);
     }
 
-    /* ========================================================
-       STANDFULL GORGEOUS PROCESSOR DIE PACKAGING HERO FRAME
-       ======================================================== */
     .hero-visual {
       flex: 0.95;
       display: flex;
@@ -385,7 +371,6 @@
       box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
     }
 
-    /* Gold Wire-Bonding Connectors Top & Bottom */
     .processor-die-package::before {
       content: '';
       position: absolute;
@@ -484,7 +469,6 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Global Section Architecture */
     section {
       padding: 6.5rem 8%;
       position: relative;
@@ -503,15 +487,18 @@
       letter-spacing: -0.5px;
     }
 
+    /* Standfull Scroll Flow Dynamics */
     .reveal-on-scroll {
       opacity: 0;
-      transform: translateY(35px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(50px) scale(0.97);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
     }
 
     .reveal-on-scroll.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
     }
 
     .wafer-panel-card {
@@ -597,7 +584,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Executive Work Experience Architecture */
     .experience-container {
       max-width: 1050px;
       margin: 0 auto;
@@ -757,7 +743,6 @@
       font-size: 0.95rem;
     }
 
-    /* Skills Grid */
     .filter-tabs {
       display: flex;
       justify-content: center;
@@ -815,7 +800,6 @@
       margin: 0 auto;
     }
 
-    /* Terminal Console & Map Integration */
     .terminal-console {
       max-width: 950px;
       margin: 0 auto;
@@ -888,7 +872,6 @@
       box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
     }
 
-    /* Modal */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -935,7 +918,6 @@
       font-size: 0.85rem;
     }
 
-    /* Responsive Mobile Overrides */
     @media (max-width: 900px) {
       section { padding: 4.5rem 5%; }
       .hero {
@@ -997,10 +979,10 @@
 </head>
 <body>
 
-  <!-- Silicon Multilayer Bus Line Canvas -->
-  <canvas id="wafer-canvas"></canvas>
+  <!-- Live Dynamic Wafer Canvas -->
+  <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Floating Navigation -->
+  <!-- Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
@@ -1083,7 +1065,6 @@
       </div>
     </div>
     
-    <!-- Processor Die Packaging Frame -->
     <div class="hero-visual">
       <div class="processor-die-package">
         <div class="floating-metric-badge badge-top-left">
@@ -1202,7 +1183,7 @@
               <div class="company-title"><i class="fa-solid fa-building"></i> Ulkasemi Pvt. Ltd.</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT[cite: 2]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1242,7 +1223,7 @@
               <div class="company-title"><i class="fa-solid fa-shield-halved"></i> United Group (UGSSL)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026[cite: 2]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1282,7 +1263,7 @@
               <div class="company-title"><i class="fa-solid fa-network-wired"></i> D-Net Service</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023[cite: 2]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1295,14 +1276,14 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-user-shield"></i> Security Consulting & Liaison</h4>
             <ul class="exp-bullets">
-              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans[cite: 2].</li>
-              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution[cite: 2].</li>
+              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans[cite: 5].</li>
+              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution[cite: 5].</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-headset"></i> Technical Escalation & Resolution</h4>
             <ul class="exp-bullets">
-              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks[cite: 2].</li>
+              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks[cite: 5].</li>
               <li>Diagnosed client connectivity disruptions, monitored network protection logs, and streamlined issue escalations.</li>
             </ul>
           </div>
@@ -1319,7 +1300,7 @@
               <div class="company-title"><i class="fa-solid fa-globe"></i> Royal Green Ltd. (PacENet)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022[cite: 2]</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1333,15 +1314,15 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-server"></i> Network Infrastructure & Data Center</h4>
             <ul class="exp-bullets">
-              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance[cite: 2].</li>
-              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans[cite: 2].</li>
+              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance[cite: 5].</li>
+              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans[cite: 5].</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-users-gear"></i> NOC Team Leadership & Tier-3 Support</h4>
             <ul class="exp-bullets">
-              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%[cite: 2].</li>
-              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate[cite: 2].</li>
+              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%[cite: 5].</li>
+              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate[cite: 5].</li>
             </ul>
           </div>
         </div>
@@ -1578,15 +1559,15 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- Semiconductor Silicon Processor Wafer Engine & Physics Animation -->
+  <!-- Ultra-Fast Scroll-Speed Reactive Particle Physics Engine (Size ~40KB total page) -->
   <script>
-    // 1. Scroll-Triggered Reveal Animation
+    // 1. Scroll Observation
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -30px 0px"
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
     };
 
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
@@ -1598,8 +1579,8 @@
       scrollObserver.observe(el);
     });
 
-    // 2. High-Performance Semiconductor Circuit & Wafer Node Engine
-    const canvas = document.getElementById('wafer-canvas');
+    // 2. Scroll Velocity & Dynamic Interactive Particle Canvas
+    const canvas = document.getElementById('scroll-live-canvas');
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
@@ -1609,26 +1590,41 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    let scrollSpeed = 0;
+    let lastScrollTop = 0;
+    let scrollTimeout;
+
+    window.addEventListener('scroll', () => {
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      scrollSpeed = (st - lastScrollTop) * 0.45;
+      lastScrollTop = st <= 0 ? 0 : st;
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        scrollSpeed = 0;
+      }, 50);
+    });
+
     const mouse = { x: null, y: null, radius: 140 };
 
-    window.addEventListener('mousemove', function(e) {
+    window.addEventListener('mousemove', (e) => {
       mouse.x = e.x;
       mouse.y = e.y;
     });
 
-    window.addEventListener('mouseout', function() {
+    window.addEventListener('mouseout', () => {
       mouse.x = null;
       mouse.y = null;
     });
 
-    window.addEventListener('touchmove', function(e) {
+    window.addEventListener('touchmove', (e) => {
       if (e.touches.length > 0) {
         mouse.x = e.touches[0].clientX;
         mouse.y = e.touches[0].clientY;
       }
     });
 
-    window.addEventListener('touchend', function() {
+    window.addEventListener('touchend', () => {
       mouse.x = null;
       mouse.y = null;
     });
@@ -1637,7 +1633,7 @@
     const particles = [];
     const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 10000), 90);
 
-    class SemiconductorNode {
+    class DynamicSiliconNode {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
@@ -1660,10 +1656,12 @@
 
       update() {
         this.x += this.vx;
-        this.y += this.vy;
+        // Directly impacted by Live Scrolling Velocity
+        this.y += this.vy - (scrollSpeed * (this.density * 0.05));
 
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
 
         if (mouse.x !== null && mouse.y !== null) {
           let dx = mouse.x - this.x;
@@ -1683,7 +1681,7 @@
     }
 
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new SemiconductorNode());
+      particles.push(new DynamicSiliconNode());
     }
 
     function renderSiliconCircuit() {
