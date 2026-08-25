@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Md. Mehedi Hassan | Security & Administration Specialist</title>
   <!-- Google Fonts & Font Awesome 6.5.1 -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
-      --bg-dark: #030712;
-      --panel-bg: rgba(9, 15, 32, 0.85);
-      --panel-hover: rgba(14, 24, 52, 0.95);
-      
-      /* Unified Multi-Spectrum Semiconductor Palette */
-      --cyan: #00f0ff;
-      --cyan-glow: rgba(0, 240, 255, 0.35);
-      --emerald: #10b981;
-      --purple: #a855f7;
-      --gold: #f59e0b;
-      
-      --border-subtle: rgba(0, 240, 255, 0.14);
-      --border-focus: rgba(0, 240, 255, 0.45);
-      --text-main: #f8fafc;
+      --silicon-black: #02040a;
+      --die-substrate: #050b18;
+      --wafer-panel: rgba(8, 17, 36, 0.88);
+      --wafer-hover: rgba(13, 26, 52, 0.96);
+
+      /* Core Semiconductor Palette */
+      --semi-cyan: #00f0ff;
+      --semi-cyan-glow: rgba(0, 240, 255, 0.35);
+      --bus-gold: #eab308;
+      --bus-gold-glow: rgba(234, 179, 8, 0.4);
+      --core-emerald: #10b981;
+      --gate-purple: #a855f7;
+
+      --trace-line: rgba(0, 240, 255, 0.16);
+      --trace-focus: rgba(0, 240, 255, 0.55);
+      --trace-gold: rgba(234, 179, 8, 0.25);
+      --text-pure: #f8fafc;
       --text-muted: #94a3b8;
     }
 
@@ -36,15 +39,15 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--silicon-black);
+      color: var(--text-pure);
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Multi-Spectrum Hybrid Interactive Canvas */
-    #hybrid-canvas {
+    /* Interactive Silicon Processor Wafer Canvas */
+    #semiconductor-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -52,10 +55,10 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background: radial-gradient(circle at center, #071026 0%, #030712 95%);
+      background: radial-gradient(circle at 50% 50%, #061126 0%, #02040a 95%);
     }
 
-    /* Floating Ultra-Sleek Glass Navbar */
+    /* Floating Microprocessor Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1rem;
@@ -70,16 +73,29 @@
     nav {
       width: 100%;
       max-width: 1200px;
-      background: rgba(8, 15, 31, 0.92);
+      background: rgba(5, 11, 24, 0.94);
       backdrop-filter: blur(25px);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       border-radius: 999px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.65rem 1.8rem;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.1);
+      position: relative;
     }
+
+    /* Microchip Node Accents on Navbar */
+    nav::before, nav::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: var(--semi-cyan);
+      pointer-events: none;
+    }
+    nav::before { top: 3px; left: 16px; border-top: 2px solid; border-left: 2px solid; }
+    nav::after { bottom: 3px; right: 16px; border-bottom: 2px solid; border-right: 2px solid; }
 
     .brand-logo {
       display: flex;
@@ -91,21 +107,21 @@
     .chip-die-icon {
       width: 38px;
       height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
-      border: 1.5px solid var(--cyan);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(234, 179, 8, 0.12));
+      border: 1.5px solid var(--semi-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
-      font-size: 1rem;
-      box-shadow: 0 0 14px var(--cyan-glow);
+      color: var(--semi-cyan);
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px var(--semi-cyan-glow);
     }
 
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       letter-spacing: 0.5px;
       color: #ffffff;
     }
@@ -113,8 +129,8 @@
     .brand-sub {
       font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--cyan);
-      letter-spacing: 1px;
+      color: var(--semi-cyan);
+      letter-spacing: 1.5px;
       font-weight: 600;
     }
 
@@ -132,7 +148,7 @@
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 500;
       padding: 0.5rem 0.85rem;
       border-radius: 8px;
@@ -144,7 +160,7 @@
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--cyan);
+      color: var(--semi-cyan);
       background: rgba(0, 240, 255, 0.08);
     }
 
@@ -153,13 +169,13 @@
       top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: rgba(7, 13, 27, 0.98);
+      background: rgba(5, 11, 24, 0.98);
       backdrop-filter: blur(28px);
-      border: 1px solid var(--border-focus);
-      border-radius: 14px;
+      border: 1px solid var(--trace-focus);
+      border-radius: 16px;
       padding: 0.8rem;
-      min-width: 270px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 240, 255, 0.12);
+      min-width: 280px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 240, 255, 0.15);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -180,11 +196,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 0.65rem 0.9rem;
+      padding: 0.7rem 1rem;
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.82rem;
-      border-radius: 8px;
+      font-size: 0.84rem;
+      border-radius: 10px;
       transition: 0.2s;
     }
 
@@ -197,8 +213,8 @@
     .mobile-menu-btn {
       display: none;
       background: transparent;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
+      border: 1px solid var(--trace-line);
+      color: var(--text-pure);
       padding: 6px 12px;
       border-radius: 8px;
       font-size: 1.1rem;
@@ -232,10 +248,10 @@
       gap: 8px;
       padding: 6px 14px;
       background: rgba(0, 240, 255, 0.05);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       border-radius: 999px;
       font-size: 0.76rem;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
@@ -243,17 +259,17 @@
 
     .chip-status-tag:hover {
       background: rgba(0, 240, 255, 0.12);
-      border-color: var(--cyan);
-      box-shadow: 0 0 12px var(--cyan-glow);
+      border-color: var(--semi-cyan);
+      box-shadow: 0 0 12px var(--semi-cyan-glow);
       transform: translateY(-2px);
     }
 
     .pulse-core {
       width: 7px;
       height: 7px;
-      background: var(--emerald);
+      background: var(--core-emerald);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--emerald);
+      box-shadow: 0 0 10px var(--core-emerald);
       animation: pulseAnim 2s infinite;
     }
 
@@ -273,11 +289,11 @@
       color: #ffffff;
     }
 
-    /* Merged Hybrid Multi-Gradient */
     .chip-gradient {
-      background: linear-gradient(135deg, var(--cyan) 0%, #38bdf8 35%, var(--purple) 70%, var(--gold) 100%);
+      background: linear-gradient(135deg, var(--semi-cyan) 0%, #38bdf8 40%, var(--gate-purple) 70%, var(--bus-gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 35px rgba(0, 240, 255, 0.25);
     }
 
     .hero-desc {
@@ -308,32 +324,34 @@
     }
 
     .chip-btn-primary {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
-      border: 1.5px solid var(--cyan);
-      color: var(--cyan);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.18), rgba(168, 85, 247, 0.22));
+      border: 1.5px solid var(--semi-cyan);
+      color: var(--semi-cyan);
       box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
     }
 
     .chip-btn-primary:hover {
-      background: var(--cyan);
+      background: var(--semi-cyan);
       color: #020617;
-      box-shadow: 0 0 40px var(--cyan);
+      box-shadow: 0 0 40px var(--semi-cyan);
       transform: translateY(-3px);
     }
 
     .chip-btn-glass {
       background: rgba(255, 255, 255, 0.03);
       color: #e2e8f0;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
     }
 
     .chip-btn-glass:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+      border-color: var(--semi-cyan);
+      color: var(--semi-cyan);
       transform: translateY(-3px);
     }
 
-    /* Executive Portrait Card */
+    /* ========================================================
+       SEMICONDUCTOR PROCESSOR DIE PACKAGING HERO FRAME
+       ======================================================== */
     .hero-visual {
       flex: 0.95;
       display: flex;
@@ -341,35 +359,53 @@
       position: relative;
     }
 
-    .executive-portrait-card {
+    .processor-die-package {
       position: relative;
       width: 360px;
       max-width: 100%;
-      border-radius: 28px;
-      padding: 10px;
-      background: linear-gradient(145deg, rgba(15, 27, 54, 0.85), rgba(6, 12, 26, 0.95));
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.15);
+      border-radius: 26px;
+      padding: 12px;
+      background: linear-gradient(145deg, #09152e, #030712);
+      border: 2px solid var(--trace-line);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 240, 255, 0.18);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .executive-portrait-card:hover {
+    .processor-die-package:hover {
       transform: translateY(-6px);
-      border-color: var(--border-focus);
-      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.25);
+      border-color: var(--trace-focus);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
     }
 
-    .portrait-image-wrapper {
+    /* Gold Wire-Bonding Connectors Top & Bottom */
+    .processor-die-package::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: 15%; right: 15%;
+      height: 5px;
+      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
+      z-index: 5;
+    }
+    .processor-die-package::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; left: 15%; right: 15%;
+      height: 5px;
+      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
+      z-index: 5;
+    }
+
+    .portrait-silicon-die {
       position: relative;
       width: 100%;
       height: 420px;
-      border-radius: 20px;
+      border-radius: 18px;
       overflow: hidden;
-      background: #060c1d;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #040814;
+      border: 1px solid rgba(0, 240, 255, 0.35);
     }
 
-    .portrait-image-wrapper img {
+    .portrait-silicon-die img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -378,26 +414,27 @@
       transition: transform 0.5s ease;
     }
 
-    .executive-portrait-card:hover .portrait-image-wrapper img {
+    .processor-die-package:hover .portrait-silicon-die img {
       transform: scale(1.03);
     }
 
-    .portrait-image-wrapper::after {
+    .portrait-silicon-die::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(2, 6, 23, 0.85) 100%);
+      background: linear-gradient(180deg, transparent 65%, rgba(2, 6, 23, 0.85) 100%);
       pointer-events: none;
     }
 
+    /* Floating Processor Core Metric Badges */
     .floating-metric-badge {
       position: absolute;
-      background: rgba(8, 15, 31, 0.92);
+      background: rgba(5, 11, 24, 0.94);
       backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       border-radius: 14px;
       padding: 0.65rem 1rem;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -406,29 +443,29 @@
     }
 
     .floating-metric-badge:hover {
-      border-color: var(--cyan);
+      border-color: var(--semi-cyan);
       transform: translateY(-2px);
     }
 
-    .badge-top-left { top: -12px; left: -16px; }
+    .badge-top-left { top: -14px; left: -16px; }
     .badge-bottom-right { bottom: -14px; right: -12px; }
 
     .badge-icon-box {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
       background: rgba(0, 240, 255, 0.1);
-      border: 1px solid var(--cyan);
+      border: 1px solid var(--semi-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
-      font-size: 0.85rem;
+      color: var(--semi-cyan);
+      font-size: 0.9rem;
     }
 
     .badge-text-primary {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.1;
@@ -436,11 +473,11 @@
 
     .badge-text-sub {
       font-size: 0.68rem;
-      color: var(--emerald);
+      color: var(--core-emerald);
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Section Styling */
+    /* Section Global */
     section {
       padding: 6.5rem 8%;
       position: relative;
@@ -470,27 +507,27 @@
       transform: translateY(0);
     }
 
-    .pro-glass-card {
-      background: var(--panel-bg);
-      border: 1px solid var(--border-subtle);
+    .wafer-panel-card {
+      background: var(--wafer-panel);
+      border: 1px solid var(--trace-line);
       border-radius: 20px;
       padding: 2.5rem;
       backdrop-filter: blur(20px);
       position: relative;
       transition: all 0.35s ease;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
     }
 
-    .pro-glass-card:hover {
-      border-color: var(--border-focus);
-      background: var(--panel-hover);
+    .wafer-panel-card:hover {
+      border-color: var(--trace-focus);
+      background: var(--wafer-hover);
       transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.15);
     }
 
     .about-sub-card {
-      background: rgba(3, 8, 20, 0.6);
-      border: 1px solid var(--border-subtle);
+      background: rgba(4, 9, 20, 0.65);
+      border: 1px solid var(--trace-line);
       border-radius: 14px;
       padding: 1.5rem;
       margin-top: 1.5rem;
@@ -500,7 +537,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -516,7 +553,7 @@
 
     .system-badge {
       background: rgba(0, 240, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       padding: 0.65rem 1rem;
       border-radius: 10px;
       font-size: 0.84rem;
@@ -527,7 +564,7 @@
     }
 
     .system-badge i {
-      color: var(--cyan);
+      color: var(--semi-cyan);
     }
 
     .metrics-grid {
@@ -536,14 +573,14 @@
       gap: 1.5rem;
       margin-top: 2.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--trace-line);
     }
 
     .metric-box h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2.1rem;
       font-weight: 800;
-      color: var(--cyan);
+      color: var(--semi-cyan);
     }
 
     .metric-box p {
@@ -563,22 +600,22 @@
     }
 
     .exp-pro-card {
-      background: var(--panel-bg);
-      border: 1px solid var(--border-subtle);
+      background: var(--wafer-panel);
+      border: 1px solid var(--trace-line);
       border-radius: 20px;
       padding: 2.4rem;
       backdrop-filter: blur(20px);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
       scroll-margin-top: 6rem;
     }
 
     .exp-pro-card:hover {
-      border-color: var(--border-focus);
-      background: var(--panel-hover);
+      border-color: var(--trace-focus);
+      background: var(--wafer-hover);
       transform: translateY(-5px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 240, 255, 0.15);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 25px var(--semi-cyan-glow);
     }
 
     .exp-top-banner {
@@ -602,12 +639,12 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(168, 85, 247, 0.1));
-      border: 1px solid var(--border-focus);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(234, 179, 8, 0.1));
+      border: 1px solid var(--trace-focus);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       font-size: 1.3rem;
       flex-shrink: 0;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
@@ -622,7 +659,7 @@
     }
 
     .company-title {
-      color: var(--cyan);
+      color: var(--semi-cyan);
       font-size: 0.95rem;
       font-weight: 600;
       display: flex;
@@ -633,7 +670,7 @@
     .job-meta-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--emerald);
+      color: var(--core-emerald);
       background: rgba(16, 185, 129, 0.1);
       border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 5px 14px;
@@ -652,9 +689,9 @@
     }
 
     .pro-badge {
-      background: rgba(245, 158, 11, 0.08);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      color: var(--gold);
+      background: rgba(234, 179, 8, 0.08);
+      border: 1px solid var(--trace-gold);
+      color: var(--bus-gold);
       font-size: 0.76rem;
       padding: 4px 11px;
       border-radius: 6px;
@@ -671,8 +708,8 @@
     }
 
     .exp-category-box {
-      background: rgba(3, 8, 20, 0.55);
-      border: 1px solid rgba(0, 240, 255, 0.08);
+      background: rgba(3, 7, 18, 0.6);
+      border: 1px solid var(--trace-line);
       border-radius: 12px;
       padding: 1.2rem;
     }
@@ -681,7 +718,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.92rem;
       font-weight: 700;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -709,7 +746,7 @@
       content: '▹';
       position: absolute;
       left: 0;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       font-size: 0.95rem;
     }
 
@@ -725,7 +762,7 @@
     .filter-btn {
       padding: 0.6rem 1.4rem;
       background: rgba(0, 240, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       border-radius: 999px;
       color: var(--text-muted);
       font-size: 0.84rem;
@@ -735,7 +772,7 @@
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      background: linear-gradient(135deg, var(--semi-cyan), var(--gate-purple));
       color: #ffffff;
       box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
       border-color: transparent;
@@ -754,11 +791,11 @@
       height: 48px;
       border-radius: 12px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--cyan);
+      border: 1.5px solid var(--semi-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--semi-cyan);
       font-size: 1.3rem;
       margin-bottom: 1.2rem;
     }
@@ -776,16 +813,16 @@
       max-width: 950px;
       margin: 0 auto;
       background: #020617;
-      border: 1px solid var(--border-focus);
+      border: 1px solid var(--trace-focus);
       border-radius: 20px;
       box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
       overflow: hidden;
     }
 
     .terminal-topbar {
-      background: rgba(6, 14, 30, 0.95);
+      background: rgba(5, 11, 24, 0.95);
       padding: 0.75rem 1.2rem;
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--trace-line);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -808,7 +845,7 @@
       margin-top: 1.5rem;
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       height: 180px;
       position: relative;
@@ -829,7 +866,7 @@
     .form-input-tech {
       width: 100%;
       background: rgba(0, 240, 255, 0.03);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--trace-line);
       border-radius: 10px;
       padding: 0.85rem 1rem;
       color: #ffffff;
@@ -840,7 +877,7 @@
     }
 
     .form-input-tech:focus {
-      border-color: var(--cyan);
+      border-color: var(--semi-cyan);
       box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
     }
 
@@ -864,13 +901,13 @@
     .modal-overlay.active { opacity: 1; visibility: visible; }
 
     .modal-hud {
-      background: #070d1e;
-      border: 1px solid var(--cyan);
+      background: #050b18;
+      border: 1px solid var(--semi-cyan);
       border-radius: 20px;
       padding: 2.4rem;
       max-width: 650px;
       width: 100%;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 50px var(--semi-cyan-glow);
       position: relative;
     }
 
@@ -886,12 +923,14 @@
     footer {
       text-align: center;
       padding: 2.5rem 8%;
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--trace-line);
       color: var(--text-muted);
       font-size: 0.85rem;
     }
 
-    /* Mobile Overrides */
+    /* ========================================================
+       PERFECT RESPONSIVE MOBILE VIEWPORT (NO DISTORTION)
+       ======================================================== */
     @media (max-width: 900px) {
       section { padding: 4.5rem 5%; }
       .hero {
@@ -905,32 +944,32 @@
       .hero-content h1 { font-size: 2.2rem; }
       .tech-badge-container { justify-content: center; }
       .btn-group { justify-content: center; }
-      
-      .executive-portrait-card { 
-        width: 280px; 
+
+      .processor-die-package {
+        width: 290px;
         padding: 8px;
       }
-      .portrait-image-wrapper { height: 320px; }
-      .badge-top-left { left: 0; top: -10px; }
-      .badge-bottom-right { right: 0; bottom: -10px; }
-      
+      .portrait-silicon-die { height: 330px; }
+      .badge-top-left { left: 0; top: -12px; }
+      .badge-bottom-right { right: 0; bottom: -12px; }
+
       .exp-pro-card { padding: 1.5rem; }
       .exp-top-banner { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
       .role-company-wrapper { gap: 0.8rem; }
       .role-company-wrapper h3 { font-size: 1.15rem; }
       .exp-grid-details { grid-template-columns: 1fr; }
-      
+
       .terminal-body { grid-template-columns: 1fr; padding: 1.5rem; }
       .map-wrapper { height: 160px; }
-      
+
       .mobile-menu-btn { display: block; }
       .nav-links {
         position: absolute;
         top: calc(100% + 10px);
         left: 0;
         width: 100%;
-        background: #030712;
-        border: 1px solid var(--border-subtle);
+        background: #050b18;
+        border: 1px solid var(--trace-line);
         border-radius: 16px;
         flex-direction: column;
         padding: 1.2rem;
@@ -953,15 +992,15 @@
 </head>
 <body>
 
-  <!-- Hybrid Multi-Spectrum Live Canvas -->
-  <canvas id="hybrid-canvas"></canvas>
+  <!-- Interactive Semiconductor Silicon Wafer & Circuit Trace Canvas -->
+  <canvas id="semiconductor-canvas"></canvas>
 
-  <!-- Floating Navigation -->
+  <!-- Floating Microprocessor Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
         <div class="chip-die-icon">
-          <i class="fa-solid fa-shield-halved"></i>
+          <i class="fa-solid fa-microchip"></i>
         </div>
         <div>
           <span class="brand-title">MEHEDI HASSAN</span><br>
@@ -1002,7 +1041,7 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Gorgeous Silicon Processor Package -->
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="tech-badge-container">
@@ -1010,19 +1049,19 @@
           <span class="pulse-core"></span> Security & Administration Professional
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-plane-shield" style="color:var(--gold);"></i> Aviation & Corporate Security Management
+          <i class="fa-solid fa-plane-shield" style="color:var(--bus-gold);"></i> Aviation & Corporate Security Management
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-award" style="color:var(--gold);"></i> Airport Security Manager (ASM) Trained
+          <i class="fa-solid fa-award" style="color:var(--bus-gold);"></i> Airport Security Manager (ASM) Trained
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-video" style="color:var(--gold);"></i> CCTV & Access Control
+          <i class="fa-solid fa-video" style="color:var(--bus-gold);"></i> CCTV & Access Control
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-shield-halved" style="color:var(--gold);"></i> Risk Management & Technology
+          <i class="fa-solid fa-shield-halved" style="color:var(--bus-gold);"></i> Risk Management & Technology
         </span>
         <span class="chip-status-tag">
-          <i class="fa-solid fa-users-gear" style="color:var(--gold);"></i> Security Leadership
+          <i class="fa-solid fa-users-gear" style="color:var(--bus-gold);"></i> Security Leadership
         </span>
       </div>
 
@@ -1039,8 +1078,10 @@
       </div>
     </div>
     
+    <!-- Ultra-Refined Processor Die Packaging Frame -->
     <div class="hero-visual">
-      <div class="executive-portrait-card">
+      <div class="processor-die-package">
+        <!-- Floating Top Verified Metric -->
         <div class="floating-metric-badge badge-top-left">
           <div class="badge-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
           <div>
@@ -1049,12 +1090,13 @@
           </div>
         </div>
 
-        <div class="portrait-image-wrapper">
+        <div class="portrait-silicon-die">
           <img src="profile.jpg" alt="Md. Mehedi Hassan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
         </div>
 
+        <!-- Floating Bottom Status Metric -->
         <div class="floating-metric-badge badge-bottom-right">
-          <div class="badge-icon-box"><i class="fa-solid fa-bolt"></i></div>
+          <div class="badge-icon-box"><i class="fa-solid fa-microchip"></i></div>
           <div>
             <div class="badge-text-primary">5+ YRS EXP</div>
             <div class="badge-text-sub">OPERATIONAL LEADERSHIP</div>
@@ -1069,7 +1111,7 @@
     <div class="section-header">
       <h2 class="section-title">ABOUT ME</h2>
     </div>
-    <div class="pro-glass-card" style="max-width: 1050px; margin: 0 auto;">
+    <div class="wafer-panel-card" style="max-width: 1050px; margin: 0 auto;">
       
       <p style="font-size: 1.06rem; color: #cbd5e1; line-height: 1.85; margin-bottom: 1.2rem;">
         I am a <strong>Security & Administration professional</strong> specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution.
@@ -1108,7 +1150,7 @@
         I have completed <strong>Airport Security Manager (ASM)</strong> training, strengthening my knowledge of aviation security principles, risk mitigation, access control, emergency preparedness, and operational security management.
       </p>
 
-      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--cyan); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--semi-cyan); padding: 1.2rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;">
         <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
           "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
         </p>
@@ -1157,7 +1199,7 @@
               <div class="company-title"><i class="fa-solid fa-building"></i> Ulkasemi Pvt. Ltd.</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> JUNE 2026 – PRESENT[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1197,7 +1239,7 @@
               <div class="company-title"><i class="fa-solid fa-shield-halved"></i> United Group (UGSSL)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> FEB 2024 – JUNE 2026[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1237,7 +1279,7 @@
               <div class="company-title"><i class="fa-solid fa-network-wired"></i> D-Net Service</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> DEC 2022 – MAR 2023[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1250,14 +1292,14 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-user-shield"></i> Security Consulting & Liaison</h4>
             <ul class="exp-bullets">
-              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans.</li>
-              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution.</li>
+              <li>Assisted in enterprise security consultancy projects, evaluating client infrastructure vulnerabilities and connectivity protection plans[cite: 5].</li>
+              <li>Maintained direct operational communications with enterprise financial partners including BRAC Bank, ensuring prompt ticket resolution[cite: 5].</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-headset"></i> Technical Escalation & Resolution</h4>
             <ul class="exp-bullets">
-              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks.</li>
+              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks[cite: 5].</li>
               <li>Diagnosed client connectivity disruptions, monitored network protection logs, and streamlined issue escalations.</li>
             </ul>
           </div>
@@ -1274,7 +1316,7 @@
               <div class="company-title"><i class="fa-solid fa-globe"></i> Royal Green Ltd. (PacENet)</div>
             </div>
           </div>
-          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022</span>
+          <span class="job-meta-tag"><i class="fa-regular fa-calendar-check"></i> NOV 2020 – NOV 2022[cite: 5]</span>
         </div>
 
         <div class="project-tags-row">
@@ -1288,15 +1330,15 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-server"></i> Network Infrastructure & Data Center</h4>
             <ul class="exp-bullets">
-              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance.</li>
-              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans.</li>
+              <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% network availability and SLA compliance[cite: 5].</li>
+              <li>Managed data center environments, MikroTik routing switches, firewall security rules, bandwidth distribution, and disaster recovery plans[cite: 5].</li>
             </ul>
           </div>
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-users-gear"></i> NOC Team Leadership & Tier-3 Support</h4>
             <ul class="exp-bullets">
-              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%.</li>
-              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate.</li>
+              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%[cite: 5].</li>
+              <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate[cite: 5].</li>
             </ul>
           </div>
         </div>
@@ -1320,37 +1362,37 @@
     </div>
 
     <div class="skills-grid">
-      <div class="pro-glass-card" data-cat="aviation">
+      <div class="wafer-panel-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
       </div>
 
-      <div class="pro-glass-card" data-cat="surveillance">
+      <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
 
-      <div class="pro-glass-card" data-cat="surveillance">
+      <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
 
-      <div class="pro-glass-card" data-cat="risk">
+      <div class="wafer-panel-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
       </div>
 
-      <div class="pro-glass-card" data-cat="leadership">
+      <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
       </div>
 
-      <div class="pro-glass-card" data-cat="leadership">
+      <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
@@ -1364,35 +1406,35 @@
       <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
     </div>
     <div class="cert-grid">
-      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--cyan);"></i>
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--semi-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Airport Security Manager (ASM)</h4>
-          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
+          <p style="color:var(--core-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026)</p>
         </div>
       </div>
 
-      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--cyan);"></i>
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--semi-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
+          <p style="color:var(--core-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
-      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--cyan);"></i>
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--semi-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">ASP.NET Core MVC Web Applications</h4>
-          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
+          <p style="color:var(--core-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
 
-      <div class="pro-glass-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--cyan);"></i>
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--semi-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Community Civil Defense Training</h4>
-          <p style="color:var(--emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
+          <p style="color:var(--core-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence</p>
         </div>
       </div>
     </div>
@@ -1404,22 +1446,22 @@
       <h2 class="section-title">ACADEMIC BACKGROUND</h2>
     </div>
     <div class="skills-grid" style="max-width:950px;">
-      <div class="pro-glass-card">
+      <div class="wafer-panel-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">B.Sc in Physics (2022)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Gopalganj Science and Technology University (GSTU)</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
+        <p style="color:var(--semi-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00</p>
       </div>
 
-      <div class="pro-glass-card">
+      <div class="wafer-panel-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Higher Secondary Certificate (2017)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Motijheel Govt. Boys College (Science)</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
+        <p style="color:var(--semi-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00</p>
       </div>
 
-      <div class="pro-glass-card">
+      <div class="wafer-panel-card">
         <h3 style="color:#fff; font-size:1.15rem; font-weight:700; margin-bottom:0.3rem;">Secondary School Certificate (2015)</h3>
         <p style="color:var(--text-muted); font-size:0.9rem;">Shahjahanpur Railway Govt. High School</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
+        <p style="color:var(--semi-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden)</p>
       </div>
     </div>
   </section>
@@ -1437,7 +1479,7 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--cyan); font-size:0.8rem;">root@mehedi-security:~$</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--semi-cyan); font-size:0.8rem;">root@mehedi-security:~$</div>
         <div></div>
       </div>
 
@@ -1451,15 +1493,15 @@
           <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.92rem;">
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">LOCATION:</span>
-              <span style="color:var(--cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh</span>
+              <span style="color:var(--semi-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh</span>
             </div>
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">PHONE:</span>
-              <a href="tel:+8801680450882" style="color:var(--emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882</a>
+              <a href="tel:+8801680450882" style="color:var(--core-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882</a>
             </div>
             <div>
               <span style="color:var(--text-muted); font-size:0.8rem; display:block;">EMAIL:</span>
-              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com</a>
+              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--semi-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com</a>
             </div>
 
             <!-- Dark-Themed Responsive Google Map Integration -->
@@ -1481,15 +1523,15 @@
 
         <form onsubmit="handleCyberSubmit(event)">
           <div>
-            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">SENDER IDENTIFIER *</label>
+            <label style="font-size:0.82rem; color:var(--semi-cyan); font-weight:600;">SENDER IDENTIFIER *</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) *</label>
+            <label style="font-size:0.82rem; color:var(--semi-cyan); font-weight:600;">RETURN CONTACT (EMAIL/PHONE) *</label>
             <input type="text" id="contactInp" class="form-input-tech" placeholder="name@company.com or phone" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-size:0.82rem; color:var(--cyan); font-weight:600;">MESSAGE *</label>
+            <label style="font-size:0.82rem; color:var(--semi-cyan); font-weight:600;">MESSAGE *</label>
             <textarea id="msgInp" class="form-input-tech" rows="4" placeholder="Write your project details or inquiry..." required></textarea>
           </div>
           <button type="submit" class="chip-btn chip-btn-primary" style="width:100%; margin-top:1.5rem; justify-content:center;">
@@ -1504,7 +1546,7 @@
   <div class="modal-overlay" id="refModal">
     <div class="modal-hud">
       <button class="modal-close-btn" onclick="closeModal('refModal')"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--cyan); font-size:1.3rem; margin-bottom:0.4rem;">
+      <h3 style="font-family:'Space Grotesk'; font-weight:700; color:var(--semi-cyan); font-size:1.3rem; margin-bottom:0.4rem;">
         <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES
       </h3>
       <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.5rem;">
@@ -1512,18 +1554,18 @@
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
-        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
+        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Air Commodore Md Salamot Ullah (Retd)</h4>
-          <p style="color:var(--cyan); font-size:0.85rem; font-weight:600;">Executive Director</p>
+          <p style="color:var(--semi-cyan); font-size:0.85rem; font-weight:600;">Executive Director</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
-          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
+          <p style="color:var(--core-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121</p>
         </div>
 
-        <div style="border:1px solid var(--border-subtle); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
+        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:12px;">
           <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Wing Commander Joarder Sirajul Islam</h4>
-          <p style="color:var(--cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
+          <p style="color:var(--semi-cyan); font-size:0.85rem; font-weight:600;">DGM (Admin & Security)</p>
           <p style="color:var(--text-muted); font-size:0.84rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd.</p>
-          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
+          <p style="color:var(--core-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495</p>
         </div>
       </div>
     </div>
@@ -1533,9 +1575,9 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST</p>
   </footer>
 
-  <!-- Unified Multi-Spectrum Neural Canvas Script -->
+  <!-- Semiconductor Processor Bus Pulse & Interactive Canvas Script -->
   <script>
-    // 1. Intersection Observer for Smooth Scroll Animations
+    // 1. Intersection Observer for Scroll Animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -30px 0px"
@@ -1553,8 +1595,8 @@
       scrollObserver.observe(el);
     });
 
-    // 2. Multi-Color Semiconductor Particle Matrix
-    const canvas = document.getElementById('hybrid-canvas');
+    // 2. Semiconductor Processor Bus Pulse & Interactive Canvas
+    const canvas = document.getElementById('semiconductor-canvas');
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
@@ -1588,7 +1630,7 @@
       mouse.y = null;
     });
 
-    const colors = ['#00f0ff', '#10b981', '#a855f7', '#f59e0b'];
+    const colors = ['#00f0ff', '#eab308', '#a855f7', '#10b981'];
     const particles = [];
     const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 10000), 90);
 
@@ -1650,7 +1692,7 @@
 
           if (distance < 130) {
             let opacity = 1 - (distance / 130);
-            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity * 0.2})`;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity * 0.22})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -1665,7 +1707,7 @@
           let mDist = Math.sqrt(mdx * mdx + mdy * mdy);
           if (mDist < mouse.radius) {
             let mOpacity = 1 - (mDist / mouse.radius);
-            ctx.strokeStyle = `rgba(168, 85, 247, ${mOpacity * 0.45})`;
+            ctx.strokeStyle = `rgba(234, 179, 8, ${mOpacity * 0.45})`;
             ctx.lineWidth = 1.2;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -1701,7 +1743,7 @@
         btnElement.classList.add('active');
       }
 
-      const cards = document.querySelectorAll('.skills-grid .pro-glass-card');
+      const cards = document.querySelectorAll('.skills-grid .wafer-panel-card');
       cards.forEach(card => {
         const cat = card.getAttribute('data-cat');
         if(!cat || category === 'all' || cat === category) {
