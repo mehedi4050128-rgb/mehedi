@@ -234,27 +234,47 @@
       flex: 1.3;
     }
 
+    /* LinkedIn-Matched Smart Pill Badges Container */
+    .tech-badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.6rem;
+    }
+
     .chip-status-tag {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px 16px;
-      background: rgba(0, 240, 255, 0.08);
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(0, 240, 255, 0.05);
       border: 1px solid var(--trace-line);
       border-radius: 6px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--neon-cyan);
-      margin-bottom: 1.5rem;
       font-family: 'JetBrains Mono', monospace;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .chip-status-tag:hover {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
+      transform: translateY(-2px);
+    }
+
+    .chip-status-tag i {
+      color: var(--bus-gold);
+      font-size: 0.78rem;
     }
 
     .pulse-core {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       background: var(--logic-emerald);
       border-radius: 50%;
-      box-shadow: 0 0 12px var(--logic-emerald);
+      box-shadow: 0 0 10px var(--logic-emerald);
       animation: pulseAnim 2s infinite;
     }
 
@@ -270,7 +290,7 @@
       font-weight: 900;
       line-height: 1.15;
       letter-spacing: -0.5px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .chip-gradient {
@@ -278,15 +298,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 35px rgba(0, 240, 255, 0.3);
-    }
-
-    .sub-tech-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      color: var(--logic-emerald);
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      line-height: 1.5;
     }
 
     .hero-desc {
@@ -362,7 +373,6 @@
       box-shadow: 0 0 50px rgba(0, 240, 255, 0.2), inset 0 0 25px rgba(0, 240, 255, 0.08);
     }
 
-    /* Gold Wire-Bonding Pins Top & Bottom */
     .chip-socket-frame::before {
       content: '';
       position: absolute;
@@ -429,7 +439,6 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
     }
 
-    /* Golden Circuit Bus Header Accent */
     .chip-module-card::before {
       content: '';
       position: absolute;
@@ -446,7 +455,6 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
     }
 
-    /* Sub-card Architecture */
     .about-sub-card {
       background: rgba(3, 8, 20, 0.7);
       border: 1px solid var(--trace-line);
@@ -489,7 +497,6 @@
       color: var(--neon-cyan);
     }
 
-    /* Metrics Dashboard */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -862,14 +869,31 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Smart LinkedIn Pill Badges -->
   <header class="hero" id="home">
     <div class="hero-content">
-      <div class="chip-status-tag">
-        <span class="pulse-core"></span> AIRPORT SECURITY MANAGER (ASM) | HCSA CERTIFIED
+      <div class="tech-badge-container">
+        <span class="chip-status-tag">
+          <span class="pulse-core"></span> Security & Administration Professional
+        </span>
+        <span class="chip-status-tag">
+          <i class="fa-solid fa-plane-shield"></i> Aviation & Corporate Security Management
+        </span>
+        <span class="chip-status-tag">
+          <i class="fa-solid fa-award"></i> Airport Security Manager (ASM) Trained
+        </span>
+        <span class="chip-status-tag">
+          <i class="fa-solid fa-video"></i> CCTV & Access Control
+        </span>
+        <span class="chip-status-tag">
+          <i class="fa-solid fa-shield-halved"></i> Risk Management & Technology
+        </span>
+        <span class="chip-status-tag">
+          <i class="fa-solid fa-users-gear"></i> Security Leadership
+        </span>
       </div>
+
       <h1>SECURITY & <br><span class="chip-gradient">ADMINISTRATION</span></h1>
-      <div class="sub-tech-tag">&gt; Corporate & Aviation Security | Advanced Surveillance & Strategic Operations_</div>
       <p class="hero-desc">
         Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution across high-profile environments.
       </p>
@@ -1049,7 +1073,7 @@
           </div>
           <ul class="job-bullets">
             <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% uptime [cite: 4].</li>
-            <li>Led a 7-engineer NOC team, reducing incident response latency by 50% [cite: 4].</li>
+            <li>Led a 7-engineer NOC operations team, reducing incident response latency by 50% [cite: 4].</li>
             <li>Managed data center environments, MikroTik routing switches, firewall security rules, and disaster recovery plans [cite: 4].</li>
             <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions [cite: 4].</li>
           </ul>
@@ -1169,7 +1193,7 @@
 
       <div class="chip-module-card">
         <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">Higher Secondary Certificate (2017) [cite: 4]</h3>
-        <p style="color:var(--text-dim); font-size:0.88rem;">Motijheel Govt. Boys College (Science) [cite: 4]</p>
+        <p style="color:var(--text-dim); font-size:0.88rem;">Motijheel Govt. Boys College (Science)</p>
         <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 4]</p>
       </div>
 
@@ -1426,9 +1450,3 @@
 
 </body>
 </html>
-"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(code_with_linkedin_expertise)
-
-print("Semiconductor PCB electron trace animation code generated successfully.")
