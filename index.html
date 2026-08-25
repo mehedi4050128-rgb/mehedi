@@ -60,9 +60,7 @@
       background: radial-gradient(circle at 50% 45%, #071638 0%, #01040a 95%);
     }
 
-    /* ========================================================
-       ULTRA-SMART LIVE HYPER-NAVBAR
-       ======================================================== */
+    /* Floating Microchip Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -76,30 +74,18 @@
 
     nav {
       width: 100%;
-      max-width: 1280px;
-      background: rgba(4, 10, 24, 0.92);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1.5px solid var(--wire-focus);
-      border-radius: 999px;
+      max-width: 1250px;
+      background: rgba(4, 10, 24, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 1.8rem;
-      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 255, 0.18);
-      position: relative;
+      padding: 0.8rem 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.1);
     }
-
-    nav::before, nav::after {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-color: var(--trace-cyan);
-      pointer-events: none;
-    }
-    nav::before { top: 3px; left: 16px; border-top: 2px solid; border-left: 2px solid; }
-    nav::after { bottom: 3px; right: 16px; border-bottom: 2px solid; border-right: 2px solid; }
 
     .brand-logo {
       display: flex;
@@ -109,32 +95,24 @@
     }
 
     .brand-core-die {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(245, 158, 11, 0.3));
-      border: 2px solid var(--trace-cyan);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
-      font-size: 1.1rem;
-      box-shadow: 0 0 20px var(--trace-cyan-glow);
-      animation: chipPulse 2.5s infinite ease-in-out;
-    }
-
-    @keyframes chipPulse {
-      0% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 22px rgba(0, 240, 255, 0.8); transform: scale(1.04); }
-      100% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.4); transform: scale(1); }
+      font-size: 1rem;
     }
 
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
-      letter-spacing: 0.5px;
       color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
     .brand-sub {
@@ -142,10 +120,8 @@
       font-family: 'JetBrains Mono', monospace;
       color: var(--trace-cyan);
       letter-spacing: 1px;
-      font-weight: 600;
     }
 
-    /* Live Telemetry Status Widget in Navbar */
     .nav-live-telemetry {
       display: flex;
       align-items: center;
@@ -168,11 +144,17 @@
       animation: pulseAnim 1.5s infinite;
     }
 
+    @keyframes pulseAnim {
+      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
     .nav-item {
@@ -182,41 +164,40 @@
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.84rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      padding: 0.45rem 0.8rem;
-      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      transition: all 0.25s ease;
+      gap: 6px;
+      transition: all 0.2s ease;
       cursor: pointer;
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--trace-cyan);
-      background: rgba(0, 240, 255, 0.12);
+      color: #ffffff;
+      background: rgba(0, 240, 255, 0.1);
     }
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 14px);
+      top: calc(100% + 12px);
       left: 50%;
-      transform: translateX(-50%) translateY(10px);
+      transform: translateX(-50%) translateY(8px);
       background: rgba(4, 9, 22, 0.98);
-      backdrop-filter: blur(28px);
       border: 1px solid var(--wire-focus);
-      border-radius: 16px;
-      padding: 0.8rem;
-      min-width: 270px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 240, 255, 0.2);
+      border-radius: 12px;
+      padding: 0.6rem;
+      min-width: 260px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
       z-index: 1050;
     }
 
@@ -229,19 +210,18 @@
     .dropdown-item a {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 0.65rem 0.9rem;
+      gap: 10px;
+      padding: 0.6rem 0.8rem;
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.82rem;
-      border-radius: 10px;
+      border-radius: 6px;
       transition: 0.2s;
     }
 
     .dropdown-item a:hover {
       color: #ffffff;
-      background: rgba(0, 240, 255, 0.15);
-      transform: translateX(4px);
+      background: rgba(0, 240, 255, 0.12);
     }
 
     .mobile-menu-btn {
@@ -289,21 +269,6 @@
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
-    }
-
-    .pulse-core {
-      width: 7px;
-      height: 7px;
-      background: var(--trace-emerald);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--trace-emerald);
-      animation: pulseAnim 2s infinite;
-    }
-
-    @keyframes pulseAnim {
-      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
     .hero-content h1 {
@@ -846,6 +811,9 @@
       margin: 0 auto;
     }
 
+    /* ========================================================
+       SMOOTHED CONTACT TERMINAL (NO MARKED TEXT)
+       ======================================================== */
     .terminal-console {
       max-width: 950px;
       margin: 0 auto;
@@ -858,7 +826,7 @@
 
     .terminal-topbar {
       background: rgba(5, 11, 24, 0.95);
-      padding: 0.75rem 1.2rem;
+      padding: 0.9rem 1.4rem;
       border-bottom: 1px solid var(--wire-border);
       display: flex;
       justify-content: space-between;
@@ -1033,7 +1001,7 @@
   <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Navigation with Live Telemetry Widget -->
+  <!-- Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
@@ -1046,7 +1014,6 @@
         </div>
       </a>
 
-      <!-- Live Telemetry Status Hub -->
       <div class="nav-live-telemetry">
         <span class="telemetry-pulse"></span>
         <span id="liveClock">NODE_ONLINE</span>
@@ -1122,7 +1089,6 @@
       </div>
     </div>
     
-    <!-- High-Visibility Live Circuit Motherboard Frame around Profile Photo -->
     <div class="hero-visual">
       <div class="circuit-motherboard-frame">
         <canvas id="profile-circuit-canvas"></canvas>
@@ -1528,7 +1494,7 @@
     </div>
   </section>
 
-  <!-- Interface / Contact Section -->
+  <!-- Interface / Contact Section with Direct Mail Transmission -->
   <section id="contact" class="reveal-on-scroll">
     <div class="section-header">
       <h2 class="section-title">CONNECT INTERFACE</h2>
@@ -1541,7 +1507,7 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--trace-cyan); font-size:0.8rem;">root@mehedi-security:~$</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--trace-cyan); font-size:0.8rem; font-weight:600;">SECURE_TRANSMISSION_GATEWAY</div>
         <div></div>
       </div>
 
@@ -1583,7 +1549,7 @@
           </div>
         </div>
 
-        <form onsubmit="handleCyberSubmit(event)">
+        <form onsubmit="handleMailTransmission(event)">
           <div>
             <label style="font-size:0.82rem; color:var(--trace-cyan); font-weight:600;">SENDER IDENTIFIER *</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
@@ -1643,7 +1609,7 @@
     setInterval(() => {
       const now = new Date();
       const timeStr = now.toTimeString().split(' ')[0];
-      document.getElementById('liveClock').innerText = `SECURE_NODE: ACTIVE [${timeStr}]`;
+      document.getElementById('liveClock').innerText = `NODE_ONLINE [${timeStr}]`;
     }, 1000);
 
     const observerOptions = {
@@ -1663,6 +1629,7 @@
       scrollObserver.observe(el);
     });
 
+    // Profile Circuit Tracing Engine
     const profileCanvas = document.getElementById('profile-circuit-canvas');
     const pCtx = profileCanvas.getContext('2d');
 
@@ -1898,14 +1865,16 @@
     function openModal(id) { document.getElementById(id).classList.add('active'); }
     function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-    function handleCyberSubmit(e) {
+    function handleMailTransmission(e) {
       e.preventDefault();
       const name = document.getElementById('nameInp').value;
       const contact = document.getElementById('contactInp').value;
       const msg = document.getElementById('msgInp').value;
 
-      const body = `NAME: ${name}%0D%0ACONTACT: ${contact}%0D%0A%0D%0APAYLOAD:%0D%0A${encodeURIComponent(msg)}`;
-      window.location.href = `mailto:mehedi4050128@gmail.com?subject=Professional%20Inquiry%20from%20Portfolio&body=${body}`;
+      const subject = encodeURIComponent(`Professional Inquiry from Portfolio: ${name}`);
+      const body = encodeURIComponent(`SENDER NAME: ${name}\nRETURN CONTACT: ${contact}\n\nMESSAGE:\n${msg}`);
+      
+      window.location.href = `mailto:mehedi4050128@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
 
