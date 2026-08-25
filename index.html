@@ -329,7 +329,7 @@
     }
 
     .chip-btn-primary {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(168, 85, 247, 0.3));
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.25));
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
       box-shadow: 0 0 30px var(--trace-cyan-glow);
@@ -343,7 +343,7 @@
     }
 
     .chip-btn-glass {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       color: #e2e8f0;
       border: 1px solid var(--wire-border);
     }
@@ -354,9 +354,7 @@
       transform: translateY(-3px);
     }
 
-    /* ========================================================
-       HIGH-VISIBILITY LIVE CIRCUIT EMBEDDED PROFILE ARCHITECTURE
-       ======================================================== */
+    /* High-Visibility Live Circuit Embedded Profile Architecture */
     .hero-visual {
       flex: 0.95;
       display: flex;
@@ -375,7 +373,6 @@
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
     }
 
-    /* Embedded High-Visibility Live Circuit Canvas */
     #profile-circuit-canvas {
       position: absolute;
       top: 0;
@@ -387,7 +384,6 @@
       z-index: 2;
     }
 
-    /* Gold PCB Bus Edge Connectors */
     .circuit-motherboard-frame::before {
       content: '';
       position: absolute;
@@ -559,7 +555,7 @@
       border-color: var(--wire-focus);
       background: var(--panel-hover);
       transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px var(--trace-cyan-glow);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.15);
     }
 
     .about-sub-card {
@@ -589,7 +585,7 @@
     }
 
     .system-badge {
-      background: rgba(0, 240, 255, 0.06);
+      background: rgba(0, 240, 255, 0.04);
       border: 1px solid var(--wire-border);
       padding: 0.65rem 1rem;
       border-radius: 10px;
@@ -675,15 +671,15 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(245, 158, 11, 0.15));
-      border: 1.5px solid var(--wire-focus);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(245, 158, 11, 0.1));
+      border: 1px solid var(--wire-focus);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
       font-size: 1.3rem;
       flex-shrink: 0;
-      box-shadow: 0 0 20px var(--trace-cyan-glow);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
     }
 
     .role-company-wrapper h3 {
@@ -707,8 +703,8 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
       color: var(--trace-emerald);
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 5px 14px;
       border-radius: 999px;
       font-weight: 600;
@@ -725,13 +721,13 @@
     }
 
     .pro-badge {
-      background: rgba(245, 158, 11, 0.1);
+      background: rgba(245, 158, 11, 0.08);
       border: 1px solid var(--wire-gold);
       color: var(--trace-gold);
       font-size: 0.76rem;
       padding: 4px 11px;
       border-radius: 6px;
-      font-weight: 600;
+      font-weight: 500;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -744,7 +740,7 @@
     }
 
     .exp-category-box {
-      background: rgba(3, 7, 18, 0.75);
+      background: rgba(3, 7, 18, 0.6);
       border: 1px solid var(--wire-border);
       border-radius: 12px;
       padding: 1.2rem;
@@ -796,7 +792,7 @@
 
     .filter-btn {
       padding: 0.6rem 1.4rem;
-      background: rgba(0, 240, 255, 0.05);
+      background: rgba(0, 240, 255, 0.04);
       border: 1px solid var(--wire-border);
       border-radius: 999px;
       color: var(--text-muted);
@@ -809,7 +805,7 @@
     .filter-btn.active, .filter-btn:hover {
       background: linear-gradient(135deg, var(--trace-cyan), var(--trace-purple));
       color: #ffffff;
-      box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
       border-color: transparent;
     }
 
@@ -825,7 +821,7 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: rgba(0, 240, 255, 0.12);
+      background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan);
       display: flex;
       align-items: center;
@@ -833,7 +829,6 @@
       color: var(--trace-cyan);
       font-size: 1.3rem;
       margin-bottom: 1.2rem;
-      box-shadow: 0 0 15px var(--trace-cyan-glow);
     }
 
     .cert-grid {
@@ -848,9 +843,9 @@
       max-width: 950px;
       margin: 0 auto;
       background: #020617;
-      border: 1.5px solid var(--wire-focus);
+      border: 1px solid var(--wire-focus);
       border-radius: 20px;
-      box-shadow: 0 0 60px rgba(0, 240, 255, 0.25);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
       overflow: hidden;
     }
 
@@ -900,7 +895,7 @@
 
     .form-input-tech {
       width: 100%;
-      background: rgba(0, 240, 255, 0.04);
+      background: rgba(0, 240, 255, 0.03);
       border: 1px solid var(--wire-border);
       border-radius: 10px;
       padding: 0.85rem 1rem;
@@ -913,7 +908,7 @@
 
     .form-input-tech:focus {
       border-color: var(--trace-cyan);
-      box-shadow: 0 0 25px var(--trace-cyan-glow);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
     }
 
     .modal-overlay {
@@ -936,12 +931,12 @@
 
     .modal-hud {
       background: #050b18;
-      border: 1.5px solid var(--trace-cyan);
+      border: 1px solid var(--trace-cyan);
       border-radius: 20px;
       padding: 2.4rem;
       max-width: 650px;
       width: 100%;
-      box-shadow: 0 0 60px var(--trace-cyan-glow);
+      box-shadow: 0 0 50px var(--trace-cyan-glow);
       position: relative;
     }
 
@@ -1023,7 +1018,7 @@
 </head>
 <body>
 
-  <!-- High-Visibility Live Canvas -->
+  <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
   <!-- Navigation -->
@@ -1433,7 +1428,7 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications & Training Section (Updated with HCSA & Critical Infrastructure) -->
   <section id="trainings" class="reveal-on-scroll">
     <div class="section-header">
       <h2 class="section-title">CERTIFICATIONS & TRAININGS</h2>
@@ -1448,17 +1443,33 @@
       </div>
 
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
+        <i class="fa-solid fa-video" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">HCSA CCTV Certification</h4>
+          <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Hikvision Certified Security Associate</p>
         </div>
       </div>
 
       <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
+        <i class="fa-solid fa-network-wired" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
         <div>
-          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">ASP.NET Core MVC Web Applications</h4>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">HCSA Networking Certification</h4>
+          <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Hikvision Certified Security Associate</p>
+        </div>
+      </div>
+
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-solid fa-shield-halved" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
+        <div>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Critical Infrastructure Protection</h4>
+          <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Advanced Physical Security & Risk Defense</p>
+        </div>
+      </div>
+
+      <div class="wafer-panel-card" style="display:flex; gap:1.2rem; align-items:center;">
+        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--trace-cyan);"></i>
+        <div>
+          <h4 style="color:#fff; font-size:1.05rem; font-weight:700;">Microsoft Azure Fundamentals</h4>
           <p style="color:var(--trace-emerald); font-size:0.84rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021)</p>
         </div>
       </div>
@@ -1641,12 +1652,12 @@
     window.addEventListener('resize', resizeProfileCanvas);
 
     const profileTracks = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 22; i++) {
       profileTracks.push({
         x: Math.random() * 390,
         y: Math.random() * 450,
-        length: 30 + Math.random() * 50,
-        speed: 1.2 + Math.random() * 1.5,
+        length: 35 + Math.random() * 55,
+        speed: 1.4 + Math.random() * 1.6,
         progress: Math.random() * 100,
         horizontal: Math.random() > 0.4,
         color: Math.random() > 0.3 ? '#00f0ff' : '#f59e0b'
@@ -1660,12 +1671,12 @@
         t.progress += t.speed;
         if (t.progress > 100) t.progress = 0;
 
-        const currentX = t.horizontal ? (t.x + (t.progress * 1.8)) % profileCanvas.width : t.x;
-        const currentY = !t.horizontal ? (t.y + (t.progress * 1.8)) % profileCanvas.height : t.y;
+        const currentX = t.horizontal ? (t.x + (t.progress * 1.9)) % profileCanvas.width : t.x;
+        const currentY = !t.horizontal ? (t.y + (t.progress * 1.9)) % profileCanvas.height : t.y;
 
         pCtx.beginPath();
-        pCtx.strokeStyle = t.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.55)' : 'rgba(245, 158, 11, 0.55)';
-        pCtx.lineWidth = 2;
+        pCtx.strokeStyle = t.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.65)' : 'rgba(245, 158, 11, 0.65)';
+        pCtx.lineWidth = 2.2;
 
         if (t.horizontal) {
           pCtx.moveTo(currentX, currentY);
@@ -1678,9 +1689,9 @@
 
         // High-Vis Glowing Node Head
         pCtx.beginPath();
-        pCtx.arc(t.horizontal ? currentX + t.length : currentX, !t.horizontal ? currentY + t.length : currentY, 3, 0, Math.PI * 2);
+        pCtx.arc(t.horizontal ? currentX + t.length : currentX, !t.horizontal ? currentY + t.length : currentY, 3.2, 0, Math.PI * 2);
         pCtx.fillStyle = t.color;
-        pCtx.shadowBlur = 12;
+        pCtx.shadowBlur = 14;
         pCtx.shadowColor = t.color;
         pCtx.fill();
         pCtx.shadowBlur = 0;
@@ -1709,7 +1720,6 @@
       const currentScrollY = window.scrollY;
       const delta = currentScrollY - lastScrollY;
       lastScrollY = currentScrollY;
-      // Controlled slow scroll velocity so it remains elegant
       targetVelocity = Math.max(Math.min(delta * 0.06, 1.8), -1.8);
     }, { passive: true });
 
