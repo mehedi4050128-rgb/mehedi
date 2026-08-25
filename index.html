@@ -10,18 +10,19 @@
 
   <style>
     :root {
-      --bg-dark: #020617;
-      --card-bg: rgba(8, 15, 30, 0.88);
-      --card-hover: rgba(14, 25, 50, 0.95);
-      --cyan: #00f0ff;
-      --cyan-glow: rgba(0, 240, 255, 0.3);
-      --emerald: #10b981;
-      --gold: #f59e0b;
-      --purple: #8b5cf6;
-      --border-wire: rgba(0, 240, 255, 0.18);
-      --border-bright: rgba(0, 240, 255, 0.65);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --silicon-bg: #030712;
+      --pcb-panel: rgba(8, 17, 34, 0.88);
+      --pcb-hover: rgba(14, 28, 54, 0.95);
+      --neon-cyan: #00f0ff;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --bus-gold: #fbbf24;
+      --gold-glow: rgba(251, 191, 36, 0.4);
+      --logic-emerald: #10b981;
+      --wafer-purple: #8b5cf6;
+      --trace-line: rgba(0, 240, 255, 0.16);
+      --trace-active: rgba(0, 240, 255, 0.65);
+      --text-pure: #f8fafc;
+      --text-dim: #94a3b8;
     }
 
     * {
@@ -33,15 +34,15 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--silicon-bg);
+      color: var(--text-pure);
       line-height: 1.7;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Cyber Matrix Digital Stream Canvas */
-    #matrix-canvas {
+    /* Semiconductor Silicon Wafer & Circuit Trace Animation Canvas */
+    #semiconductor-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -49,10 +50,10 @@
       height: 100%;
       z-index: -1;
       pointer-events: none;
-      background: radial-gradient(circle at center, #060e20 0%, #020617 95%);
+      background: radial-gradient(circle at center, #071329 0%, #030712 95%);
     }
 
-    /* Floating Microchip Glass Navbar */
+    /* Microchip Floating HUD Navbar */
     .nav-wrapper {
       position: fixed;
       top: 1.2rem;
@@ -67,28 +68,29 @@
     nav {
       width: 100%;
       max-width: 1200px;
-      background: rgba(6, 12, 26, 0.92);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--border-wire);
+      background: rgba(6, 14, 29, 0.92);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--trace-line);
       border-radius: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.65rem 1.6rem;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.1);
       position: relative;
     }
 
+    /* Silicon IC Pin Accents */
     nav::before, nav::after {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
-      border-color: var(--cyan);
+      width: 10px;
+      height: 10px;
+      border-color: var(--neon-cyan);
       pointer-events: none;
     }
-    nav::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
-    nav::after { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
+    nav::before { top: -2px; left: -2px; border-top: 2px solid; border-left: 2px solid; }
+    nav::after { bottom: -2px; right: -2px; border-bottom: 2px solid; border-right: 2px solid; }
 
     .brand-logo {
       display: flex;
@@ -97,16 +99,16 @@
       text-decoration: none;
     }
 
-    .chip-core-icon {
+    .chip-die-icon {
       width: 38px;
       height: 38px;
       border-radius: 8px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--cyan);
+      border: 1.5px solid var(--neon-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-size: 1.1rem;
       box-shadow: 0 0 15px var(--cyan-glow);
     }
@@ -116,14 +118,14 @@
       font-weight: 800;
       font-size: 0.95rem;
       letter-spacing: 1px;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       text-shadow: 0 0 10px var(--cyan-glow);
     }
 
     .brand-sub {
       font-size: 0.65rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--emerald);
+      color: var(--logic-emerald);
       letter-spacing: 1px;
       font-weight: 600;
     }
@@ -141,7 +143,7 @@
 
     .nav-link {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--text-muted);
+      color: var(--text-dim);
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 500;
@@ -155,9 +157,9 @@
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--cyan);
+      color: var(--neon-cyan);
       background: rgba(0, 240, 255, 0.1);
-      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
     }
 
     .dropdown-menu {
@@ -165,9 +167,9 @@
       top: calc(100% + 12px);
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: rgba(6, 12, 26, 0.98);
+      background: rgba(5, 11, 24, 0.98);
       backdrop-filter: blur(28px);
-      border: 1px solid var(--border-bright);
+      border: 1px solid var(--trace-active);
       border-radius: 12px;
       padding: 0.8rem;
       min-width: 270px;
@@ -193,7 +195,7 @@
       align-items: center;
       gap: 12px;
       padding: 0.65rem 0.9rem;
-      color: var(--text-muted);
+      color: var(--text-dim);
       text-decoration: none;
       font-size: 0.82rem;
       font-family: 'JetBrains Mono', monospace;
@@ -210,8 +212,8 @@
     .mobile-menu-btn {
       display: none;
       background: transparent;
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
       padding: 6px 12px;
       border-radius: 6px;
       font-size: 1.1rem;
@@ -238,10 +240,10 @@
       gap: 10px;
       padding: 6px 16px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--trace-line);
       border-radius: 6px;
       font-size: 0.78rem;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       margin-bottom: 1.5rem;
       font-family: 'JetBrains Mono', monospace;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
@@ -250,9 +252,9 @@
     .pulse-core {
       width: 8px;
       height: 8px;
-      background: var(--emerald);
+      background: var(--logic-emerald);
       border-radius: 50%;
-      box-shadow: 0 0 12px var(--emerald);
+      box-shadow: 0 0 12px var(--logic-emerald);
       animation: pulseAnim 2s infinite;
     }
 
@@ -272,7 +274,7 @@
     }
 
     .chip-gradient {
-      background: linear-gradient(135deg, var(--cyan) 0%, #38bdf8 40%, var(--purple) 100%);
+      background: linear-gradient(135deg, var(--neon-cyan) 0%, #38bdf8 40%, var(--wafer-purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 35px rgba(0, 240, 255, 0.3);
@@ -281,7 +283,7 @@
     .sub-tech-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 1rem;
-      color: var(--emerald);
+      color: var(--logic-emerald);
       margin-bottom: 1.5rem;
       font-weight: 600;
       line-height: 1.5;
@@ -289,7 +291,7 @@
 
     .hero-desc {
       font-size: 1.02rem;
-      color: var(--text-muted);
+      color: var(--text-dim);
       max-width: 620px;
       margin-bottom: 2.2rem;
       line-height: 1.8;
@@ -317,31 +319,31 @@
 
     .chip-btn-primary {
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.25));
-      border: 1.5px solid var(--cyan);
-      color: var(--cyan);
+      border: 1.5px solid var(--neon-cyan);
+      color: var(--neon-cyan);
       box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
     }
 
     .chip-btn-primary:hover {
-      background: var(--cyan);
+      background: var(--neon-cyan);
       color: #020617;
-      box-shadow: 0 0 40px var(--cyan);
+      box-shadow: 0 0 40px var(--neon-cyan);
       transform: translateY(-3px);
     }
 
     .chip-btn-glass {
       background: rgba(255, 255, 255, 0.03);
       color: #e2e8f0;
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--trace-line);
     }
 
     .chip-btn-glass:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+      border-color: var(--neon-cyan);
+      color: var(--neon-cyan);
       transform: translateY(-3px);
     }
 
-    /* Microchip Portrait Socket */
+    /* Semiconductor IC Package / BGA Socket Frame */
     .hero-visual {
       flex: 0.9;
       display: flex;
@@ -354,25 +356,26 @@
       width: 340px;
       height: 340px;
       padding: 12px;
-      background: rgba(8, 16, 34, 0.85);
-      border: 2px solid var(--border-wire);
+      background: rgba(7, 15, 32, 0.88);
+      border: 2px solid var(--trace-line);
       border-radius: 20px;
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.2), inset 0 0 25px rgba(0, 240, 255, 0.08);
     }
 
+    /* Gold Wire-Bonding Pins Top & Bottom */
     .chip-socket-frame::before {
       content: '';
       position: absolute;
       top: -10px; left: 15%; right: 15%;
       height: 6px;
-      background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 6px, transparent 6px, transparent 14px);
+      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
     }
     .chip-socket-frame::after {
       content: '';
       position: absolute;
       bottom: -10px; left: 15%; right: 15%;
       height: 6px;
-      background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 6px, transparent 6px, transparent 14px);
+      background: repeating-linear-gradient(90deg, var(--bus-gold) 0px, var(--bus-gold) 6px, transparent 6px, transparent 14px);
     }
 
     .chip-socket-frame img {
@@ -382,10 +385,10 @@
       object-fit: cover;
       background: #060c1d;
       display: block;
-      border: 2px solid var(--border-bright);
+      border: 2px solid var(--trace-active);
     }
 
-    /* Sections */
+    /* Section Styling */
     section {
       padding: 6.5rem 8%;
       position: relative;
@@ -398,7 +401,7 @@
 
     .section-module-tag {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--emerald);
+      color: var(--logic-emerald);
       font-size: 0.78rem;
       letter-spacing: 2px;
       display: block;
@@ -414,10 +417,10 @@
       letter-spacing: 0.5px;
     }
 
-    /* Microchip Card Part-by-Part Architecture */
+    /* Semiconductor Module Architecture Card */
     .chip-module-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-wire);
+      background: var(--pcb-panel);
+      border: 1px solid var(--trace-line);
       border-radius: 16px;
       padding: 2.4rem;
       backdrop-filter: blur(20px);
@@ -426,26 +429,27 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
     }
 
+    /* Golden Circuit Bus Header Accent */
     .chip-module-card::before {
       content: '';
       position: absolute;
       top: 0; left: 25px;
-      width: 40px; height: 3px;
-      background: var(--cyan);
-      box-shadow: 0 0 12px var(--cyan);
+      width: 45px; height: 3px;
+      background: linear-gradient(90deg, var(--bus-gold), var(--neon-cyan));
+      box-shadow: 0 0 12px var(--cyan-glow);
     }
 
     .chip-module-card:hover {
-      border-color: var(--border-bright);
-      background: var(--card-hover);
+      border-color: var(--trace-active);
+      background: var(--pcb-hover);
       transform: translateY(-6px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.2);
     }
 
-    /* About Section Detailed Sub-sections */
+    /* Sub-card Architecture */
     .about-sub-card {
-      background: rgba(2, 6, 23, 0.6);
-      border: 1px solid var(--border-wire);
+      background: rgba(3, 8, 20, 0.7);
+      border: 1px solid var(--trace-line);
       border-radius: 12px;
       padding: 1.5rem;
       margin-top: 1.5rem;
@@ -454,7 +458,7 @@
     .about-sub-title {
       font-family: 'Orbitron', sans-serif;
       font-size: 1rem;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -469,8 +473,8 @@
     }
 
     .system-badge {
-      background: rgba(0, 240, 255, 0.05);
-      border: 1px solid var(--border-wire);
+      background: rgba(0, 240, 255, 0.04);
+      border: 1px solid var(--trace-line);
       padding: 0.65rem 1rem;
       border-radius: 8px;
       font-family: 'JetBrains Mono', monospace;
@@ -482,35 +486,35 @@
     }
 
     .system-badge i {
-      color: var(--cyan);
+      color: var(--neon-cyan);
     }
 
-    /* Core Metrics Dashboard in About */
+    /* Metrics Dashboard */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
       margin-top: 2.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-wire);
+      border-top: 1px solid var(--trace-line);
     }
 
     .metric-box h3 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
       font-weight: 800;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
     }
 
     .metric-box p {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--text-muted);
+      color: var(--text-dim);
       letter-spacing: 1px;
     }
 
-    /* Experience Circuit Timeline */
+    /* Experience Timeline */
     .timeline {
       position: relative;
       max-width: 1000px;
@@ -522,8 +526,8 @@
       position: absolute;
       left: 20px; top: 0; bottom: 0;
       width: 2px;
-      background: linear-gradient(180deg, var(--cyan), var(--purple), var(--gold), transparent);
-      box-shadow: 0 0 12px var(--cyan);
+      background: linear-gradient(180deg, var(--neon-cyan), var(--wafer-purple), var(--bus-gold), transparent);
+      box-shadow: 0 0 12px var(--neon-cyan);
     }
 
     .timeline-item {
@@ -538,13 +542,13 @@
       width: 30px; height: 30px;
       border-radius: 8px;
       background: #020617;
-      border: 2px solid var(--cyan);
+      border: 2px solid var(--neon-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-size: 0.85rem;
-      box-shadow: 0 0 15px var(--cyan);
+      box-shadow: 0 0 15px var(--neon-cyan);
     }
 
     .job-top-row {
@@ -564,7 +568,7 @@
     }
 
     .company-title {
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.92rem;
       font-weight: 600;
@@ -573,7 +577,7 @@
     .job-duration {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.78rem;
-      color: var(--emerald);
+      color: var(--logic-emerald);
       background: rgba(16, 185, 129, 0.1);
       border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 4px 12px;
@@ -601,11 +605,11 @@
       content: '◆';
       position: absolute;
       left: 0;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-size: 0.75rem;
     }
 
-    /* Core Expertise Matrix Grid */
+    /* Skills Grid */
     .filter-tabs {
       display: flex;
       justify-content: center;
@@ -617,9 +621,9 @@
     .filter-btn {
       padding: 0.55rem 1.4rem;
       background: rgba(0, 240, 255, 0.04);
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--trace-line);
       border-radius: 8px;
-      color: var(--text-muted);
+      color: var(--text-dim);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem;
       cursor: pointer;
@@ -627,9 +631,9 @@
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--cyan);
+      background: var(--neon-cyan);
       color: #020617;
-      box-shadow: 0 0 25px var(--cyan);
+      box-shadow: 0 0 25px var(--neon-cyan);
       font-weight: 700;
     }
 
@@ -646,11 +650,11 @@
       height: 50px;
       border-radius: 10px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1.5px solid var(--cyan);
+      border: 1.5px solid var(--neon-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-size: 1.4rem;
       margin-bottom: 1.2rem;
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
@@ -670,16 +674,16 @@
       max-width: 950px;
       margin: 0 auto;
       background: #020617;
-      border: 1px solid var(--border-bright);
+      border: 1px solid var(--trace-active);
       border-radius: 16px;
       box-shadow: 0 0 50px rgba(0, 240, 255, 0.25);
       overflow: hidden;
     }
 
     .terminal-topbar {
-      background: rgba(8, 15, 32, 0.95);
+      background: rgba(6, 14, 30, 0.95);
       padding: 0.75rem 1.2rem;
-      border-bottom: 1px solid var(--border-wire);
+      border-bottom: 1px solid var(--trace-line);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -701,10 +705,10 @@
     .form-input-tech {
       width: 100%;
       background: rgba(0, 240, 255, 0.03);
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--trace-line);
       border-radius: 8px;
       padding: 0.85rem 1rem;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.88rem;
       outline: none;
@@ -713,7 +717,7 @@
     }
 
     .form-input-tech:focus {
-      border-color: var(--cyan);
+      border-color: var(--neon-cyan);
       box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
       background: rgba(0, 240, 255, 0.08);
     }
@@ -739,7 +743,7 @@
 
     .modal-hud {
       background: #070d1e;
-      border: 2px solid var(--cyan);
+      border: 2px solid var(--neon-cyan);
       border-radius: 16px;
       padding: 2.4rem;
       max-width: 650px;
@@ -752,7 +756,7 @@
       position: absolute;
       top: 1.2rem; right: 1.2rem;
       background: none; border: none;
-      color: var(--cyan);
+      color: var(--neon-cyan);
       font-size: 1.3rem;
       cursor: pointer;
     }
@@ -760,8 +764,8 @@
     footer {
       text-align: center;
       padding: 2.5rem 8%;
-      border-top: 1px solid var(--border-wire);
-      color: var(--text-muted);
+      border-top: 1px solid var(--trace-line);
+      color: var(--text-dim);
       font-size: 0.85rem;
       font-family: 'JetBrains Mono', monospace;
     }
@@ -775,7 +779,7 @@
         left: 0;
         width: 100%;
         background: rgba(6, 12, 26, 0.98);
-        border: 1px solid var(--border-wire);
+        border: 1px solid var(--trace-line);
         border-radius: 12px;
         flex-direction: column;
         padding: 1.2rem;
@@ -809,15 +813,15 @@
 </head>
 <body>
 
-  <!-- Cyber Digital Matrix Rain Background -->
-  <canvas id="matrix-canvas"></canvas>
+  <!-- Semiconductor Silicon Circuit Animation Canvas -->
+  <canvas id="semiconductor-canvas"></canvas>
 
   <!-- Floating Microchip Navigation -->
   <div class="nav-wrapper">
     <nav>
       <a href="#home" class="brand-logo">
-        <div class="chip-core-icon">
-          <i class="fa-solid fa-shield-halved"></i>
+        <div class="chip-die-icon">
+          <i class="fa-solid fa-microchip"></i>
         </div>
         <div>
           <span class="brand-title">MEHEDI HASSAN</span><br>
@@ -904,7 +908,7 @@
       <!-- Integrated Security Systems Breakdown -->
       <div class="about-sub-card">
         <div class="about-sub-title"><i class="fa-solid fa-network-wired"></i> Core Implementation & Integrated Systems Expertise:</div>
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+        <p style="font-size: 0.95rem; color: var(--text-dim); margin-bottom: 0.8rem;">
           A significant part of my expertise is in the planning, coordination, execution, and operational implementation of integrated security systems:
         </p>
         <div class="system-badge-grid">
@@ -932,7 +936,7 @@
       </p>
 
       <!-- Vision Block -->
-      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--cyan); padding: 1.2rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--neon-cyan); padding: 1.2rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0;">
         <p style="font-size: 1rem; color: #e2e8f0; font-style: italic; line-height: 1.8;">
           "I believe modern security is more than physical protection. It is the effective integration of people, processes, technology, intelligence, and leadership. My focus is on building proactive, technology-enabled security environments that improve safety, operational resilience, and organizational security standards."
         </p>
@@ -982,7 +986,7 @@
               <h3 class="job-title">Executive (Security & Administration)</h3>
               <div class="company-title">Ulkasemi Pvt. Ltd.</div>
             </div>
-            <span class="job-duration">JUNE 2026 – PRESENT </span>
+            <span class="job-duration">JUNE 2026 – PRESENT [cite: 4]</span>
           </div>
           <ul class="job-bullets">
             <li>Directing end-to-end security operations, administrative governance, and workplace safety compliance for high-tech semiconductor corporate offices.</li>
@@ -1045,7 +1049,7 @@
           </div>
           <ul class="job-bullets">
             <li>Administered end-to-end IP network infrastructure for enterprise clients, sustaining 99.9% uptime [cite: 4].</li>
-            <li>Led a 7-engineer NOC operations team, reducing incident response latency by 50% [cite: 4].</li>
+            <li>Led a 7-engineer NOC team, reducing incident response latency by 50% [cite: 4].</li>
             <li>Managed data center environments, MikroTik routing switches, firewall security rules, and disaster recovery plans [cite: 4].</li>
             <li>Delivered Tier-3 technical escalation support, diagnosing complex routing and connectivity disruptions [cite: 4].</li>
           </ul>
@@ -1074,37 +1078,37 @@
       <div class="chip-module-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">Airport Security Manager (ASM) standards, 5-star hotel security governance, guest safety, perimeter protection, and emergency preparedness.</p>
       </div>
 
       <div class="chip-module-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
 
       <div class="chip-module-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
 
       <div class="chip-module-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
       </div>
 
       <div class="chip-module-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
       </div>
 
       <div class="chip-module-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
         <h3 style="font-family:'Orbitron'; font-size:1.05rem; color:#fff; margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
+        <p style="font-size:0.92rem; color:var(--text-dim);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
       </div>
     </div>
   </section>
@@ -1117,34 +1121,34 @@
     </div>
     <div class="cert-grid">
       <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--cyan);"></i>
+        <i class="fa-solid fa-award" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem;">Airport Security Manager (ASM)</h4>
-          <p style="color:var(--emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026) [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Civil Aviation Authority of Bangladesh (2026) [cite: 4]</p>
         </div>
       </div>
 
       <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--cyan);"></i>
+        <i class="fa-brands fa-microsoft" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem;">Microsoft Azure Fundamentals</h4>
-          <p style="color:var(--emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4]</p>
         </div>
       </div>
 
       <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--cyan);"></i>
+        <i class="fa-solid fa-code" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem;">ASP.NET Core MVC Web Applications</h4>
-          <p style="color:var(--emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh High-Tech Park Authority (2021) [cite: 4]</p>
         </div>
       </div>
 
       <div class="chip-module-card" style="display:flex; gap:1.2rem; align-items:center;">
-        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--cyan);"></i>
+        <i class="fa-solid fa-fire-extinguisher" style="font-size:2.2rem; color:var(--neon-cyan);"></i>
         <div>
           <h4 style="color:#fff; font-size:1.05rem;">Community Civil Defense Training</h4>
-          <p style="color:var(--emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-size:0.82rem; font-family:'JetBrains Mono';">Bangladesh Fire Service & Civil Defence [cite: 4]</p>
         </div>
       </div>
     </div>
@@ -1159,20 +1163,20 @@
     <div class="skills-grid" style="max-width:950px;">
       <div class="chip-module-card">
         <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">B.Sc in Physics (2022) [cite: 4]</h3>
-        <p style="color:var(--text-muted); font-size:0.88rem;">Gopalganj Science and Technology University (GSTU)</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 4]</p>
+        <p style="color:var(--text-dim); font-size:0.88rem;">Gopalganj Science and Technology University (GSTU)</p>
+        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">CGPA: 3.55 / 4.00 [cite: 4]</p>
       </div>
 
       <div class="chip-module-card">
         <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">Higher Secondary Certificate (2017) [cite: 4]</h3>
-        <p style="color:var(--text-muted); font-size:0.88rem;">Motijheel Govt. Boys College (Science) [cite: 4]</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 4]</p>
+        <p style="color:var(--text-dim); font-size:0.88rem;">Motijheel Govt. Boys College (Science) [cite: 4]</p>
+        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 4.42 / 5.00 [cite: 4]</p>
       </div>
 
       <div class="chip-module-card">
         <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.3rem;">Secondary School Certificate (2015) [cite: 4]</h3>
-        <p style="color:var(--text-muted); font-size:0.88rem;">Shahjahanpur Railway Govt. High School [cite: 4]</p>
-        <p style="color:var(--cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden) [cite: 4]</p>
+        <p style="color:var(--text-dim); font-size:0.88rem;">Shahjahanpur Railway Govt. High School [cite: 4]</p>
+        <p style="color:var(--neon-cyan); font-family:'JetBrains Mono'; margin-top:6px; font-weight:700;">GPA: 5.00 / 5.00 (Golden) [cite: 4]</p>
       </div>
     </div>
   </section>
@@ -1191,29 +1195,29 @@
           <span class="tdot tdot-yellow"></span>
           <span class="tdot tdot-green"></span>
         </div>
-        <div style="font-family:'JetBrains Mono'; color:var(--cyan); font-size:0.8rem;">root@mehedi-security:~$ [cite: 4]</div>
+        <div style="font-family:'JetBrains Mono'; color:var(--neon-cyan); font-size:0.8rem;">root@mehedi-security:~$ [cite: 4]</div>
         <div></div>
       </div>
 
       <div class="terminal-body">
         <div>
           <h3 style="font-family:'Orbitron'; font-size:1.2rem; color:#fff; margin-bottom:1rem;">COMMUNICATION PORT [cite: 4]</h3>
-          <p style="font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">
+          <p style="font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--text-dim); margin-bottom:1.5rem;">
             Ready to establish secure communication for corporate security administration, surveillance infrastructure, and technical operations [cite: 4].
           </p>
 
           <div style="display:flex; flex-direction:column; gap:1rem; font-family:'JetBrains Mono'; font-size:0.88rem;">
             <div>
-              <span style="color:var(--text-muted);">LOCATION: [cite: 4]</span><br>
-              <span style="color:var(--cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh [cite: 4]</span>
+              <span style="color:var(--text-dim);">LOCATION: [cite: 4]</span><br>
+              <span style="color:var(--neon-cyan);"><i class="fa-solid fa-location-dot"></i> Malibagh, Dhaka-1217, Bangladesh [cite: 4]</span>
             </div>
             <div>
-              <span style="color:var(--text-muted);">PHONE: [cite: 4]</span><br>
-              <a href="tel:+8801680450882" style="color:var(--emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882 [cite: 4]</a>
+              <span style="color:var(--text-dim);">PHONE: [cite: 4]</span><br>
+              <a href="tel:+8801680450882" style="color:var(--logic-emerald); text-decoration:none;"><i class="fa-solid fa-phone"></i> +880 1680-450882 [cite: 4]</a>
             </div>
             <div>
-              <span style="color:var(--text-muted);">EMAIL: [cite: 4]</span><br>
-              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com [cite: 4]</a>
+              <span style="color:var(--text-dim);">EMAIL: [cite: 4]</span><br>
+              <a href="mailto:mehedi4050128@gmail.com" style="color:var(--neon-cyan); text-decoration:none;"><i class="fa-solid fa-envelope"></i> mehedi4050128@gmail.com [cite: 4]</a>
             </div>
           </div>
 
@@ -1225,15 +1229,15 @@
 
         <form onsubmit="handleCyberSubmit(event)">
           <div>
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--cyan);">SENDER IDENTIFIER * [cite: 4]</label>
+            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">SENDER IDENTIFIER * [cite: 4]</label>
             <input type="text" id="nameInp" class="form-input-tech" placeholder="Enter Full Name" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--cyan);">RETURN CONTACT (EMAIL/PHONE) * [cite: 4]</label>
+            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">RETURN CONTACT (EMAIL/PHONE) * [cite: 4]</label>
             <input type="text" id="contactInp" class="form-input-tech" placeholder="name@company.com or phone" required />
           </div>
           <div style="margin-top:1rem;">
-            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--cyan);">MESSAGE * [cite: 4]</label>
+            <label style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--neon-cyan);">MESSAGE * [cite: 4]</label>
             <textarea id="msgInp" class="form-input-tech" rows="4" placeholder="Write your project details or inquiry..." required></textarea>
           </div>
           <button type="submit" class="chip-btn chip-btn-primary" style="width:100%; margin-top:1.5rem; justify-content:center;">
@@ -1248,26 +1252,26 @@
   <div class="modal-overlay" id="refModal">
     <div class="modal-hud">
       <button class="modal-close-btn" onclick="closeModal('refModal')"><i class="fa-solid fa-xmark"></i></button>
-      <h3 style="font-family:'Orbitron'; color:var(--cyan); font-size:1.3rem; margin-bottom:0.4rem;">
+      <h3 style="font-family:'Orbitron'; color:var(--neon-cyan); font-size:1.3rem; margin-bottom:0.4rem;">
         <i class="fa-solid fa-shield-halved"></i> VERIFIED REFERENCES [cite: 4]
       </h3>
-      <p style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--text-muted); margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--text-dim); margin-bottom:1.5rem;">
         Defense & executive leadership verification records [cite: 4].
       </p>
 
       <div style="display:flex; flex-direction:column; gap:1.2rem;">
-        <div style="border:1px solid var(--border-wire); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
+        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
           <h4 style="color:#fff; font-size:1.05rem;">Air Commodore Md Salamot Ullah (Retd) [cite: 4]</h4>
-          <p style="color:var(--cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">Executive Director [cite: 4]</p>
-          <p style="color:var(--text-muted); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4]</p>
-          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121 [cite: 4]</p>
+          <p style="color:var(--neon-cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">Executive Director [cite: 4]</p>
+          <p style="color:var(--text-dim); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1552-353121 [cite: 4]</p>
         </div>
 
-        <div style="border:1px solid var(--border-wire); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
+        <div style="border:1px solid var(--trace-line); background:rgba(0,240,255,0.03); padding:1.2rem; border-radius:10px;">
           <h4 style="color:#fff; font-size:1.05rem;">Wing Commander Joarder Sirajul Islam [cite: 4]</h4>
-          <p style="color:var(--cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">DGM (Admin & Security) [cite: 4]</p>
-          <p style="color:var(--text-muted); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4]</p>
-          <p style="color:var(--emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495 [cite: 4]</p>
+          <p style="color:var(--neon-cyan); font-size:0.85rem; font-family:'JetBrains Mono'; font-weight:600;">DGM (Admin & Security) [cite: 4]</p>
+          <p style="color:var(--text-dim); font-size:0.82rem;">IPCO Development (BD) Ltd. & IPCO Hotels (BD) Ltd. [cite: 4]</p>
+          <p style="color:var(--logic-emerald); font-family:'JetBrains Mono'; font-size:0.85rem; margin-top:5px;"><i class="fa-solid fa-phone"></i> +880 1720-578495 [cite: 4]</p>
         </div>
       </div>
     </div>
@@ -1277,9 +1281,9 @@
     <p>&copy; 2026 MD. MEHEDI HASSAN | SECURITY & ADMINISTRATION SPECIALIST [cite: 4]</p>
   </footer>
 
-  <!-- Matrix Digital Stream Rain Animation Script -->
+  <!-- Semiconductor Digital Trace & Electron Animation Script -->
   <script>
-    const canvas = document.getElementById('matrix-canvas');
+    const canvas = document.getElementById('semiconductor-canvas');
     const ctx = canvas.getContext('2d');
 
     function resizeCanvas() {
@@ -1289,29 +1293,94 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const chars = '01 MEHEDI SECURITY AVIATION CCTV ACCESS NOC RISK MANAGEMENT 0101';
-    const fontSize = 13;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array(columns).fill(1);
+    // Semiconductor Grid Lines & Electrons moving on PCB Traces
+    const gridSize = 65;
+    const electrons = [];
+    const numElectrons = 28;
 
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(2, 6, 23, 0.08)';
+    for (let i = 0; i < numElectrons; i++) {
+      electrons.push({
+        x: Math.floor(Math.random() * (window.innerWidth / gridSize)) * gridSize,
+        y: Math.floor(Math.random() * (window.innerHeight / gridSize)) * gridSize,
+        dir: Math.floor(Math.random() * 4), // 0: Right, 1: Down, 2: Left, 3: Up
+        speed: 1.5 + Math.random() * 2,
+        history: [],
+        maxHistory: 20 + Math.floor(Math.random() * 15),
+        color: Math.random() > 0.3 ? '#00f0ff' : '#fbbf24'
+      });
+    }
+
+    function drawSemiconductorTrace() {
+      // Semi-transparent fade for silicon wafer glow
+      ctx.fillStyle = 'rgba(3, 7, 18, 0.2)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.28)';
-      ctx.font = fontSize + "px 'JetBrains Mono'";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
+      // Draw Grid Matrix Lines (Silicon PCB Layer)
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.03)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
       }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      // Draw and Move Electric Signals along PCB Bus lines
+      electrons.forEach(el => {
+        el.history.push({ x: el.x, y: el.y });
+        if (el.history.length > el.maxHistory) {
+          el.history.shift();
+        }
+
+        // Draw Electron Tail
+        ctx.beginPath();
+        for (let i = 0; i < el.history.length; i++) {
+          const pt = el.history[i];
+          if (i === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
+        }
+        ctx.strokeStyle = el.color === '#00f0ff' ? 'rgba(0, 240, 255, 0.25)' : 'rgba(251, 191, 36, 0.25)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Draw Electron Head (Silicon Signal Node)
+        ctx.beginPath();
+        ctx.arc(el.x, el.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = el.color;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = el.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Move according to Grid Traces (90-degree Turns like real microchips)
+        if (el.dir === 0) el.x += el.speed;
+        else if (el.dir === 1) el.y += el.speed;
+        else if (el.dir === 2) el.x -= el.speed;
+        else if (el.dir === 3) el.y -= el.speed;
+
+        // Change Direction at Grid Intersections
+        if (Math.random() < 0.03) {
+          el.dir = Math.floor(Math.random() * 4);
+          el.x = Math.round(el.x / gridSize) * gridSize;
+          el.y = Math.round(el.y / gridSize) * gridSize;
+        }
+
+        // Wrap around screen boundaries
+        if (el.x < 0) el.x = canvas.width;
+        if (el.x > canvas.width) el.x = 0;
+        if (el.y < 0) el.y = canvas.height;
+        if (el.y > canvas.height) el.y = 0;
+      });
+
+      requestAnimationFrame(drawSemiconductorTrace);
     }
-    setInterval(drawMatrix, 45);
+    drawSemiconductorTrace();
 
     // Mobile Navigation Toggle
     function toggleMobileNav() {
@@ -1360,6 +1429,6 @@
 """
 
 with open("index.html", "w", encoding="utf-8") as f:
-    f.write(refined_about_code)
+    f.write(code_with_linkedin_expertise)
 
-print("Updated index.html with your complete, detailed About Me statement and structured system badges successfully.")
+print("Semiconductor PCB electron trace animation code generated successfully.")
