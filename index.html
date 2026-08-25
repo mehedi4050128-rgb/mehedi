@@ -60,10 +60,12 @@
       background: radial-gradient(circle at 50% 45%, #071638 0%, #01040a 95%);
     }
 
-    /* Floating Microchip Navbar */
+    /* ========================================================
+       NEW SOPHISTICATED FLOATING TOP BAR (EXECUTIVE COMMAND STYLE)
+       ======================================================== */
     .nav-wrapper {
       position: fixed;
-      top: 1.2rem;
+      top: 1rem;
       left: 0;
       width: 100%;
       display: flex;
@@ -74,17 +76,17 @@
 
     nav {
       width: 100%;
-      max-width: 1250px;
-      background: rgba(4, 10, 24, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 240, 255, 0.25);
-      border-radius: 16px;
+      max-width: 1280px;
+      background: linear-gradient(135deg, rgba(6, 15, 36, 0.95), rgba(3, 8, 20, 0.98));
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1.5px solid rgba(0, 240, 255, 0.4);
+      border-radius: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 2rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.1);
+      padding: 0.75rem 1.8rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 0 15px rgba(0, 240, 255, 0.08);
     }
 
     .brand-logo {
@@ -95,59 +97,57 @@
     }
 
     .brand-core-die {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(0, 240, 255, 0.1);
-      border: 1px solid var(--trace-cyan);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
+      border: 1.5px solid var(--trace-cyan);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--trace-cyan);
       font-size: 1rem;
+      box-shadow: 0 0 15px var(--trace-cyan-glow);
     }
 
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      color: #ffffff;
+      font-size: 0.92rem;
       letter-spacing: 0.5px;
+      color: #ffffff;
     }
 
     .brand-sub {
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-family: 'JetBrains Mono', monospace;
       color: var(--trace-cyan);
       letter-spacing: 1px;
     }
 
-    .nav-live-telemetry {
+    /* Live Digital Clock Hub (Replaces Node Online) */
+    .nav-live-clock {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(0, 240, 255, 0.05);
-      border: 1px solid var(--wire-border);
-      padding: 4px 14px;
-      border-radius: 999px;
+      gap: 8px;
+      background: rgba(0, 240, 255, 0.06);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 5px 14px;
+      border-radius: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       color: var(--trace-cyan);
+      box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
     }
 
-    .telemetry-pulse {
-      width: 6px;
-      height: 6px;
-      background: var(--trace-emerald);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--trace-emerald);
-      animation: pulseAnim 1.5s infinite;
+    .clock-icon {
+      color: var(--trace-gold);
+      animation: spinSlow 8s linear infinite;
     }
 
-    @keyframes pulseAnim {
-      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .nav-links {
@@ -164,40 +164,40 @@
     .nav-link {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
+      gap: 5px;
+      transition: all 0.25s ease;
       cursor: pointer;
     }
 
     .nav-link:hover, .nav-item:hover > .nav-link {
       color: #ffffff;
-      background: rgba(0, 240, 255, 0.1);
+      background: rgba(0, 240, 255, 0.12);
     }
 
     .dropdown-menu {
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(8px);
       background: rgba(4, 9, 22, 0.98);
       border: 1px solid var(--wire-focus);
-      border-radius: 12px;
-      padding: 0.6rem;
+      border-radius: 14px;
+      padding: 0.7rem;
       min-width: 260px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95);
       opacity: 0;
       visibility: hidden;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
       z-index: 1050;
     }
 
@@ -215,13 +215,13 @@
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.82rem;
-      border-radius: 6px;
+      border-radius: 8px;
       transition: 0.2s;
     }
 
     .dropdown-item a:hover {
       color: #ffffff;
-      background: rgba(0, 240, 255, 0.12);
+      background: rgba(0, 240, 255, 0.15);
     }
 
     .mobile-menu-btn {
@@ -269,6 +269,21 @@
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: all 0.25s ease;
+    }
+
+    .pulse-core {
+      width: 7px;
+      height: 7px;
+      background: var(--trace-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--trace-emerald);
+      animation: pulseAnim 2s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
     .hero-content h1 {
@@ -823,7 +838,7 @@
 
     .terminal-topbar {
       background: rgba(5, 11, 24, 0.95);
-      padding: 0.9rem 1.4rem;
+      padding: 0.75rem 1.2rem;
       border-bottom: 1px solid var(--wire-border);
       display: flex;
       justify-content: space-between;
@@ -1050,9 +1065,10 @@
         </div>
       </a>
 
-      <div class="nav-live-telemetry">
-        <span class="telemetry-pulse"></span>
-        <span id="liveClock">NODE_ONLINE</span>
+      <!-- Live Digital Clock Widget -->
+      <div class="nav-live-clock">
+        <i class="fa-regular fa-clock clock-icon"></i>
+        <span id="liveClock">00:00:00 AM</span>
       </div>
 
       <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
@@ -1530,7 +1546,7 @@
     </div>
   </section>
 
-  <!-- Interface / Contact Section with Direct Mail Transmission & Time Slot Selection -->
+  <!-- Interface / Contact Section -->
   <section id="contact" class="reveal-on-scroll">
     <div class="section-header">
       <h2 class="section-title">CONNECT INTERFACE</h2>
@@ -1655,11 +1671,11 @@
 
   <!-- Script Engine -->
   <script>
-    // Live Digital Clock & Status Updater
+    // Live Digital Clock & Time Updater ( Dhaka Local Time )
     setInterval(() => {
       const now = new Date();
-      const timeStr = now.toTimeString().split(' ')[0];
-      document.getElementById('liveClock').innerText = `NODE_ONLINE [${timeStr}]`;
+      const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+      document.getElementById('liveClock').innerText = timeStr;
     }, 1000);
 
     // Back to Top Button Control
