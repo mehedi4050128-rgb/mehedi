@@ -432,7 +432,7 @@
       box-shadow: 0 0 20px var(--trace-cyan-glow);
     }
 
-    /* ChatGPT Style Personal AI Assistant Widget */
+    /* ChatGPT Style AI Companion / Assistant Widget (Right Side) */
     .ai-chatbot-widget {
       position: fixed; bottom: 2rem; right: 2rem; z-index: 1500;
     }
@@ -446,7 +446,7 @@
     .ai-chat-toggle-btn:hover { transform: scale(1.08); }
     
     .ai-chat-badge {
-      position: absolute; top: -5px; right: -5px; background: #ef4444; color: #fff;
+      position: absolute; top: -5px; right: -5px; background: #10b981; color: #fff;
       font-size: 0.65rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center; border: 2px solid var(--bg-void);
       animation: pulseAnim 2s infinite;
@@ -1167,7 +1167,7 @@
     </div>
   </section>
 
-  <!-- ChatGPT-Style Personal AI Assistant Widget (Right Side) -->
+  <!-- ChatGPT Style Personal AI Assistant Widget (Right Side) -->
   <div class="ai-chatbot-widget" id="aiChatWidget">
     <div class="ai-chat-window">
       <div class="ai-chat-header">
@@ -1175,16 +1175,16 @@
         <button onclick="toggleAIChat()" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1rem;"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Hi! I am Mehedi Hassan's Personal AI Assistant (like ChatGPT). Ask me anything about his professional career, companies like SecureVision BD or Hebron Tex, family background, or technical skills!</div>
+        <div class="ai-msg bot">Hi there! 👋 I'm Mehedi's Personal AI Companion. You can chat with me about anything—his career, his security work, his businesses, or just have a general friendly conversation! What's on your mind?</div>
       </div>
       <div class="ai-quick-replies">
-        <span class="quick-chip" onclick="sendQuickQuery('Tell me about Mehedi')">👤 Profile</span>
-        <span class="quick-chip" onclick="sendQuickQuery('Companies & Business')">🏢 Businesses</span>
-        <span class="quick-chip" onclick="sendQuickQuery('Work Experience')">💼 Experience</span>
-        <span class="quick-chip" onclick="sendQuickQuery('Personal & Family')">👨‍👩‍👦 Family</span>
+        <span class="quick-chip" onclick="sendQuickQuery('Tell me a fun fact or joke')">😄 Tell a Joke</span>
+        <span class="quick-chip" onclick="sendQuickQuery('What companies does Mehedi run?')">🏢 Businesses</span>
+        <span class="quick-chip" onclick="sendQuickQuery('Tell me about his career')">💼 Career</span>
+        <span class="quick-chip" onclick="sendQuickQuery('How is the weather today?')">🌤️ Weather talk</span>
       </div>
       <div class="ai-chat-footer">
-        <input type="text" id="aiUserInput" class="ai-chat-input" placeholder="Ask like ChatGPT..." onkeypress="handleAIPress(event)" />
+        <input type="text" id="aiUserInput" class="ai-chat-input" placeholder="Type a message or chat freely..." onkeypress="handleAIPress(event)" />
         <button class="ai-chat-send" onclick="sendAIMessage()"><i class="fa-solid fa-paper-plane"></i></button>
       </div>
     </div>
@@ -1389,7 +1389,7 @@
       });
     }
 
-    // ChatGPT-Style Advanced Personal AI Brain Logic
+    // ChatGPT Style Conversational Personal AI Companion Engine
     function toggleAIChat() {
       const widget = document.getElementById('aiChatWidget');
       widget.classList.toggle('active');
@@ -1419,33 +1419,33 @@
       input.value = '';
       chatBody.scrollTop = chatBody.scrollHeight;
 
-      // Simulated ChatGPT-style intelligent reasoning delay
+      // Natural conversational thinking delay
       setTimeout(() => {
         const botDiv = document.createElement('div');
         botDiv.className = 'ai-msg bot';
         
         const q = text.toLowerCase();
         
-        if (q.includes('profile') || q.includes('who is') || q.includes('mehedi') || q.includes('about')) {
-          botDiv.innerText = "Md. Mehedi Hassan is a seasoned Security & Administration Specialist born on December 23, 1999. He holds a B.Sc in Physics from GSTU (CGPA 3.55) and has deep expertise in physical security governance, aviation security (CAAB ASM trained), and enterprise IT infrastructure.";
+        if (q.includes('joke') || q.includes('fun fact') || q.includes('laugh')) {
+          botDiv.innerText = "Here is one for you: Why did the security camera break up with the router? Because there was simply no connection! 😄 What else are you curious about?";
         } 
-        else if (q.includes('business') || q.includes('company') || q.includes('securevision') || q.includes('hebron') || q.includes('tex')) {
-          botDiv.innerText = "Mehedi operates two key entrepreneurial ventures:\n1. SecureVision BD: Specializes in surveillance cameras (Hikvision), security equipment, and modern tech marketing.\n2. Hebron Tex: An apparel sector business based in Bangladesh.";
+        else if (q.includes('weather') || q.includes('rain') || q.includes('hot')) {
+          botDiv.innerText = "Well, as an AI, I don't feel the weather outside, but I hear it's a great day to build something cool or explore this portfolio! How's the weather at your end? 🌤️";
         } 
-        else if (q.includes('experience') || q.includes('work') || q.includes('career') || q.includes('ulkasemi') || q.includes('united')) {
-          botDiv.innerText = "His professional milestones include:\n• Ulkasemi Pvt. Ltd. (Executive - Security & Admin)\n• United Group / UGSSL (Managed security for InterContinental Dhaka, Crowne Plaza, and Unimart Airport)\n• D-Net Service (Security Consultant linking with BRAC Bank)\n• Royal Green Ltd. (Sr. Executive NOC, managing 99.9% network uptime).";
+        else if (q.includes('business') || q.includes('company') || q.includes('securevision') || q.includes('hebron')) {
+          botDiv.innerText = "Mehedi is quite entrepreneurial! He manages SecureVision BD (specializing in CCTV and security equipment) and Hebron Tex in the apparel/garment sector. Pretty impressive diversification, right?";
         } 
-        else if (q.includes('family') || q.includes('son') || q.includes('wife')) {
-          botDiv.innerText = "Mehedi has a family including a son. He balances a dedicated career in corporate administration alongside his personal life and entrepreneurial ventures.";
+        else if (q.includes('career') || q.includes('experience') || q.includes('work') || q.includes('job')) {
+          botDiv.innerText = "Professionally, he has a strong background in security and administration—working with Ulkasemi, United Group (handling security for 5-star hotels like InterContinental and Crowne Plaza), D-Net, and Royal Green NOC.";
         } 
-        else if (q.includes('project') || q.includes('ipco') || q.includes('server') || q.includes('biostar')) {
-          botDiv.innerText = "His standout enterprise achievement is the IPCO Development & Hotels Project:\n• Deployed central server architecture with zero-loss data migration.\n• Configured BioStar 2 access control and time-attendance infrastructure.\n• Engineered heavy-duty Tire Killer vehicle barrier systems.";
+        else if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('salam')) {
+          botDiv.innerText = "Hey there! 👋 Great to chat with you. How can I help you today? Feel free to ask me anything or explore the portfolio!";
         } 
-        else if (q.includes('contact') || q.includes('phone') || q.includes('email') || q.includes('location')) {
-          botDiv.innerText = "You can connect with Mehedi directly via:\n📧 Email: mehedi4050128@gmail.com\n📞 Phone: +880 1680-450882\n📍 Base: Malibagh, Dhaka-1217, Bangladesh";
+        else if (q.includes('how are you') || q.includes('kemon aso')) {
+          botDiv.innerText = "I'm doing fantastic, thank you for asking! Ready to help you explore Mehedi's portfolio or just have a nice chat. What's on your mind?";
         } 
         else {
-          botDiv.innerText = `That's a thoughtful question about Mehedi Hassan! As his personal AI assistant, I can confirm he excels at bridging physical safety protocols with high-end technology. Feel free to ask about his work at Ulkasemi, his companies, or technical skills!`;
+          botDiv.innerText = `That's an interesting point! I love chatting about tech, security systems, lifestyle, or Mehedi's professional background. Tell me more or let me know if you want to know about his projects!`;
         }
 
         chatBody.appendChild(botDiv);
