@@ -20,8 +20,7 @@
       --panel-hover: rgba(12, 24, 52, 0.98);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --nav-bg: rgba(4, 10, 24, 0.98);
-      --card-bg: rgba(7, 15, 34, 0.88);
+      --nav-bg: rgba(4, 10, 24, 0.95);
       --terminal-bg: #020617;
       --input-bg: rgba(0, 240, 255, 0.04);
       --input-text: #ffffff;
@@ -31,7 +30,6 @@
       --trace-cyan: #00f0ff;
       --trace-cyan-glow: rgba(0, 240, 255, 0.7);
       --trace-gold: #f59e0b;
-      --trace-gold-glow: rgba(245, 158, 11, 0.6);
       --trace-emerald: #10b981;
       --trace-purple: #a855f7;
       
@@ -45,8 +43,7 @@
       --panel-hover: rgba(241, 245, 249, 0.98);
       --text-main: #0f172a;
       --text-muted: #475569;
-      --nav-bg: rgba(255, 255, 255, 0.96);
-      --card-bg: rgba(255, 255, 255, 0.85);
+      --nav-bg: rgba(255, 255, 255, 0.92);
       --terminal-bg: #ffffff;
       --input-bg: #f8fafc;
       --input-text: #0f172a;
@@ -87,118 +84,107 @@
       background: radial-gradient(circle at 50% 45%, var(--canvas-grad-1) 0%, var(--canvas-grad-2) 95%);
     }
 
-    /* Fixed Navigation Layout */
+    /* Fixed Profile Card / Header Layout */
     .nav-wrapper {
-      position: fixed; top: 0.8rem; left: 0; width: 100%;
-      display: flex; justify-content: center; z-index: 1000; padding: 0 0.8rem;
+      position: fixed; top: 1rem; left: 0; width: 100%;
+      display: flex; justify-content: center; z-index: 1000; padding: 0 1rem;
     }
 
-    nav {
+    .profile-card {
       width: 100%; max-width: 1280px;
-      background: var(--nav-bg);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      background: var(--panel-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1.5px solid var(--wire-focus);
-      border-radius: 16px;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.6rem 1.2rem;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.4rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 25px var(--trace-cyan-glow);
     }
 
-    .brand-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-    .brand-core-die {
-      width: 34px; height: 34px; border-radius: 8px;
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
+    .icon-box {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(245, 158, 11, 0.2));
       border: 1.5px solid var(--trace-cyan);
       display: flex; align-items: center; justify-content: center;
-      color: var(--trace-cyan); font-size: 0.9rem;
+      color: var(--trace-cyan);
+      font-size: 1.1rem;
+      box-shadow: 0 0 12px var(--trace-cyan-glow);
     }
 
-    .brand-title {
+    .info-text h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
       color: var(--text-main);
     }
 
-    .brand-sub {
-      font-size: 0.55rem; font-family: 'JetBrains Mono', monospace;
-      color: var(--trace-cyan); letter-spacing: 0.5px;
+    .info-text p {
+      font-size: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--trace-cyan);
+      letter-spacing: 0.8px;
     }
 
-    .nav-utilities { display: flex; align-items: center; gap: 8px; }
+    .card-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-    .nav-live-clock {
-      display: flex; align-items: center; gap: 6px;
+    .time-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       background: rgba(0, 240, 255, 0.06);
       border: 1px solid var(--wire-border);
-      padding: 4px 8px; border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem; color: var(--trace-cyan);
+      font-size: 0.78rem;
+      color: var(--trace-cyan);
       white-space: nowrap;
     }
 
-    .clock-icon { color: var(--trace-gold); animation: spinSlow 8s linear infinite; }
-    @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .time-box i { color: var(--trace-gold); }
 
-    .theme-toggle-btn {
-      width: 34px; height: 34px; border-radius: 8px;
+    .theme-btn, .menu-btn {
+      width: 40px; height: 40px;
+      border-radius: 10px;
       background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--trace-cyan-glow);
     }
 
-    .theme-toggle-btn:hover {
-      background: var(--trace-cyan); color: var(--bg-void);
+    .theme-btn:hover, .menu-btn:hover {
+      background: var(--trace-cyan);
+      color: var(--bg-void);
+      transform: translateY(-2px);
     }
 
-    .nav-links { display: flex; align-items: center; list-style: none; gap: 0.4rem; }
-    .nav-item { position: relative; }
-
-    .nav-link {
-      color: var(--text-muted); text-decoration: none;
-      font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.7rem;
-      border-radius: 6px; display: inline-flex; align-items: center; gap: 4px;
-      transition: all 0.25s ease; cursor: pointer;
-    }
-
-    .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--text-main); background: rgba(0, 240, 255, 0.12);
-    }
-
-    .dropdown-menu {
-      position: absolute; top: calc(100% + 10px); left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: var(--nav-bg); border: 1px solid var(--wire-focus);
-      border-radius: 12px; padding: 0.5rem; min-width: 220px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      opacity: 0; visibility: hidden;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      list-style: none; display: flex; flex-direction: column; gap: 4px; z-index: 1050;
-    }
-
-    .nav-item:hover .dropdown-menu {
-      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
-    }
-
-    .dropdown-item a {
-      display: flex; align-items: center; gap: 8px;
-      padding: 0.5rem 0.7rem; color: var(--text-muted);
-      text-decoration: none; font-size: 0.8rem; border-radius: 6px; transition: 0.2s;
-    }
-
-    .dropdown-item a:hover { color: var(--text-main); background: rgba(0, 240, 255, 0.15); }
-
-    .mobile-menu-btn {
-      display: none; background: transparent; border: 1px solid var(--wire-border);
-      color: var(--text-main); padding: 5px 8px; border-radius: 6px; font-size: 1rem; cursor: pointer;
-    }
-
+    /* Hero Section */
     .hero {
-      min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
-      padding: 9rem 8% 4.5rem; gap: 4.5rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11rem 8% 4.5rem; /* Top padding increased to clear the fixed header card */
+      gap: 4.5rem;
     }
 
     .hero-content { flex: 1.25; }
@@ -458,10 +444,10 @@
 
     footer { text-align: center; padding: 2.5rem 8%; border-top: 1px solid var(--wire-border); color: var(--text-muted); font-size: 0.85rem; }
 
-    /* Improved Mobile Responsive Menu Styles */
+    /* Mobile Responsive Adjustments */
     @media (max-width: 900px) {
       section { padding: 4rem 4%; }
-      .hero { flex-direction: column-reverse; text-align: center; padding-top: 5.5rem; padding-left: 4%; padding-right: 4%; gap: 2.2rem; }
+      .hero { flex-direction: column-reverse; text-align: center; padding-top: 7rem; padding-left: 4%; padding-right: 4%; gap: 2.2rem; }
       .hero-content h1 { font-size: 1.95rem; line-height: 1.25; }
       .hero-desc { font-size: 0.9rem; }
       .tech-badge-container { justify-content: center; gap: 5px; }
@@ -483,17 +469,24 @@
       .map-wrapper { height: 160px; }
       .back-to-top-btn { bottom: 1.2rem; right: 1.2rem; width: 42px; height: 42px; font-size: 1rem; }
 
-      .mobile-menu-btn { display: block; }
-      
+      /* Mobile Header Card Refinement */
+      .profile-card { padding: 0.5rem 0.8rem; border-radius: 14px; }
+      .icon-box { width: 34px; height: 34px; font-size: 0.9rem; }
+      .info-text h2 { font-size: 0.75rem; }
+      .info-text p { font-size: 0.5rem; }
+      .time-box { font-size: 0.62rem; padding: 4px 6px; }
+      .theme-btn, .menu-btn { width: 34px; height: 34px; font-size: 0.85rem; }
+
+      /* Mobile Dropdown Menu */
       .nav-links {
         position: fixed; 
-        top: 4.8rem; 
+        top: 4.5rem; 
         left: 50%;
         transform: translateX(-50%);
         width: 92%; 
-        max-height: 80vh;
+        max-height: 75vh;
         overflow-y: auto;
-        background: var(--nav-bg); 
+        background: var(--panel-glass); 
         border: 1.5px solid var(--wire-focus); 
         border-radius: 16px;
         flex-direction: column; 
@@ -530,28 +523,31 @@
   <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Navigation -->
+  <!-- Navigation / Profile Card Header -->
   <div class="nav-wrapper">
-    <nav>
-      <a href="#home" class="brand-logo">
-        <div class="brand-core-die"><i class="fa-solid fa-microchip"></i></div>
-        <div>
-          <span class="brand-title">MEHEDI HASSAN</span><br>
-          <span class="brand-sub">SECURITY & ADMINISTRATION</span>
+    <header class="profile-card">
+      <div class="card-left">
+        <div class="icon-box">
+          <i class="fa-solid fa-microchip"></i>
         </div>
-      </a>
-
-      <div class="nav-utilities">
-        <div class="nav-live-clock">
+        <div class="info-text">
+          <h2>MEHEDI HASSAN</h2>
+          <p>SECURITY & ADMINISTRATION</p>
+        </div>
+      </div>
+      
+      <div class="card-right">
+        <div class="time-box">
           <i class="fa-regular fa-clock clock-icon"></i>
-          <span id="liveClock">00:00:00 AM</span>
+          <span id="liveClock">12:25:16 AM</span>
         </div>
-        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch Day/Night Theme">
+        <button class="theme-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch Day/Night Theme">
           <i class="fa-solid fa-moon" id="themeIcon"></i>
         </button>
+        <button class="menu-btn mobile-menu-btn" onclick="toggleMobileNav()" title="Open Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-
-      <button class="mobile-menu-btn" onclick="toggleMobileNav()"><i class="fa-solid fa-bars"></i></button>
 
       <ul class="nav-links" id="mobileNav">
         <li class="nav-item"><a href="#home" class="nav-link" onclick="closeNav()">Home</a></li>
@@ -588,7 +584,7 @@
         <li class="nav-item"><a href="#education" class="nav-link" onclick="closeNav()">Education</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link" onclick="closeNav()">Contact</a></li>
       </ul>
-    </nav>
+    </header>
   </div>
 
   <!-- Hero Section -->
