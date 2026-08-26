@@ -84,29 +84,31 @@
       background: radial-gradient(circle at 50% 45%, var(--canvas-grad-1) 0%, var(--canvas-grad-2) 95%);
     }
 
+    /* Fixed Desktop & Mobile Header Layout */
     .nav-wrapper {
       position: fixed; top: 1.2rem; left: 0; width: 100%;
-      display: flex; justify-content: center; z-index: 1000; padding: 0 1.2rem;
+      display: flex; justify-content: center; z-index: 1000; padding: 0 1.5rem;
     }
 
     .profile-card {
-      width: 100%; max-width: 1280px;
+      width: 100%; max-width: 1320px;
       background: var(--panel-glass);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1.5px solid var(--wire-focus);
       border-radius: 20px;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
-      padding: 0.75rem 1.8rem;
+      padding: 0.65rem 1.8rem;
+      gap: 1.5rem;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 25px var(--trace-cyan-glow);
     }
 
-    .card-left { display: flex; align-items: center; gap: 14px; }
+    .card-left { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
 
     .icon-box {
-      width: 40px; height: 40px;
+      width: 38px; height: 38px;
       border-radius: 10px;
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
       border: 1.5px solid var(--trace-cyan);
@@ -122,16 +124,54 @@
 
     .info-text h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px;
+      font-weight: 700; font-size: 0.92rem; letter-spacing: 0.5px;
       color: var(--text-main); line-height: 1.2;
     }
 
     .info-text p {
-      font-size: 0.65rem; font-family: 'JetBrains Mono', monospace;
-      color: var(--trace-cyan); letter-spacing: 1px; line-height: 1.3; margin-top: 2px;
+      font-size: 0.58rem; font-family: 'JetBrains Mono', monospace;
+      color: var(--trace-cyan); letter-spacing: 0.8px; line-height: 1.3; margin-top: 2px;
     }
 
-    .card-right { display: flex; align-items: center; gap: 12px; }
+    .nav-center { display: flex; justify-content: center; align-items: center; }
+    .nav-links { display: flex; align-items: center; list-style: none; gap: 0.35rem; }
+    .nav-item { position: relative; }
+
+    .nav-link {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.84rem; font-weight: 600; padding: 0.45rem 0.75rem;
+      border-radius: 8px; display: inline-flex; align-items: center; gap: 4px;
+      transition: all 0.25s ease; cursor: pointer; white-space: nowrap;
+    }
+
+    .nav-link:hover, .nav-item:hover > .nav-link {
+      color: var(--text-main); background: rgba(0, 240, 255, 0.12);
+    }
+
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: var(--panel-glass); border: 1px solid var(--wire-focus);
+      border-radius: 14px; padding: 0.7rem; min-width: 250px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      opacity: 0; visibility: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      list-style: none; display: flex; flex-direction: column; gap: 5px; z-index: 1050;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-item a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 0.6rem 0.8rem; color: var(--text-muted);
+      text-decoration: none; font-size: 0.82rem; border-radius: 8px; transition: 0.2s;
+    }
+
+    .dropdown-item a:hover { color: var(--text-main); background: rgba(0, 240, 255, 0.15); }
+
+    .card-right { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
 
     .time-box {
       display: flex; align-items: center; gap: 8px;
@@ -154,53 +194,17 @@
       display: flex; align-items: center; justify-content: center;
       cursor: pointer; font-size: 1rem; transition: all 0.3s ease;
       box-shadow: 0 0 15px var(--trace-cyan-glow);
+      flex-shrink: 0;
     }
 
     .theme-btn:hover { background: var(--trace-cyan); color: var(--bg-void); transform: translateY(-2px); }
 
     .menu-btn {
-      display: none; width: 38px; height: 38px; border-radius: 10px;
+      display: none; width: 38px; height: 38px; border-radius: 12px;
       background: rgba(0, 240, 255, 0.08); border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan); align-items: center; justify-content: center;
-      cursor: pointer; font-size: 1rem;
+      cursor: pointer; font-size: 1rem; flex-shrink: 0;
     }
-
-    .nav-links { display: flex; align-items: center; list-style: none; gap: 0.5rem; }
-    .nav-item { position: relative; }
-
-    .nav-link {
-      color: var(--text-muted); text-decoration: none;
-      font-size: 0.84rem; font-weight: 600; padding: 0.45rem 0.85rem;
-      border-radius: 8px; display: inline-flex; align-items: center; gap: 5px;
-      transition: all 0.25s ease; cursor: pointer;
-    }
-
-    .nav-link:hover, .nav-item:hover > .nav-link {
-      color: var(--text-main); background: rgba(0, 240, 255, 0.12);
-    }
-
-    .dropdown-menu {
-      position: absolute; top: calc(100% + 14px); left: 50%;
-      transform: translateX(-50%) translateY(8px);
-      background: var(--panel-glass); border: 1px solid var(--wire-focus);
-      border-radius: 14px; padding: 0.7rem; min-width: 240px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      opacity: 0; visibility: hidden;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      list-style: none; display: flex; flex-direction: column; gap: 5px; z-index: 1050;
-    }
-
-    .nav-item:hover .dropdown-menu {
-      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
-    }
-
-    .dropdown-item a {
-      display: flex; align-items: center; gap: 10px;
-      padding: 0.6rem 0.8rem; color: var(--text-muted);
-      text-decoration: none; font-size: 0.82rem; border-radius: 8px; transition: 0.2s;
-    }
-
-    .dropdown-item a:hover { color: var(--text-main); background: rgba(0, 240, 255, 0.15); }
 
     .hero {
       min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
@@ -373,12 +377,12 @@
     .project-tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.4rem; }
     .pro-badge { background: rgba(245, 158, 11, 0.08); border: 1px solid var(--wire-gold); color: var(--trace-gold); font-size: 0.76rem; padding: 4px 11px; border-radius: 6px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
 
-    .exp-grid-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
-    .exp-category-box { background: rgba(100, 116, 139, 0.04); border: 1px solid var(--wire-border); border-radius: 12px; padding: 1.2rem; }
+    .exp-grid-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
+    .exp-category-box { background: rgba(100, 116, 139, 0.04); border: 1px solid var(--wire-border); border-radius: 14px; padding: 1.4rem; }
     .exp-category-box h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--trace-cyan); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .exp-bullets li { position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .exp-bullets li { position: relative; padding-left: 18px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
     .exp-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--trace-cyan); font-size: 0.95rem; }
 
     .filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2.8rem; }
@@ -388,7 +392,7 @@
     }
     .filter-btn.active, .filter-btn:hover { background: linear-gradient(135deg, var(--trace-cyan), var(--trace-purple)); color: #ffffff; box-shadow: 0 0 20px var(--trace-cyan-glow); border-color: transparent; }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; max-width: 1100px; margin: 0 auto; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; max-width: 1200px; margin: 0 auto; }
     .skill-chip-icon {
       width: 48px; height: 48px; border-radius: 12px; background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan); display: flex; align-items: center; justify-content: center; color: var(--trace-cyan); font-size: 1.3rem; margin-bottom: 1.2rem;
@@ -506,8 +510,14 @@
 
     footer { text-align: center; padding: 2.5rem 8%; border-top: 1px solid var(--wire-border); color: var(--text-muted); font-size: 0.85rem; }
 
-    /* Responsive Design Fixes for Phone View (Header & Profile Card Alignment) */
+    /* Mobile Responsive Customization */
     @media (max-width: 1024px) {
+      .profile-card {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.6rem 1.2rem;
+      }
+      .nav-center { display: none; }
       .menu-btn { display: flex; }
       
       .nav-links {
@@ -575,16 +585,15 @@
       .ai-chatbot-widget { bottom: 1.2rem; right: 1.2rem; }
       .ai-chat-window { width: 310px; max-height: 450px; }
 
-      /* PC & Phone View Header Alignment Fix */
-      .nav-wrapper { padding: 0 0.8rem; top: 0.8rem; }
-      .profile-card { padding: 0.5rem 1rem; border-radius: 14px; gap: 8px; }
-      .card-left { gap: 10px; }
-      .icon-box { width: 34px; height: 34px; font-size: 0.85rem; border-radius: 8px; }
-      .info-text h2 { font-size: 0.75rem; letter-spacing: 0.3px; }
-      .info-text p { font-size: 0.5rem; }
-      .card-right { gap: 8px; }
-      .time-box { font-size: 0.62rem; padding: 4px 8px; border-radius: 8px; }
-      .theme-btn, .menu-btn { width: 34px; height: 34px; font-size: 0.8rem; border-radius: 8px; }
+      .nav-wrapper { padding: 0 0.6rem; top: 0.6rem; }
+      .profile-card { padding: 0.5rem 0.8rem; border-radius: 14px; gap: 6px; }
+      .card-left { gap: 8px; }
+      .icon-box { width: 32px; height: 32px; font-size: 0.8rem; border-radius: 8px; }
+      .info-text h2 { font-size: 0.7rem; }
+      .info-text p { font-size: 0.48rem; }
+      .card-right { gap: 6px; }
+      .time-box { font-size: 0.58rem; padding: 4px 6px; border-radius: 8px; }
+      .theme-btn, .menu-btn { width: 32px; height: 32px; font-size: 0.8rem; border-radius: 8px; }
     }
   </style>
 </head>
@@ -593,7 +602,7 @@
   <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Navigation / Profile Card Header -->
+  <!-- Navigation / Profile Card Header (3-Column Desktop Alignment: Logo Left | Links Center | Time & Theme Right) -->
   <div class="nav-wrapper">
     <header class="profile-card">
       <div class="card-left">
@@ -604,6 +613,46 @@
           <h2>MD. MEHEDI HASSAN</h2>
           <p>SECURITY & ADMIN SPECIALIST</p>
         </div>
+      </div>
+
+      <div class="nav-center">
+        <ul class="nav-links" id="desktopNavLinks">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+          
+          <li class="nav-item">
+            <a class="nav-link">Experience <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#exp-ulkasemi">Ulkasemi Pvt. Ltd.</a></li>
+              <li class="dropdown-item"><a href="#exp-united">United Group (UGSSL)</a></li>
+              <li class="dropdown-item"><a href="#exp-dnet">D-Net Service</a></li>
+              <li class="dropdown-item"><a href="#exp-royalgreen">Royal Green Ltd.</a></li>
+              <li class="dropdown-item"><a href="#exp-antaranga">Antaranga Dot Com Ltd</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link">Projects <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#projects">IPCO Enterprise Project</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link">Expertise <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#skills" onclick="filterSkills('aviation');">Aviation & Corporate Security</a></li>
+              <li class="dropdown-item"><a href="#skills" onclick="filterSkills('surveillance');">CCTV, Arch Way & Scanners</a></li>
+              <li class="dropdown-item"><a href="#skills" onclick="filterSkills('access');">Access Control & Parking Guidance</a></li>
+              <li class="dropdown-item"><a href="#skills" onclick="filterSkills('avpa');">AV & PA Systems</a></li>
+              <li class="dropdown-item"><a href="#skills" onclick="filterSkills('leadership');">Security Leadership & NOC</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="#trainings" class="nav-link">Certifications</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </div>
       
       <div class="card-right">
@@ -619,6 +668,7 @@
         </button>
       </div>
 
+      <!-- Mobile Dropdown Nav Menu -->
       <ul class="nav-links" id="mobileNav">
         <li class="nav-item"><a href="#home" class="nav-link" onclick="closeNav()">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link" onclick="closeNav()">About Me</a></li>
@@ -645,8 +695,9 @@
           <a class="nav-link">Expertise <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li class="dropdown-item"><a href="#skills" onclick="filterSkills('aviation'); closeNav();">Aviation & Corporate Security</a></li>
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('surveillance'); closeNav();">CCTV & Access Control</a></li>
-            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('risk'); closeNav();">Risk Management & Tech</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('surveillance'); closeNav();">CCTV, Arch Way & Scanners</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('access'); closeNav();">Access Control & Parking Guidance</a></li>
+            <li class="dropdown-item"><a href="#skills" onclick="filterSkills('avpa'); closeNav();">AV & PA Systems</a></li>
             <li class="dropdown-item"><a href="#skills" onclick="filterSkills('leadership'); closeNav();">Security Leadership & NOC</a></li>
           </ul>
         </li>
@@ -773,7 +824,7 @@
     </div>
   </section>
 
-  <!-- Major Enterprise Projects Section (Detailed Challenges & Solutions Highlighted) -->
+  <!-- Major Enterprise Projects Section (Segregated & Separated Issue/Solution Cards) -->
   <section id="projects" class="reveal-on-scroll">
     <div class="section-header"><h2 class="section-title">MAJOR ENTERPRISE PROJECTS</h2></div>
 
@@ -792,40 +843,51 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-database"></i> Server Deployment & Migration</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control & Parking Guidance</span>
-          <span class="pro-badge"><i class="fa-solid fa-volume-high"></i> AV & PA Systems Infrastructure</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control Architecture</span>
+          <span class="pro-badge"><i class="fa-solid fa-square-parking"></i> Parking Guidance Systems</span>
+          <span class="pro-badge"><i class="fa-solid fa-volume-high"></i> AV & PA Systems</span>
           <span class="pro-badge"><i class="fa-solid fa-car-burst"></i> Tire Killer Barriers</span>
         </div>
 
+        <!-- 4 Completely Separated Grid Cards for Key Issues and Solutions -->
         <div class="exp-grid-details">
+          
+          <!-- Card 1: Server Migration -->
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-server"></i> Server Deployment & Data Migration Challenge</h4>
+            <h4><i class="fa-solid fa-server"></i> Server Deployment & Migration</h4>
             <ul class="exp-bullets">
-              <li><strong>The Issue:</strong> Legacy surveillance archives and access control records were fragmented across disparate decentralized servers, risking data loss during corporate restructuring.</li>
-              <li><strong>The Solution:</strong> Orchestrated the end-to-end installation of a high-performance centralized server matrix, executing seamless migration with zero data downtime and 100% record integrity.</li>
+              <li><strong>The Issue:</strong> Legacy surveillance archives and access control records were fragmented across disparate decentralized servers, risking critical data loss during corporate restructuring.</li>
+              <li><strong>The Solution:</strong> Orchestrated the installation of a high-performance central server matrix, executing zero-loss data migration and ensuring 100% continuous system availability.</li>
             </ul>
           </div>
+
+          <!-- Card 2: Access Control Architecture (Separated) -->
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-fingerprint"></i> Access Control & Parking Guidance Bottlenecks</h4>
+            <h4><i class="fa-solid fa-fingerprint"></i> Access Control System Bottlenecks</h4>
             <ul class="exp-bullets">
-              <li><strong>The Issue:</strong> Frequent database connectivity dropouts and synchronization lags in multi-brand access control software disrupted real-time employee tracking.</li>
-              <li><strong>The Solution:</strong> Reconfigured database routing, optimized API endpoints, and integrated automated Parking Management & Parking Guidance Systems to eliminate vehicle congestion and ensure flawless access tracking.</li>
+              <li><strong>The Issue:</strong> Database connectivity dropouts and synchronization lags across multi-brand access control software disrupted real-time employee tracking and zone authorization.</li>
+              <li><strong>The Solution:</strong> Reconfigured database routing, stabilized API communication endpoints, and upgraded server drivers to achieve 100% real-time attendance and access logging.</li>
             </ul>
           </div>
+
+          <!-- Card 3: Parking Guidance Systems (Separated) -->
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-volume-high"></i> AV & PA Systems Signal Integrity</h4>
+            <h4><i class="fa-solid fa-square-parking"></i> Parking & Guidance Systems</h4>
             <ul class="exp-bullets">
-              <li><strong>The Issue:</strong> Audio distortion and feedback loops across multi-zone corporate venues compromised emergency broadcast clarity and background audio distribution.</li>
+              <li><strong>The Issue:</strong> Peak-hour vehicular congestion and manual entry delays caused security bottlenecks at high-traffic hotel and commercial perimeter gates.</li>
+              <li><strong>The Solution:</strong> Implemented automated Parking Management & Parking Guidance Systems (PGS) integrated with ANPR cameras, RFID barriers, and heavy-duty Tire Killer spike barriers.</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: AV & PA Systems (Separated) -->
+          <div class="exp-category-box">
+            <h4><i class="fa-solid fa-volume-high"></i> AV & PA Systems Resolution</h4>
+            <ul class="exp-bullets">
+              <li><strong>The Issue:</strong> Audio distortion, line noise, and feedback loops across multi-zone corporate venues compromised emergency broadcast clarity and background audio distribution.</li>
               <li><strong>The Solution:</strong> Restructured multi-zone AV and Public Address (PA) amplification routing, resolving impedance mismatches and ensuring crystal-clear emergency paging compliance.</li>
             </ul>
           </div>
-          <div class="exp-category-box">
-            <h4><i class="fa-solid fa-desktop"></i> Central Command Room Integration</h4>
-            <ul class="exp-bullets">
-              <li>Managed technical integration of IP CCTV cameras, door sensors, smart access control walls, and security control room display units.</li>
-              <li>Collaborated directly with executive leadership including Air Commodore Md Salamot Ullah (Retd) and Wing Commander Joarder Sirajul Islam.</li>
-            </ul>
-          </div>
+
         </div>
       </div>
     </div>
@@ -877,7 +939,7 @@
         </div>
       </div>
 
-      <!-- 2. United Group (UGSSL) - Fully updated with consultant specs, IHG, CCTV, AV, PA, Arch way, Baggage scanner, Terminal system -->
+      <!-- 2. United Group (UGSSL) -->
       <div class="exp-pro-card reveal-on-scroll" id="exp-united">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
@@ -992,7 +1054,7 @@
         </div>
       </div>
 
-      <!-- 5. Antaranga Dot Com Ltd (1st Job Experience at Bottom) -->
+      <!-- 5. Antaranga Dot Com Ltd -->
       <div class="exp-pro-card reveal-on-scroll" id="exp-antaranga">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
@@ -1028,47 +1090,61 @@
     </div>
   </section>
 
-  <!-- Core Expertise Section -->
+  <!-- Core Expertise Section (Updated & Dedicated Categories) -->
   <section id="skills" class="reveal-on-scroll">
     <div class="section-header"><h2 class="section-title">CORE EXPERTISE</h2></div>
     <div class="filter-tabs">
       <button class="filter-btn active" onclick="filterSkills('all', this)">ALL DOMAINS</button>
       <button class="filter-btn" onclick="filterSkills('aviation', this)">AVIATION & CORPORATE</button>
-      <button class="filter-btn" onclick="filterSkills('surveillance', this)">CCTV & ACCESS CONTROL</button>
-      <button class="filter-btn" onclick="filterSkills('risk', this)">RISK MANAGEMENT & TECH</button>
-      <button class="filter-btn" onclick="filterSkills('leadership', this)">SECURITY LEADERSHIP</button>
+      <button class="filter-btn" onclick="filterSkills('surveillance', this)">CCTV & SCANNERS</button>
+      <button class="filter-btn" onclick="filterSkills('access', this)">ACCESS CONTROL & PGS</button>
+      <button class="filter-btn" onclick="filterSkills('avpa', this)">AV & PA SYSTEMS</button>
+      <button class="filter-btn" onclick="filterSkills('leadership', this)">LEADERSHIP & NOC</button>
     </div>
     <div class="skills-grid">
+      
+      <!-- Skill 1: Aviation -->
       <div class="wafer-panel-card" data-cat="aviation">
         <div class="skill-chip-icon"><i class="fa-solid fa-plane-departure"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Aviation & Hospitality Security</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance (IHG standards), guest safety, perimeter protection, and emergency preparedness.</p>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Airport Security Manager (ASM) standards, 5-star hotel security governance (IHG standards), VIP safety, perimeter defense, and disaster preparedness.</p>
       </div>
+
+      <!-- Skill 2: CCTV, Arch Way & Baggage Scanners -->
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">CCTV Systems, Arch Way & Scanners</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV installations, Walk-Through Arch Ways, X-Ray Baggage Scanners, Intelligent Video Analytics, and AV/PA system integrations.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">CCTV, Arch Way & Baggage Scanners</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">High-definition CCTV matrices, Walk-Through Metal Detector Arch Ways, X-Ray Baggage Scanners, Intelligent Video Analytics, and Central Command integration.</p>
       </div>
-      <div class="wafer-panel-card" data-cat="surveillance">
+
+      <!-- Skill 3: Access Control & Parking Guidance Systems -->
+      <div class="wafer-panel-card" data-cat="access">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control System & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-brand Access Control Systems, Parking Guidance Systems, biometric architecture, RFID privilege control, and automated barrier gates.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control & Parking Guidance</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-brand Access Control architecture, automated Parking Guidance Systems (PGS), biometric credentialing, RFID barriers, and ANPR vehicle tracking.</p>
       </div>
-      <div class="wafer-panel-card" data-cat="risk">
-        <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Risk Assessment & Loss Prevention</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Security risk evaluations, threat investigations, loss prevention audits, SOP formulation, compliance monitoring, and disaster recovery.</p>
+
+      <!-- Skill 4: AV & PA Systems -->
+      <div class="wafer-panel-card" data-cat="avpa">
+        <div class="skill-chip-icon"><i class="fa-solid fa-volume-high"></i></div>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">AV & Public Address (PA) Systems</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-zone Public Address amplification, acoustic balancing, emergency paging broadcasts, AV distribution matrices, and terminal audio networking.</p>
       </div>
+
+      <!-- Skill 5: Leadership, Call Center & Client Support -->
       <div class="wafer-panel-card" data-cat="leadership">
-        <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Security Leadership & Call Center</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, call center helpdesk operations, vendor SLA negotiation, and team leadership.</p>
+        <div class="skill-chip-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Client Support & Call Center Ops</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Call center helpdesk management, CRM ticketing workflows, client escalation resolution, customer satisfaction (CSAT) scoring, and Tier-1 IT support.</p>
       </div>
+
+      <!-- Skill 6: IP Networking & NOC Operations -->
       <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">IP Networking & NOC Operations</h3>
         <p style="font-size:0.92rem; color:var(--text-muted);">MikroTik routing configurations, CCNA standards, OLT distribution, firewall rules, data center uptime, and IT infrastructure administration.</p>
       </div>
+
     </div>
   </section>
 
@@ -1228,13 +1304,13 @@
       </div>
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">
-          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his United Group terminal implementation, IHG standards, CCTV, Arch Ways, Baggage Scanners, AV/PA, and Access Control!
+          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his United Group terminal implementation, IPCO project challenges & resolutions, CCTV, Arch Ways, Baggage Scanners, AV/PA, and Access Control!
           <br><button class="speak-btn" onclick="speakText(this)"><i class="fa-solid fa-volume-high"></i> Listen (Female Voice)</button>
         </div>
       </div>
       <div class="ai-quick-replies">
         <span class="quick-chip" onclick="sendQuickQuery('Work Experience')">💼 Experience</span>
-        <span class="quick-chip" onclick="sendQuickQuery('IPCO Project')">⚡ IPCO Project</span>
+        <span class="quick-chip" onclick="sendQuickQuery('IPCO Project Details')">⚡ IPCO Project</span>
         <span class="quick-chip" onclick="sendQuickQuery('Certifications')">🏆 Certifications</span>
         <span class="quick-chip" onclick="sendQuickQuery('Contact info')">📞 Contact</span>
       </div>
