@@ -85,8 +85,8 @@
     }
 
     .nav-wrapper {
-      position: fixed; top: 1rem; left: 0; width: 100%;
-      display: flex; justify-content: center; z-index: 1000; padding: 0 1rem;
+      position: fixed; top: 1.2rem; left: 0; width: 100%;
+      display: flex; justify-content: center; z-index: 1000; padding: 0 1.2rem;
     }
 
     .profile-card {
@@ -99,73 +99,74 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 1.5rem;
+      padding: 0.75rem 1.8rem;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 25px var(--trace-cyan-glow);
     }
 
-    .card-left { display: flex; align-items: center; gap: 10px; }
+    .card-left { display: flex; align-items: center; gap: 12px; }
 
     .icon-box {
-      width: 36px; height: 36px;
+      width: 38px; height: 38px;
       border-radius: 10px;
       background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(245, 158, 11, 0.25));
       border: 1.5px solid var(--trace-cyan);
       display: flex; align-items: center; justify-content: center;
-      color: var(--trace-cyan); font-size: 0.95rem;
+      color: var(--trace-cyan); font-size: 1rem;
       box-shadow: 0 0 15px var(--trace-cyan-glow);
     }
 
     .info-text h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;
+      font-weight: 700; font-size: 0.92rem; letter-spacing: 0.5px;
       color: var(--text-main);
     }
 
     .info-text p {
-      font-size: 0.55rem; font-family: 'JetBrains Mono', monospace;
-      color: var(--trace-cyan); letter-spacing: 0.5px;
+      font-size: 0.6rem; font-family: 'JetBrains Mono', monospace;
+      color: var(--trace-cyan); letter-spacing: 1px;
     }
 
-    .card-right { display: flex; align-items: center; gap: 10px; }
+    .card-right { display: flex; align-items: center; gap: 12px; }
 
     .time-box {
-      display: flex; align-items: center; gap: 6px;
+      display: flex; align-items: center; gap: 8px;
       background: rgba(0, 240, 255, 0.06);
       border: 1px solid var(--wire-border);
-      padding: 5px 10px; border-radius: 10px;
+      padding: 6px 14px; border-radius: 12px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem; color: var(--trace-cyan);
+      font-size: 0.76rem; color: var(--trace-cyan);
       white-space: nowrap;
+      box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
     }
 
     .time-box i { color: var(--trace-gold); }
 
     .theme-btn {
-      width: 36px; height: 36px; border-radius: 10px;
+      width: 38px; height: 38px; border-radius: 12px;
       background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;
+      cursor: pointer; font-size: 1rem; transition: all 0.3s ease;
       box-shadow: 0 0 15px var(--trace-cyan-glow);
     }
 
     .theme-btn:hover { background: var(--trace-cyan); color: var(--bg-void); transform: translateY(-2px); }
 
     .menu-btn {
-      display: none; width: 36px; height: 36px; border-radius: 10px;
+      display: none; width: 38px; height: 38px; border-radius: 10px;
       background: rgba(0, 240, 255, 0.08); border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan); align-items: center; justify-content: center;
-      cursor: pointer; font-size: 0.95rem;
+      cursor: pointer; font-size: 1rem;
     }
 
-    .nav-links { display: flex; align-items: center; list-style: none; gap: 0.4rem; }
+    .nav-links { display: flex; align-items: center; list-style: none; gap: 0.5rem; }
     .nav-item { position: relative; }
 
     .nav-link {
       color: var(--text-muted); text-decoration: none;
-      font-size: 0.8rem; font-weight: 600; padding: 0.4rem 0.75rem;
-      border-radius: 8px; display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.84rem; font-weight: 600; padding: 0.45rem 0.85rem;
+      border-radius: 8px; display: inline-flex; align-items: center; gap: 5px;
       transition: all 0.25s ease; cursor: pointer;
     }
 
@@ -652,7 +653,7 @@
     </header>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Updated with AV & PA, Parking & Parking Guidance System badges) -->
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="tech-badge-container">
@@ -660,13 +661,15 @@
         <span class="chip-status-tag"><i class="fa-solid fa-plane-shield" style="color:var(--trace-gold);"></i> Aviation & Corporate Security Management</span>
         <span class="chip-status-tag"><i class="fa-solid fa-award" style="color:var(--trace-gold);"></i> Airport Security Manager (ASM) Trained</span>
         <span class="chip-status-tag"><i class="fa-solid fa-video" style="color:var(--trace-gold);"></i> CCTV & Access Control Systems</span>
+        <span class="chip-status-tag"><i class="fa-solid fa-volume-high" style="color:var(--trace-gold);"></i> AV & PA Systems Integration</span>
+        <span class="chip-status-tag"><i class="fa-solid fa-square-parking" style="color:var(--trace-gold);"></i> Parking & Parking Guidance Systems</span>
         <span class="chip-status-tag"><i class="fa-solid fa-shield-halved" style="color:var(--trace-gold);"></i> Risk Management & Enterprise Tech</span>
         <span class="chip-status-tag"><i class="fa-solid fa-users-gear" style="color:var(--trace-gold);"></i> Security Leadership & Operations</span>
       </div>
 
       <h1>SECURITY & <br><span class="chip-gradient">ADMINISTRATION</span></h1>
       <p class="hero-desc">
-        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Access Control Systems, Risk Management, and Project Execution across high-profile environments.
+        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Access Control Systems, AV & PA Solutions, Parking Guidance Systems, Risk Management, and Project Execution across high-profile environments.
       </p>
       <div class="btn-group">
         <a href="./cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="chip-btn chip-btn-primary">
@@ -705,17 +708,17 @@
     </div>
   </header>
 
-  <!-- About Me Section (Expanded & Enhanced) -->
+  <!-- About Me Section (Expanded, Smart & Professional Touch) -->
   <section id="about" class="reveal-on-scroll">
     <div class="section-header"><h2 class="section-title">ABOUT ME</h2></div>
     <div class="wafer-panel-card" style="max-width: 1050px; margin: 0 auto;">
       
       <p style="font-size: 1.08rem; color: var(--text-main); line-height: 1.9; font-weight: 500; margin-bottom: 1.4rem;">
-        As a distinguished <strong>Security & Administration Specialist</strong>, I bring over 5+ years of robust operational leadership in bridging physical safety protocols with high-end enterprise technology. My core expertise spans corporate physical security governance, aviation security management, international hospitality protection, advanced CCTV networks, multi-brand Access Control Systems, and 24/7 call center & client support infrastructures.
+        As a distinguished <strong>Security & Administration Specialist</strong>, I bring over 5+ years of robust operational leadership in bridging physical safety protocols with high-end enterprise technology. My core expertise spans corporate physical security governance, aviation security management, international hospitality protection, advanced CCTV networks, multi-brand Access Control Systems, AV & PA systems, Parking Guidance Infrastructure, and 24/7 call center & client support operations.
       </p>
 
       <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
-        My professional trajectory covers high-profile commercial, retail, convention, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
+        My professional trajectory covers high-profile commercial, retail, convention, call center environments, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
       </p>
 
       <div class="about-sub-card">
@@ -728,9 +731,9 @@
           <div class="system-badge"><i class="fa-solid fa-brain"></i> Intelligent Video Analytics & Monitoring</div>
           <div class="system-badge"><i class="fa-solid fa-car-side"></i> ANPR & Vehicle Identification Systems</div>
           <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> Multi-brand Access Control System Architecture</div>
-          <div class="system-badge"><i class="fa-solid fa-square-parking"></i> Parking Management & Tire Killer Barriers</div>
+          <div class="system-badge"><i class="fa-solid fa-volume-high"></i> AV & PA Systems Troubleshooting & Integration</div>
+          <div class="system-badge"><i class="fa-solid fa-square-parking"></i> Parking Management & Parking Guidance Systems</div>
           <div class="system-badge"><i class="fa-solid fa-headset"></i> Call Center & Client Support Management</div>
-          <div class="system-badge"><i class="fa-solid fa-desktop"></i> Central Command Center Integration</div>
           <div class="system-badge"><i class="fa-solid fa-shield-virus"></i> Loss Prevention, Audits & Asset Safety</div>
         </div>
       </div>
@@ -784,9 +787,9 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-database"></i> Server Deployment & Migration</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control System Architecture</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control & Parking Guidance</span>
+          <span class="pro-badge"><i class="fa-solid fa-volume-high"></i> AV & PA Systems Infrastructure</span>
           <span class="pro-badge"><i class="fa-solid fa-car-burst"></i> Tire Killer Barriers</span>
-          <span class="pro-badge"><i class="fa-solid fa-video"></i> Central Command Integration</span>
         </div>
 
         <div class="exp-grid-details">
@@ -798,16 +801,16 @@
             </ul>
           </div>
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-fingerprint"></i> Access Control System & Troubleshooting</h4>
+            <h4><i class="fa-solid fa-fingerprint"></i> Access Control & Parking Guidance</h4>
             <ul class="exp-bullets">
               <li>Deployed and configured advanced access control hardware and multi-brand Access Control software for seamless employee management and secure zone authorization.</li>
-              <li>Diagnosed and resolved intricate server display errors and database connectivity bottlenecks, ensuring 100% real-time access control tracking uptime.</li>
+              <li>Engineered and troubleshot automated Parking Management Systems and Parking Guidance Systems to streamline high-density vehicle movement.</li>
             </ul>
           </div>
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-car"></i> Heavy-Duty Perimeter Security & Barriers</h4>
+            <h4><i class="fa-solid fa-volume-high"></i> AV & PA Systems Resolution</h4>
             <ul class="exp-bullets">
-              <li>Spearheaded technical specifications, structural layouts, and design implementation for heavy-duty Tire Killer vehicle barrier systems to secure high-risk perimeters.</li>
+              <li>Resolved complex AV and PA (Public Address) system issues across multi-zone corporate venues to ensure crystal-clear emergency broadcasting and background audio routing.</li>
               <li>Integrated automated physical barriers, RFID readers, and ANPR components directly into the central command security grid.</li>
             </ul>
           </div>
@@ -823,7 +826,7 @@
     </div>
   </section>
 
-  <!-- Work Experience Section -->
+  <!-- Work Experience Section (Updated United Group & Antaranga Dot Com) -->
   <section id="experience">
     <div class="section-header reveal-on-scroll"><h2 class="section-title">WORK EXPERIENCE</h2></div>
 
@@ -869,7 +872,7 @@
         </div>
       </div>
 
-      <!-- 2. United Group -->
+      <!-- 2. United Group (Updated with AV & PA, Parking & Access Control) -->
       <div class="exp-pro-card reveal-on-scroll" id="exp-united">
         <div class="exp-top-banner">
           <div class="role-company-wrapper">
@@ -883,19 +886,19 @@
         </div>
 
         <div class="project-tags-row">
-          <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental Dhaka</span>
-          <span class="pro-badge"><i class="fa-solid fa-hotel"></i> Crowne Plaza Dhaka</span>
+          <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental & Crowne Plaza</span>
+          <span class="pro-badge"><i class="fa-solid fa-volume-high"></i> AV & PA Systems</span>
+          <span class="pro-badge"><i class="fa-solid fa-square-parking"></i> Parking & Guidance Systems</span>
           <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control System</span>
-          <span class="pro-badge"><i class="fa-solid fa-car"></i> ANPR & Barrier Control</span>
         </div>
 
         <div class="exp-grid-details">
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-video"></i> Hospitality & Retail Security Systems</h4>
+            <h4><i class="fa-solid fa-video"></i> Hospitality & Venue Security Systems</h4>
             <ul class="exp-bullets">
-              <li>Spearheaded integrated physical security, central command monitoring, and enterprise Access Control Systems across 5-star luxury hotels (InterContinental, Crowne Plaza), convention centres, and Unimart Airport retail hubs.</li>
-              <li>Oversaw continuous monitoring of centralized CCTV control rooms, ANPR vehicle identification, and RFID electronic access barriers.</li>
-              <li>Managed third-party vendor contracts, maintenance SLA benchmarks, preventive checks, and electronic surveillance troubleshooting.</li>
+              <li>Spearheaded integrated physical security, central command monitoring, AV & PA systems, and enterprise Access Control Systems across 5-star luxury hotels (InterContinental Dhaka, Crowne Plaza Dhaka), convention centres, and Unimart Airport retail hubs.</li>
+              <li>Managed complex Parking Management and Parking Guidance Systems to ensure seamless vehicular traffic flow, bay tracking, and secure entry logging.</li>
+              <li>Resolved critical AV and PA (Public Address) system issues, maintaining flawless audio performance and emergency paging across multi-zone guest areas.</li>
             </ul>
           </div>
           <div class="exp-category-box">
@@ -1044,7 +1047,7 @@
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
         <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control System & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-brand Access Control Systems, biometric time-attendance architecture, RFID privilege control, and automated barrier gates.</p>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-brand Access Control Systems, Parking Guidance Systems, biometric architecture, RFID privilege control, and automated barrier gates.</p>
       </div>
       <div class="wafer-panel-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
@@ -1220,7 +1223,7 @@
       </div>
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">
-          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, CCTV systems, Access Control Systems, or Call Center management!
+          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, CCTV, Access Control, AV & PA systems, or Call Center management!
           <br><button class="speak-btn" onclick="speakText(this)"><i class="fa-solid fa-volume-high"></i> Listen (Female Voice)</button>
         </div>
       </div>
@@ -1506,17 +1509,17 @@
         
         const query = text.toLowerCase();
         if (query.includes('experience') || query.includes('work') || query.includes('company') || query.includes('career')) {
-          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership & client support experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security, CCTV Systems & Admin)\n• United Group / UGSSL (Executive - Safety & Security, covering 5-star hotels & Access Control Systems)\n• D-Net Service (Security Consultant & Call Center Support)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC & Helpdesk Lead)\n• Antaranga Dot Com Ltd (Customer Support Executive - 1st Job Experience)";
+          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership & technical infrastructure experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security, CCTV & Admin)\n• United Group / UGSSL (Executive - Safety & Security for InterContinental, Crowne Plaza, AV/PA & Parking Systems)\n• D-Net Service (Security Consultant & Call Center Support)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC & Helpdesk Lead)\n• Antaranga Dot Com Ltd (Customer Support Executive - 1st Job Experience)";
         } else if (query.includes('ipco') || query.includes('project') || query.includes('server')) {
-          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured multi-brand Access Control System & time attendance software.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
+          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured Access Control Systems, AV & PA systems, and Parking Guidance Systems.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
         } else if (query.includes('contact') || query.includes('phone') || query.includes('email') || query.includes('location')) {
           botDiv.innerText = "Direct Contact Information:\n📧 Email: mehedi4050128@gmail.com\n📞 Phone: +880 1680-450882\n📍 Location: Malibagh, Dhaka-1217, Bangladesh\n🔗 LinkedIn: linkedin.com/in/mehedi-hassan-7810261aa";
         } else if (query.includes('skill') || query.includes('expert') || query.includes('cctv') || query.includes('security')) {
-          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV Systems & Intelligent Video Analytics\n• Multi-brand Access Control System Architecture\n• Call Center & Client Support Management\n• Risk Management & MikroTik NOC Operations";
+          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV Systems & Video Analytics\n• Access Control & Parking Guidance Systems\n• AV & PA Systems Integration\n• Call Center Management & NOC Operations";
         } else if (query.includes('certi') || query.includes('train') || query.includes('education')) {
           botDiv.innerText = "Certifications & Education:\n• Airport Security Manager (ASM) - CAAB (2026)\n• HCSA Certified Security Associate (Hikvision - CCTV & Networking)\n• Microsoft Azure Fundamentals\n• B.Sc in Physics - GSTU (CGPA 3.55)";
         } else {
-          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration, CCTV surveillance, Access Control Systems, and client support operations. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
+          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration, CCTV surveillance, Access Control Systems, AV & PA solutions, and enterprise tech. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
         }
 
         const speakButton = document.createElement('button');
