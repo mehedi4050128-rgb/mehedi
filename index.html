@@ -432,15 +432,15 @@
       box-shadow: 0 0 20px var(--trace-cyan-glow);
     }
 
-    /* Smart Lady AI Assistant Widget with Female Voice */
+    /* Smart AI Assistant Widget with Female Voice Support */
     .ai-chatbot-widget {
       position: fixed; bottom: 2rem; right: 2rem; z-index: 1500;
     }
     .ai-chat-toggle-btn {
       width: 56px; height: 56px; border-radius: 18px;
-      background: linear-gradient(135deg, #ff758c, #a855f7);
-      border: 2px solid #ffffff; color: #ffffff; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 25px rgba(255, 117, 140, 0.6); transition: 0.3s;
+      background: linear-gradient(135deg, #00f0ff, #a855f7);
+      border: 2px solid #ffffff; color: #01040a; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; cursor: pointer; box-shadow: 0 0 25px var(--trace-cyan-glow); transition: 0.3s;
       position: relative;
     }
     .ai-chat-toggle-btn:hover { transform: scale(1.08); }
@@ -454,39 +454,39 @@
 
     .ai-chat-window {
       position: absolute; bottom: 75px; right: 0; width: 380px; max-height: 560px;
-      background: var(--panel-glass); border: 1.5px solid #ff758c; border-radius: 18px;
+      background: var(--panel-glass); border: 1.5px solid var(--trace-cyan); border-radius: 18px;
       box-shadow: 0 25px 60px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden;
       opacity: 0; visibility: hidden; transform: translateY(15px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .ai-chatbot-widget.active .ai-chat-window { opacity: 1; visibility: visible; transform: translateY(0); }
     
     .ai-chat-header {
-      background: rgba(255, 117, 140, 0.15); padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255, 117, 140, 0.3);
+      background: rgba(0, 240, 255, 0.15); padding: 0.85rem 1rem; border-bottom: 1px solid var(--wire-border);
       display: flex; justify-content: space-between; align-items: center; font-family: 'Space Grotesk', sans-serif;
     }
     .ai-chat-body { padding: 1rem; height: 340px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 0.85rem; }
     .ai-msg { padding: 10px 14px; border-radius: 12px; max-width: 88%; line-height: 1.6; white-space: pre-line; position: relative; }
-    .ai-msg.bot { background: rgba(255, 117, 140, 0.08); border: 1px solid rgba(255, 117, 140, 0.2); color: var(--text-main); align-self: flex-start; }
-    .ai-msg.user { background: #ff758c; color: #ffffff; font-weight: 600; align-self: flex-end; }
+    .ai-msg.bot { background: rgba(0, 240, 255, 0.08); border: 1px solid var(--wire-border); color: var(--text-main); align-self: flex-start; }
+    .ai-msg.user { background: var(--trace-cyan); color: #01040a; font-weight: 600; align-self: flex-end; }
     
     .speak-btn {
-      background: none; border: none; color: #ff99ab; cursor: pointer; font-size: 0.8rem;
+      background: none; border: none; color: var(--trace-cyan); cursor: pointer; font-size: 0.8rem;
       margin-top: 6px; display: inline-flex; align-items: center; gap: 5px; opacity: 0.9; transition: 0.2s;
     }
-    .speak-btn:hover { opacity: 1; text-shadow: 0 0 10px #ff758c; }
+    .speak-btn:hover { opacity: 1; text-shadow: 0 0 10px var(--trace-cyan); }
 
     .ai-quick-replies {
       display: flex; flex-wrap: wrap; gap: 6px; padding: 0 1rem 0.6rem; background: var(--panel-glass);
     }
     .quick-chip {
-      background: rgba(255, 117, 140, 0.1); border: 1px solid rgba(255, 117, 140, 0.3); color: #ff99ab;
+      background: rgba(0, 240, 255, 0.1); border: 1px solid var(--wire-border); color: var(--trace-cyan);
       font-size: 0.72rem; padding: 4px 8px; border-radius: 6px; cursor: pointer; transition: 0.2s;
     }
-    .quick-chip:hover { background: #ff758c; color: #ffffff; }
+    .quick-chip:hover { background: var(--trace-cyan); color: #01040a; }
 
     .ai-chat-footer { padding: 0.7rem; border-top: 1px solid var(--wire-border); display: flex; gap: 8px; background: var(--terminal-bg); }
     .ai-chat-input { flex: 1; background: var(--input-bg); border: 1px solid var(--wire-border); border-radius: 8px; padding: 8px 10px; color: var(--input-text); font-size: 0.85rem; outline: none; }
-    .ai-chat-send { background: #ff758c; border: none; border-radius: 8px; padding: 0 14px; color: #ffffff; cursor: pointer; font-weight: 700; }
+    .ai-chat-send { background: var(--trace-cyan); border: none; border-radius: 8px; padding: 0 14px; color: #01040a; cursor: pointer; font-weight: 700; }
 
     .back-to-top-btn {
       position: fixed; bottom: 8.2rem; right: 2rem; width: 48px; height: 48px;
@@ -592,7 +592,7 @@
         </div>
         <div class="info-text">
           <h2>MEHEDI HASSAN</h2>
-          <p>SECURITY & ADMINISTRATION</p>
+          <p>SECURITY & ADMINISTRATION SPECIALIST</p>
         </div>
       </div>
       
@@ -655,14 +655,14 @@
         <span class="chip-status-tag"><span class="pulse-core"></span> Security & Administration Professional</span>
         <span class="chip-status-tag"><i class="fa-solid fa-plane-shield" style="color:var(--trace-gold);"></i> Aviation & Corporate Security Management</span>
         <span class="chip-status-tag"><i class="fa-solid fa-award" style="color:var(--trace-gold);"></i> Airport Security Manager (ASM) Trained</span>
-        <span class="chip-status-tag"><i class="fa-solid fa-video" style="color:var(--trace-gold);"></i> CCTV & Access Control</span>
-        <span class="chip-status-tag"><i class="fa-solid fa-shield-halved" style="color:var(--trace-gold);"></i> Risk Management & Technology</span>
-        <span class="chip-status-tag"><i class="fa-solid fa-users-gear" style="color:var(--trace-gold);"></i> Security Leadership</span>
+        <span class="chip-status-tag"><i class="fa-solid fa-video" style="color:var(--trace-gold);"></i> CCTV & Access Control Systems</span>
+        <span class="chip-status-tag"><i class="fa-solid fa-shield-halved" style="color:var(--trace-gold);"></i> Risk Management & Enterprise Tech</span>
+        <span class="chip-status-tag"><i class="fa-solid fa-users-gear" style="color:var(--trace-gold);"></i> Security Leadership & Operations</span>
       </div>
 
       <h1>SECURITY & <br><span class="chip-gradient">ADMINISTRATION</span></h1>
       <p class="hero-desc">
-        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Security Systems, Risk Management, and Project Execution across high-profile environments.
+        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, BioStar 2 Access Control Architecture, Risk Management, and Project Execution across high-profile environments.
       </p>
       <div class="btn-group">
         <a href="./cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="chip-btn chip-btn-primary">
@@ -707,25 +707,25 @@
     <div class="wafer-panel-card" style="max-width: 1050px; margin: 0 auto;">
       
       <p style="font-size: 1.06rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
-        I am a dedicated <strong>Security & Administration professional</strong> with extensive hands-on experience in corporate physical security, aviation security management, international hospitality security, and advanced electronic surveillance infrastructure. My career is built on bridging the gap between physical safety protocols and cutting-edge technology systems to safeguard critical assets, corporate headquarters, and high-profile environments.
+        I am a dedicated <strong>Security & Administration Specialist</strong> with extensive hands-on experience in corporate physical security, aviation security management, international hospitality security, advanced electronic surveillance, and client support command infrastructure. My career is built on bridging the gap between physical safety protocols and cutting-edge technology systems to safeguard critical assets, corporate headquarters, and high-profile environments.
       </p>
 
       <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
-        My professional trajectory covers high-profile commercial, retail, convention, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
+        My professional trajectory covers high-profile commercial, retail, convention, call center operations, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
       </p>
 
       <div class="about-sub-card">
         <div class="about-sub-title"><i class="fa-solid fa-network-wired"></i> Core Implementation & Integrated Systems Expertise:</div>
         <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem;">
-          A cornerstone of my technical capabilities lies in the planning, integration, and operational administration of enterprise-grade security systems:
+          A cornerstone of my technical capabilities lies in the planning, integration, and operational administration of enterprise-grade security and support systems:
         </p>
         <div class="system-badge-grid">
           <div class="system-badge"><i class="fa-solid fa-video"></i> Advanced IP CCTV & Surveillance Matrices</div>
           <div class="system-badge"><i class="fa-solid fa-brain"></i> Intelligent Video Analytics & Monitoring</div>
           <div class="system-badge"><i class="fa-solid fa-car-side"></i> ANPR & Vehicle Identification Systems</div>
-          <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> Biometric Access Architecture (BioStar 2)</div>
+          <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Biometrics</div>
           <div class="system-badge"><i class="fa-solid fa-square-parking"></i> Parking Management & Tire Killer Barriers</div>
-          <div class="system-badge"><i class="fa-solid fa-volume-high"></i> AV, Intercom & Public Address (PA)</div>
+          <div class="system-badge"><i class="fa-solid fa-headset"></i> Call Center & Client Support Management</div>
           <div class="system-badge"><i class="fa-solid fa-desktop"></i> Central Command Center Integration</div>
           <div class="system-badge"><i class="fa-solid fa-shield-virus"></i> Loss Prevention, Audits & Asset Safety</div>
         </div>
@@ -737,7 +737,7 @@
 
       <div style="background: rgba(0, 240, 255, 0.04); border-left: 3px solid var(--trace-cyan); padding: 1.4rem 1.6rem; border-radius: 0 12px 12px 0; margin: 1.8rem 0;">
         <p style="font-size: 1.02rem; color: var(--text-main); font-style: italic; line-height: 1.8; margin-bottom: 0.6rem;">
-          "Modern security is no longer just about physical guarding; it is the perfect alignment of people, rigorous processes, and intelligent technology."
+          "Modern security and administrative excellence are no longer just about physical guarding; it is the perfect alignment of people, rigorous processes, and intelligent technology."
         </p>
         <p style="font-size: 0.95rem; color: var(--trace-cyan); font-family: 'JetBrains Mono', monospace; font-weight: 600;">
           — Vision & Leadership Philosophy
@@ -780,7 +780,7 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-database"></i> Server Deployment & Migration</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Biometrics</span>
           <span class="pro-badge"><i class="fa-solid fa-car-burst"></i> Tire Killer Barriers</span>
           <span class="pro-badge"><i class="fa-solid fa-video"></i> Central Command Integration</span>
         </div>
@@ -796,8 +796,8 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Troubleshooting</h4>
             <ul class="exp-bullets">
-              <li>Deployed and configured advanced access control hardware and BioStar 2 time attendance software for seamless employee management and secure zone access.</li>
-              <li>Diagnosed and resolved intricate server display errors and database connectivity bottlenecks, ensuring 100% real-time attendance tracking uptime.</li>
+              <li>Deployed and configured advanced access control hardware and BioStar 2 time attendance & access control software for seamless employee management and secure zone authorization.</li>
+              <li>Diagnosed and resolved intricate server display errors and database connectivity bottlenecks, ensuring 100% real-time access control tracking uptime.</li>
             </ul>
           </div>
           <div class="exp-category-box">
@@ -810,7 +810,7 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-desktop"></i> Central Command Room Architecture</h4>
             <ul class="exp-bullets">
-              <li>Managed technical integration of IP CCTV cameras, door sensors, smart access walls, and security control room display units.</li>
+              <li>Managed technical integration of IP CCTV cameras, door sensors, smart access control walls, and security control room display units.</li>
               <li>Collaborated directly with executive leadership including Air Commodore Md Salamot Ullah (Retd) and Wing Commander Joarder Sirajul Islam.</li>
             </ul>
           </div>
@@ -840,7 +840,7 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-building-user"></i> Corporate HQ</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Suprema BioStar 2</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control</span>
           <span class="pro-badge"><i class="fa-solid fa-shield-virus"></i> Safety & SOP Compliance</span>
           <span class="pro-badge"><i class="fa-solid fa-users"></i> Force Deployment</span>
         </div>
@@ -850,7 +850,7 @@
             <h4><i class="fa-solid fa-shield-halved"></i> Security & Command Operations</h4>
             <ul class="exp-bullets">
               <li>Direct full-scope workplace physical security governance, electronic surveillance, and asset protection for high-tech semiconductor corporate offices.</li>
-              <li>Monitor centralized CCTV matrices, BioStar biometric access systems, automated visitor tracking, and secure server room access controls.</li>
+              <li>Monitor centralized CCTV matrices, BioStar 2 access control and biometric systems, automated visitor tracking, and secure server room entry protocols.</li>
               <li>Coordinate with hardware and network technology vendors for CCTV maintenance, firmware patching, and infrastructure scaling.</li>
             </ul>
           </div>
@@ -881,7 +881,7 @@
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental Dhaka</span>
           <span class="pro-badge"><i class="fa-solid fa-hotel"></i> Crowne Plaza Dhaka</span>
-          <span class="pro-badge"><i class="fa-solid fa-cart-shopping"></i> Unimart Airport Retail</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar Access Control</span>
           <span class="pro-badge"><i class="fa-solid fa-car"></i> ANPR & Barrier Control</span>
         </div>
 
@@ -889,7 +889,7 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-video"></i> Hospitality & Retail Security Systems</h4>
             <ul class="exp-bullets">
-              <li>Spearheaded integrated physical security, central command monitoring, and safety operations across 5-star luxury hotels (InterContinental, Crowne Plaza), convention centres, and Unimart Airport retail hubs.</li>
+              <li>Spearheaded integrated physical security, central command monitoring, and BioStar 2 access control systems across 5-star luxury hotels (InterContinental, Crowne Plaza), convention centres, and Unimart Airport retail hubs.</li>
               <li>Oversaw continuous monitoring of centralized CCTV control rooms, ANPR vehicle identification, and RFID electronic access barriers.</li>
               <li>Managed third-party vendor contracts, maintenance SLA benchmarks, preventive checks, and electronic surveillance troubleshooting.</li>
             </ul>
@@ -920,7 +920,7 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-building-columns"></i> BRAC Bank Enterprise Liaison</span>
-          <span class="pro-badge"><i class="fa-solid fa-headset"></i> Escalation Support</span>
+          <span class="pro-badge"><i class="fa-solid fa-headset"></i> Call Center & Support</span>
           <span class="pro-badge"><i class="fa-solid fa-shield-halved"></i> Infrastructure Protection</span>
         </div>
 
@@ -933,9 +933,9 @@
             </ul>
           </div>
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-headset"></i> Technical Escalation & Resolution</h4>
+            <h4><i class="fa-solid fa-headset"></i> Call Center Support & Resolution</h4>
             <ul class="exp-bullets">
-              <li>Delivered high-responsiveness technical support for client service escalations, maintaining first-call resolution benchmarks.</li>
+              <li>Delivered high-responsiveness call center & technical support for client service escalations, maintaining first-call resolution benchmarks.</li>
               <li>Diagnosed client connectivity disruptions, monitored network protection logs, and streamlined issue escalations.</li>
             </ul>
           </div>
@@ -957,7 +957,7 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-database"></i> Tier-3 NOC Core Operations</span>
-          <span class="pro-badge"><i class="fa-solid fa-shield-halved"></i> Firewall & Disaster Recovery</span>
+          <span class="pro-badge"><i class="fa-solid fa-headset"></i> 24/7 Call Center & Helpdesk</span>
           <span class="pro-badge"><i class="fa-solid fa-users"></i> 7-Engineer Team Lead</span>
           <span class="pro-badge"><i class="fa-solid fa-network-wired"></i> 99.9% Uptime SLA</span>
         </div>
@@ -971,9 +971,9 @@
             </ul>
           </div>
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-users-gear"></i> NOC Team Leadership & Tier-3 Support</h4>
+            <h4><i class="fa-solid fa-users-gear"></i> NOC Call Center Leadership & Tier-3 Support</h4>
             <ul class="exp-bullets">
-              <li>Led a 7-engineer NOC operations team, optimizing task delegation and reducing critical incident response times by 50%.</li>
+              <li>Led a 7-engineer NOC call center and technical helpdesk team, optimizing task delegation and reducing critical incident response times by 50%.</li>
               <li>Delivered Tier-3 technical escalation support, diagnosing complex routing anomalies with an 88% first-contact resolution rate.</li>
             </ul>
           </div>
@@ -994,18 +994,18 @@
         </div>
 
         <div class="project-tags-row">
+          <span class="pro-badge"><i class="fa-solid fa-headset"></i> Client Support & Call Center</span>
           <span class="pro-badge"><i class="fa-solid fa-users"></i> 100+ Daily Users</span>
-          <span class="pro-badge"><i class="fa-solid fa-headset"></i> Tier-1 IT Support</span>
-          <span class="pro-badge"><i class="fa-solid fa-database"></i> CRM Management</span>
+          <span class="pro-badge"><i class="fa-solid fa-database"></i> CRM & Helpdesk Management</span>
         </div>
 
         <div class="exp-grid-details" style="grid-template-columns: 1fr;">
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-headset"></i> Customer Service & Technical Support</h4>
+            <h4><i class="fa-solid fa-headset"></i> Call Center Operations & Client Support</h4>
             <ul class="exp-bullets">
-              <li>Delivered high-quality customer service management to over 100+ daily users, ensuring seamless communication, real-time issue resolution, and maintaining a customer satisfaction score (CSAT) of 95%+.</li>
-              <li>Provided Tier-1 IT support and technical troubleshooting for internet connectivity, device configuration, and service disruptions—achieving a first-contact resolution (FCR) rate of 88%.</li>
-              <li>Diagnosed and resolved recurring technical issues by collaborating with the network and field support teams, reducing repeat complaints by 25% and improving overall support efficiency.</li>
+              <li>Delivered high-quality client support and call center management to over 100+ daily users, ensuring seamless communication, real-time issue resolution, and maintaining a customer satisfaction score (CSAT) of 95%+.</li>
+              <li>Provided Tier-1 IT helpdesk support and technical troubleshooting for internet connectivity, device configuration, and service disruptions—achieving a first-contact resolution (FCR) rate of 88%.</li>
+              <li>Managed inbound/outbound call center interactions, diagnosing and resolving recurring technical issues by collaborating with network and field support teams, reducing repeat complaints by 25%.</li>
               <li>Maintained detailed records and tickets in the CRM system, ensuring accurate documentation of customer queries and solutions for future reference and internal audits.</li>
               <li>Participated in regular service quality assessments and client feedback reviews, contributing to process improvements that cut average handling time (AHT) by 20%.</li>
             </ul>
@@ -1039,8 +1039,8 @@
       </div>
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">BioStar 2 Access Control & Parking Tech</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access control architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
       </div>
       <div class="wafer-panel-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
@@ -1049,8 +1049,8 @@
       </div>
       <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-users-gear"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Security Leadership & Manpower</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, vendor SLA negotiation, multi-stakeholder communication, and team leadership.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Security Leadership & Call Center</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Security manpower deployment, 24/7 duty roster management, call center helpdesk operations, vendor SLA negotiation, and team leadership.</p>
       </div>
       <div class="wafer-panel-card" data-cat="leadership">
         <div class="skill-chip-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1207,7 +1207,7 @@
     </div>
   </section>
 
-  <!-- Smart Lady AI Assistant Widget with Optimized Female Voice -->
+  <!-- Smart Lady AI Assistant Widget with Voice Support -->
   <div class="ai-chatbot-widget" id="aiChatWidget">
     <div class="ai-chat-window">
       <div class="ai-chat-header">
@@ -1216,7 +1216,7 @@
       </div>
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">
-          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, IPCO server projects, Ulkasemi, or Antaranga Dot Com!
+          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, IPCO server projects, BioStar 2 access control, or Call Center management!
           <br><button class="speak-btn" onclick="speakText(this)"><i class="fa-solid fa-volume-high"></i> Listen (Female Voice)</button>
         </div>
       </div>
@@ -1432,7 +1432,7 @@
       });
     }
 
-    // Optimized Female Voice Synthesis (Smart Lady Voice Support)
+    // Female Voice Synthesis (Smart Lady Voice Support)
     function speakText(buttonElement) {
       const msgBox = buttonElement.closest('.ai-msg');
       const clone = msgBox.cloneNode(true);
@@ -1444,9 +1444,8 @@
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(textToSpeak);
         
-        // Pick best available female voice
         const voices = window.speechSynthesis.getVoices();
-        const femaleVoice = voices.find(v => (v.name.includes('Female') || v.name.includes('Zira') || v.name.includes('Google US English') || v.name.includes('Samantha') || v.name.includes('Victoria')) && !v.name.includes('Male'));
+        const femaleVoice = voices.find(v => (v.name.includes('Female') || v.name.includes('Zira') || v.name.includes('Google US English') || v.name.includes('Samantha')) && !v.name.includes('Male'));
         if (femaleVoice) {
           utterance.voice = femaleVoice;
         }
@@ -1460,14 +1459,14 @@
         }
 
         utterance.rate = 1.0;
-        utterance.pitch = 1.3; // Softer, natural female tone
+        utterance.pitch = 1.3;
         window.speechSynthesis.speak(utterance);
       } else {
         alert("Speech synthesis is not supported on your browser.");
       }
     }
 
-    // Proactive AI Assistant Logic with Professional Info + Female Voice
+    // Proactive AI Assistant Logic
     function toggleAIChat() {
       const widget = document.getElementById('aiChatWidget');
       widget.classList.toggle('active');
@@ -1503,17 +1502,17 @@
         
         const query = text.toLowerCase();
         if (query.includes('experience') || query.includes('work') || query.includes('company') || query.includes('career')) {
-          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security & Admin)\n• United Group / UGSSL (Executive - Safety & Security, 2024-2026 covering InterContinental & Crowne Plaza Dhaka)\n• D-Net Service (Security Consultant, 2022-2023)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC, 2020-2022)\n• Antaranga Dot Com Ltd (Customer Support Executive, Dec 2018 - Nov 2020 - His 1st job experience)";
+          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership & client support experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security & Admin)\n• United Group / UGSSL (Executive - Safety & Security, covering 5-star hotels & BioStar Access Control)\n• D-Net Service (Security Consultant & Call Center Support)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC & Helpdesk Lead)\n• Antaranga Dot Com Ltd (Customer Support & Call Center Executive - 1st Job Experience)";
         } else if (query.includes('ipco') || query.includes('project') || query.includes('server')) {
-          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured BioStar 2 access control & time attendance software.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
+          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured BioStar 2 Access Control & Biometric Attendance software.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
         } else if (query.includes('contact') || query.includes('phone') || query.includes('email') || query.includes('location')) {
           botDiv.innerText = "Direct Contact Information:\n📧 Email: mehedi4050128@gmail.com\n📞 Phone: +880 1680-450882\n📍 Location: Malibagh, Dhaka-1217, Bangladesh\n🔗 LinkedIn: linkedin.com/in/mehedi-hassan-7810261aa";
         } else if (query.includes('skill') || query.includes('expert') || query.includes('cctv') || query.includes('security')) {
-          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV & Intelligent Video Analytics\n• Biometric Access Architecture (BioStar 2)\n• Risk Management, Threat Assessment & SOP Formulation\n• IP Networking & MikroTik NOC Operations";
+          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV & Intelligent Video Analytics\n• BioStar 2 Access Control & Biometric Systems\n• Call Center & Client Support Management\n• Risk Management & MikroTik NOC Operations";
         } else if (query.includes('certi') || query.includes('train') || query.includes('education')) {
           botDiv.innerText = "Certifications & Education:\n• Airport Security Manager (ASM) - CAAB (2026)\n• HCSA Certified Security Associate (Hikvision - CCTV & Networking)\n• Microsoft Azure Fundamentals\n• B.Sc in Physics - GSTU (CGPA 3.55)";
         } else {
-          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration and infrastructure tech. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
+          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration, BioStar access control, and client support command. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
         }
 
         const speakButton = document.createElement('button');
