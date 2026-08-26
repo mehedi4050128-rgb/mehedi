@@ -132,16 +132,17 @@
       display: flex; align-items: center; gap: 8px;
       background: rgba(0, 240, 255, 0.06);
       border: 1px solid var(--wire-border);
-      padding: 5px 12px; border-radius: 10px;
+      padding: 6px 14px; border-radius: 12px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.74rem; color: var(--trace-cyan);
+      font-size: 0.76rem; color: var(--trace-cyan);
       white-space: nowrap;
+      box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.1);
     }
 
     .time-box i { color: var(--trace-gold); }
 
     .theme-btn {
-      width: 38px; height: 38px; border-radius: 10px;
+      width: 38px; height: 38px; border-radius: 12px;
       background: rgba(0, 240, 255, 0.08);
       border: 1.5px solid var(--trace-cyan);
       color: var(--trace-cyan);
@@ -583,7 +584,7 @@
   <!-- Live Dynamic Wafer Canvas -->
   <canvas id="scroll-live-canvas"></canvas>
 
-  <!-- Navigation / Profile Card Header -->
+  <!-- Navigation / Profile Card Header (Enhanced with Live Time & Theme Switcher) -->
   <div class="nav-wrapper">
     <header class="profile-card">
       <div class="card-left">
@@ -591,7 +592,7 @@
           <i class="fa-solid fa-microchip"></i>
         </div>
         <div class="info-text">
-          <h2>MEHEDI HASSAN</h2>
+          <h2>MD. MEHEDI HASSAN</h2>
           <p>SECURITY & ADMINISTRATION SPECIALIST</p>
         </div>
       </div>
@@ -662,7 +663,7 @@
 
       <h1>SECURITY & <br><span class="chip-gradient">ADMINISTRATION</span></h1>
       <p class="hero-desc">
-        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, BioStar 2 Access Control Architecture, Risk Management, and Project Execution across high-profile environments.
+        Specializing in Corporate Security, Aviation Security, International Hospitality Security, Advanced Surveillance Technology, Access Control Systems, Risk Management, and Project Execution across high-profile environments.
       </p>
       <div class="btn-group">
         <a href="./cv.pdf" download="Md_Mehedi_Hassan_CV.pdf" class="chip-btn chip-btn-primary">
@@ -701,17 +702,17 @@
     </div>
   </header>
 
-  <!-- About Me Section -->
+  <!-- About Me Section (Expanded & Enhanced) -->
   <section id="about" class="reveal-on-scroll">
     <div class="section-header"><h2 class="section-title">ABOUT ME</h2></div>
     <div class="wafer-panel-card" style="max-width: 1050px; margin: 0 auto;">
       
-      <p style="font-size: 1.06rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
-        I am a dedicated <strong>Security & Administration Specialist</strong> with extensive hands-on experience in corporate physical security, aviation security management, international hospitality security, advanced electronic surveillance, and client support command infrastructure. My career is built on bridging the gap between physical safety protocols and cutting-edge technology systems to safeguard critical assets, corporate headquarters, and high-profile environments.
+      <p style="font-size: 1.08rem; color: var(--text-main); line-height: 1.9; font-weight: 500; margin-bottom: 1.4rem;">
+        As a distinguished <strong>Security & Administration Specialist</strong>, I bring over 5+ years of robust operational leadership in bridging physical safety protocols with high-end enterprise technology. My core expertise spans corporate physical security governance, aviation security management, international hospitality protection, advanced CCTV networks, multi-brand Access Control Systems, and 24/7 call center & client support infrastructures.
       </p>
 
       <p style="font-size: 1.02rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.2rem;">
-        My professional trajectory covers high-profile commercial, retail, convention, call center operations, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
+        My professional trajectory covers high-profile commercial, retail, convention, and luxury hospitality venues, including landmark projects such as <strong>InterContinental Dhaka, Crowne Plaza Dhaka, and Unimart Airport</strong>. Over the years, I have successfully governed operational security, enforced rigorous compliance standards, managed 24/7 security forces, and executed seamless technological deployments across multi-stakeholder corporate structures.
       </p>
 
       <div class="about-sub-card">
@@ -723,7 +724,7 @@
           <div class="system-badge"><i class="fa-solid fa-video"></i> Advanced IP CCTV & Surveillance Matrices</div>
           <div class="system-badge"><i class="fa-solid fa-brain"></i> Intelligent Video Analytics & Monitoring</div>
           <div class="system-badge"><i class="fa-solid fa-car-side"></i> ANPR & Vehicle Identification Systems</div>
-          <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Biometrics</div>
+          <div class="system-badge"><i class="fa-solid fa-fingerprint"></i> Multi-brand Access Control System Architecture</div>
           <div class="system-badge"><i class="fa-solid fa-square-parking"></i> Parking Management & Tire Killer Barriers</div>
           <div class="system-badge"><i class="fa-solid fa-headset"></i> Call Center & Client Support Management</div>
           <div class="system-badge"><i class="fa-solid fa-desktop"></i> Central Command Center Integration</div>
@@ -780,7 +781,7 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-database"></i> Server Deployment & Migration</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Biometrics</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control System Architecture</span>
           <span class="pro-badge"><i class="fa-solid fa-car-burst"></i> Tire Killer Barriers</span>
           <span class="pro-badge"><i class="fa-solid fa-video"></i> Central Command Integration</span>
         </div>
@@ -794,9 +795,9 @@
             </ul>
           </div>
           <div class="exp-category-box">
-            <h4><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control & Troubleshooting</h4>
+            <h4><i class="fa-solid fa-fingerprint"></i> Access Control System & Troubleshooting</h4>
             <ul class="exp-bullets">
-              <li>Deployed and configured advanced access control hardware and BioStar 2 time attendance & access control software for seamless employee management and secure zone authorization.</li>
+              <li>Deployed and configured advanced access control hardware and multi-brand Access Control software for seamless employee management and secure zone authorization.</li>
               <li>Diagnosed and resolved intricate server display errors and database connectivity bottlenecks, ensuring 100% real-time access control tracking uptime.</li>
             </ul>
           </div>
@@ -840,17 +841,17 @@
 
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-building-user"></i> Corporate HQ</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar 2 Access Control</span>
+          <span class="pro-badge"><i class="fa-solid fa-video"></i> CCTV & Advanced Surveillance</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control System</span>
           <span class="pro-badge"><i class="fa-solid fa-shield-virus"></i> Safety & SOP Compliance</span>
-          <span class="pro-badge"><i class="fa-solid fa-users"></i> Force Deployment</span>
         </div>
 
         <div class="exp-grid-details">
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-shield-halved"></i> Security & Command Operations</h4>
             <ul class="exp-bullets">
-              <li>Direct full-scope workplace physical security governance, electronic surveillance, and asset protection for high-tech semiconductor corporate offices.</li>
-              <li>Monitor centralized CCTV matrices, BioStar 2 access control and biometric systems, automated visitor tracking, and secure server room entry protocols.</li>
+              <li>Direct full-scope workplace physical security governance, electronic surveillance (CCTV Systems), and asset protection for high-tech semiconductor corporate offices.</li>
+              <li>Monitor centralized CCTV matrices, multi-brand Access Control Systems, automated visitor tracking, and secure server room entry protocols.</li>
               <li>Coordinate with hardware and network technology vendors for CCTV maintenance, firmware patching, and infrastructure scaling.</li>
             </ul>
           </div>
@@ -881,7 +882,7 @@
         <div class="project-tags-row">
           <span class="pro-badge"><i class="fa-solid fa-hotel"></i> InterContinental Dhaka</span>
           <span class="pro-badge"><i class="fa-solid fa-hotel"></i> Crowne Plaza Dhaka</span>
-          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> BioStar Access Control</span>
+          <span class="pro-badge"><i class="fa-solid fa-fingerprint"></i> Access Control System</span>
           <span class="pro-badge"><i class="fa-solid fa-car"></i> ANPR & Barrier Control</span>
         </div>
 
@@ -889,7 +890,7 @@
           <div class="exp-category-box">
             <h4><i class="fa-solid fa-video"></i> Hospitality & Retail Security Systems</h4>
             <ul class="exp-bullets">
-              <li>Spearheaded integrated physical security, central command monitoring, and BioStar 2 access control systems across 5-star luxury hotels (InterContinental, Crowne Plaza), convention centres, and Unimart Airport retail hubs.</li>
+              <li>Spearheaded integrated physical security, central command monitoring, and enterprise Access Control Systems across 5-star luxury hotels (InterContinental, Crowne Plaza), convention centres, and Unimart Airport retail hubs.</li>
               <li>Oversaw continuous monitoring of centralized CCTV control rooms, ANPR vehicle identification, and RFID electronic access barriers.</li>
               <li>Managed third-party vendor contracts, maintenance SLA benchmarks, preventive checks, and electronic surveillance troubleshooting.</li>
             </ul>
@@ -1034,13 +1035,13 @@
       </div>
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-video"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Surveillance & Video Analytics</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">CCTV Systems & Video Analytics</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Advanced CCTV installations, Intelligent Video Analytics, ANPR, Central Command Monitoring, and AV/PA system integrations.</p>
       </div>
       <div class="wafer-panel-card" data-cat="surveillance">
         <div class="skill-chip-icon"><i class="fa-solid fa-fingerprint"></i></div>
-        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">BioStar 2 Access Control & Parking Tech</h3>
-        <p style="font-size:0.92rem; color:var(--text-muted);">Biometric access control architectures (BioStar 2), RFID privilege control, automated barrier gates, and Parking Management Systems.</p>
+        <h3 style="font-family:'Space Grotesk'; font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Access Control System & Parking Tech</h3>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Multi-brand Access Control Systems, biometric time-attendance architecture, RFID privilege control, and automated barrier gates.</p>
       </div>
       <div class="wafer-panel-card" data-cat="risk">
         <div class="skill-chip-icon"><i class="fa-solid fa-shield-virus"></i></div>
@@ -1216,7 +1217,7 @@
       </div>
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">
-          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, IPCO server projects, BioStar 2 access control, or Call Center management!
+          Greetings! I am Mehedi Hassan's intelligent portfolio assistant. Ask me about his experience, CCTV & Access Control Systems, Ulkasemi, or Call Center management!
           <br><button class="speak-btn" onclick="speakText(this)"><i class="fa-solid fa-volume-high"></i> Listen (Female Voice)</button>
         </div>
       </div>
@@ -1502,17 +1503,17 @@
         
         const query = text.toLowerCase();
         if (query.includes('experience') || query.includes('work') || query.includes('company') || query.includes('career')) {
-          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership & client support experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security & Admin)\n• United Group / UGSSL (Executive - Safety & Security, covering 5-star hotels & BioStar Access Control)\n• D-Net Service (Security Consultant & Call Center Support)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC & Helpdesk Lead)\n• Antaranga Dot Com Ltd (Customer Support & Call Center Executive - 1st Job Experience)";
+          botDiv.innerText = "Md. Mehedi Hassan has robust operational leadership & client support experience:\n• Ulkasemi Pvt. Ltd. (Executive - Security, CCTV Systems & Admin)\n• United Group / UGSSL (Executive - Safety & Security, covering 5-star hotels & Access Control Systems)\n• D-Net Service (Security Consultant & Call Center Support)\n• Royal Green Ltd. / PacENet (Sr. Executive NOC & Helpdesk Lead)\n• Antaranga Dot Com Ltd (Customer Support & Call Center Executive - 1st Job Experience)";
         } else if (query.includes('ipco') || query.includes('project') || query.includes('server')) {
-          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured BioStar 2 Access Control & Biometric Attendance software.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
+          botDiv.innerText = "Key Enterprise Project: IPCO Development & Hotels (BD) Ltd.\n• Orchestrated central server deployment & zero-loss data migration.\n• Configured multi-brand Access Control System & time attendance software.\n• Implemented heavy-duty Tire Killer vehicle barriers & ANPR integration.";
         } else if (query.includes('contact') || query.includes('phone') || query.includes('email') || query.includes('location')) {
           botDiv.innerText = "Direct Contact Information:\n📧 Email: mehedi4050128@gmail.com\n📞 Phone: +880 1680-450882\n📍 Location: Malibagh, Dhaka-1217, Bangladesh\n🔗 LinkedIn: linkedin.com/in/mehedi-hassan-7810261aa";
         } else if (query.includes('skill') || query.includes('expert') || query.includes('cctv') || query.includes('security')) {
-          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV & Intelligent Video Analytics\n• BioStar 2 Access Control & Biometric Systems\n• Call Center & Client Support Management\n• Risk Management & MikroTik NOC Operations";
+          botDiv.innerText = "Core Domains:\n• Aviation & Hospitality Security Governance\n• Advanced IP CCTV Systems & Intelligent Video Analytics\n• Multi-brand Access Control System Architecture\n• Call Center & Client Support Operations\n• Risk Management & MikroTik NOC Operations";
         } else if (query.includes('certi') || query.includes('train') || query.includes('education')) {
           botDiv.innerText = "Certifications & Education:\n• Airport Security Manager (ASM) - CAAB (2026)\n• HCSA Certified Security Associate (Hikvision - CCTV & Networking)\n• Microsoft Azure Fundamentals\n• B.Sc in Physics - GSTU (CGPA 3.55)";
         } else {
-          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration, BioStar access control, and client support command. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
+          botDiv.innerText = `That is an interesting query regarding Mehedi's profile! He specializes in high-end security administration, CCTV surveillance, Access Control Systems, and client support operations. You can also book a meeting slot or send a direct inquiry via the 'Contact With Me' form below.`;
         }
 
         const speakButton = document.createElement('button');
